@@ -13,8 +13,27 @@ const FloatingCTA = () => {
     // Don't show if already dismissed this session
     if (sessionStorage.getItem("cta-dismissed")) return;
 
-    const timer = setTimeout(() => setVisible(true), 3500);
-    return () => clearTimeout(timer);
+    const handleScroll = () => {
+      // Only show after scrolling past ~600px (past the hero section)
+      if (window.scrollY > 600) {
+        setVisible(true);
+        window.removeEventListener("scroll", handleScroll);
+      }
+    };
+
+    // Also show after 3500ms even if no scroll (for desktop)
+    const timer = setTimeout(() => {
+      if (!sessionStorage.getItem("cta-dismissed")) {
+        setVisible(true);
+        window.removeEventListener("scroll", handleScroll);
+      }
+    }, 3500);
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => {
+      clearTimeout(timer);
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   const dismiss = (e: React.MouseEvent) => {
@@ -28,7 +47,7 @@ const FloatingCTA = () => {
 
   return (
     <div
-      className={`hidden sm:block fixed bottom-24 right-6 z-50 transition-all duration-500 ${
+      className={`fixed bottom-24 right-6 z-50 transition-all duration-500 ${
         visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6 pointer-events-none"
       }`}
     >
