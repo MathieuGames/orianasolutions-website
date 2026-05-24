@@ -6,7 +6,7 @@ import { Typography } from "@/components/ui/typography";
 
 export default function ServicesHero() {
   return (
-    <Container className="pb-10! xl:pb-14!">
+    <Container className="hidden sm:block pb-10! xl:pb-14!">
       <div className="flex flex-col items-center gap-8 text-center">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
