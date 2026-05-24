@@ -42,12 +42,12 @@ export default function Footer() {
               organisation.
             </p>
 
-            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-[21px] mt-4">
+            <div className="flex flex-col sm:flex-row sm:flex-wrap items-center justify-center lg:justify-start gap-4 mt-4 w-full">
               <Button
                 href="https://calendly.com/mathieumorinlamy/appel-exploratoire-de-15-minutes-par-telephone"
                 target="_blank"
                 variant="outline"
-                className="bg-primary-light border-transparent text-heading font-medium hover:bg-white w-fit! rounded-xl xl:rounded-2xl! "
+                className="bg-primary-light border-transparent text-heading font-medium hover:bg-white w-full sm:w-fit! rounded-xl xl:rounded-2xl!"
               >
                 Prendre rendez-vous
               </Button>
