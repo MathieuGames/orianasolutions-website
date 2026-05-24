@@ -48,4 +48,109 @@ export const faqSections: FAQSection[] = [
       },
     ],
   },
+  {
+    category: "Application mobile",
+    items: [
+      {
+        id: 101,
+        question: "Développez-vous des applications iOS et Android ?",
+        answer:
+          "Oui, on développe des applications disponibles sur les deux plateformes. On utilise principalement **React Native** ou **Flutter**, ce qui nous permet de couvrir iOS et Android avec une seule base de code tout en offrant des performances natives.\n\nLe choix du framework dépend de vos besoins, de la complexité de l'application et des fonctionnalités requises.",
+      },
+      {
+        id: 102,
+        question: "Combien de temps faut-il pour développer une application mobile ?",
+        answer:
+          "Pour un **MVP simple**, comptez généralement **6 à 10 semaines**. Pour une application complète avec back-end, authentification, notifications et fonctionnalités avancées, le délai se situe plutôt entre **3 et 6 mois**.\n\nOn commence toujours par bien définir les fonctionnalités prioritaires afin de livrer une première version rapidement et d'itérer ensuite selon vos retours.",
+      },
+      {
+        id: 103,
+        question: "Gérez-vous la publication sur l'App Store et Google Play ?",
+        answer:
+          "Oui, on s'occupe de l'ensemble du processus de soumission : captures d'écran, descriptions, conformité aux guidelines d'Apple et de Google, certificats et configuration des comptes développeur.\n\nSi vous n'avez pas encore de compte développeur, on vous guide dans la création et la configuration.",
+      },
+      {
+        id: 104,
+        question: "Peut-on intégrer un système de paiement dans l'application ?",
+        answer:
+          "Absolument. On intègre **Stripe** pour les paiements en application, incluant les abonnements, les achats uniques et les paiements in-app. On s'assure que l'intégration respecte les exigences d'Apple et Google en matière de paiements.",
+      },
+      {
+        id: 105,
+        question: "Offrez-vous de la maintenance après le lancement ?",
+        answer:
+          "Oui, on propose des plans de maintenance adaptés pour les **mises à jour de compatibilité** (nouvelles versions iOS/Android), la correction de bugs, l'ajout de nouvelles fonctionnalités et la surveillance des performances.\n\nLes stores évoluent régulièrement et une maintenance active permet de garder votre application disponible et performante dans le temps.",
+      },
+    ],
+  },
+  {
+    category: "Application web & SaaS",
+    items: [
+      {
+        id: 201,
+        question: "Quelle est la différence entre une application web et un site web ?",
+        answer:
+          "Un **site web** est principalement informatif : il présente votre entreprise, vos services ou votre contenu. Une **application web** est interactive : les utilisateurs s'y connectent, créent un compte, gèrent des données et effectuent des actions.\n\nUn **SaaS** (Software as a Service) est une application web accessible par abonnement, généralement avec plusieurs niveaux de fonctionnalités ou d'utilisateurs.",
+      },
+      {
+        id: 202,
+        question: "Quelles technologies utilisez-vous pour les applications web ?",
+        answer:
+          "On utilise principalement **Next.js** et **React** pour le front-end, avec **TypeScript** comme langage. Pour le back-end, on travaille avec **.NET Core** en C# ou **Node.js** selon les besoins.\n\nPour la base de données, on utilise **PostgreSQL**, **Supabase** ou **Firebase** selon l'architecture. Nos déploiements se font sur **Microsoft Azure** ou **Vercel** pour assurer performance et scalabilité.",
+      },
+      {
+        id: 203,
+        question: "Pouvez-vous reprendre ou améliorer une application web existante ?",
+        answer:
+          "Oui, on peut auditer votre code existant, identifier les problèmes et proposer un plan d'amélioration. On peut refactoriser une application, migrer vers une technologie plus moderne ou ajouter de nouvelles fonctionnalités.\n\nOn commence toujours par une **phase d'analyse** pour bien comprendre l'existant avant de recommander quoi que ce soit.",
+      },
+      {
+        id: 204,
+        question: "Comment gérez-vous la sécurité et les données des utilisateurs ?",
+        answer:
+          "La sécurité est intégrée dès le départ : **authentification sécurisée** (JWT, OAuth), **chiffrement des données sensibles**, protection contre les injections SQL et les attaques XSS, et conformité aux bonnes pratiques de l'industrie.\n\nOn s'assure également que votre application respecte les obligations légales en matière de confidentialité, notamment la **Loi 25 au Québec** et le **RGPD** si applicable.",
+      },
+      {
+        id: 205,
+        question: "Peut-on intégrer des outils tiers comme Stripe, HubSpot ou des API externes ?",
+        answer:
+          "Oui, l'intégration d'outils tiers fait partie de notre quotidien. On connecte régulièrement des systèmes de paiement (**Stripe**), des CRM, des outils de communication, des API gouvernementales ou des plateformes tierces selon vos besoins.\n\nSi une API existe pour l'outil que vous utilisez, on peut l'intégrer à votre application.",
+      },
+    ],
+  },
+  {
+    category: "Site web sur mesure",
+    items: [
+      {
+        id: 301,
+        question: "Quelle est la différence entre un site sur mesure et un site WordPress ?",
+        answer:
+          "Un **site sur mesure** est développé entièrement à partir de zéro, sans template ni thème prédéfini. Il est plus rapide, plus performant, plus sécurisé et entièrement adapté à votre image de marque.\n\n**WordPress** est une bonne option pour les budgets plus limités ou les projets qui nécessitent une gestion de contenu simple. On travaille avec les deux selon les besoins du client, mais on recommande le sur-mesure pour les entreprises qui veulent se démarquer.",
+      },
+      {
+        id: 302,
+        question: "Le site sera-t-il optimisé pour le référencement (SEO) ?",
+        answer:
+          "Oui, le SEO est intégré dès la phase de développement. On s'assure que le site respecte les meilleures pratiques : **structure HTML sémantique**, **balises meta optimisées**, **temps de chargement rapide**, **images compressées**, **sitemap XML** et **compatibilité mobile**.\n\nOn utilise **Next.js** qui offre un rendu côté serveur (SSR) nativement, ce qui est un avantage significatif pour le référencement.",
+      },
+      {
+        id: 303,
+        question: "Est-ce que je pourrai modifier le contenu moi-même ?",
+        answer:
+          "Oui, si vous souhaitez pouvoir modifier votre contenu sans toucher au code, on peut intégrer un **système de gestion de contenu (CMS)** comme **Sanity**, **Contentful** ou **Prismic**.\n\nCela vous permet de mettre à jour vos textes, images, articles de blogue ou offres d'emploi directement depuis une interface simple, sans aucune connaissance technique.",
+      },
+      {
+        id: 304,
+        question: "Combien coûte un site web sur mesure ?",
+        answer:
+          "Un site vitrine simple commence autour de **2 500 $**. Un site avec plusieurs pages, animations, formulaires et intégrations se situe généralement entre **5 000 $ et 15 000 $**.\n\nLe prix dépend du nombre de pages, du niveau de design, des fonctionnalités requises et des intégrations nécessaires. On vous fournit un devis détaillé et transparent dès notre première rencontre.",
+      },
+      {
+        id: 305,
+        question: "Est-ce que le site sera responsive sur mobile et tablette ?",
+        answer:
+          "Oui, tous nos sites sont **100 % responsives**. On adopte une approche mobile-first, c'est-à-dire qu'on design et développe d'abord pour les petits écrans avant d'adapter pour les formats plus grands.\n\nAvec plus de 60 % du trafic web qui provient des appareils mobiles, c'est une priorité non négociable pour nous.",
+      },
+    ],
+  },
 ];
