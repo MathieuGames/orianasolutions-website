@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(node \"C:\\\\Users\\\\malyn\\\\Downloads\\\\screenshot-tool\\\\screenshot.cjs\" 2>&1)",
+      "WebSearch"
+    ]
+  }
+}

@@ -1,0 +1,150 @@
+import Image from "next/image";
+import Link from "next/link";
+import Navbar from "@/components/shared/navbar";
+import Footer from "@/components/shared/footer";
+
+const PARTNERS = [
+  {
+    id: 1,
+    name: "Alexie Doucet",
+    role: "Designer Graphique",
+    description:
+      "Designer graphique basée à Montréal, spécialisée en stratégie de marque, identité visuelle, design web et création de contenu.",
+    href: "https://alexiedoucet.ca/",
+    logo: "https://framerusercontent.com/images/UuJn7G23Lc2mDwNXYleVxjAZE4.png",
+    logoDark: true,
+  },
+  {
+    id: 2,
+    name: "Witify",
+    role: "Développement logiciel",
+    description:
+      "Firme montréalaise spécialisée dans le développement de logiciels sur mesure, sécurisés et évolutifs pour des organisations ambitieuses.",
+    href: "https://witify.io/",
+    logo: "https://witify.imgix.net/logo/logo-full-side-primary-black.svg?fit=clip&q=80&w=300",
+    logoDark: false,
+  },
+  {
+    id: 3,
+    name: "Abbie Richer",
+    role: "Marketing 360",
+    description:
+      "Fondatrice du Kollectif de talents — solutions marketing sur mesure pour les entreprises québécoises, combinant agilité et expertise en web, SEO et automatisation.",
+    href: "https://www.abbiericher.com/",
+    logo: "/png/logo-abbie-richer.png",
+    logoDark: false,
+  },
+];
+
+export default function CollaborateursPage() {
+  return (
+    <>
+      <div className="sticky top-0 z-50">
+        <Navbar />
+      </div>
+
+      <main className="w-full px-6 sm:px-16 xl:px-25 2xl:px-35 py-14 md:py-20 max-w-[1980px] mx-auto">
+
+        {/* Header */}
+        <div className="mb-14 md:mb-20">
+          <p className="text-xs font-semibold uppercase tracking-widest text-black/40 mb-4">
+            Partenaires
+          </p>
+          <h1 className="font-heading font-normal text-3xl sm:text-4xl xl:text-5xl 2xl:text-6xl text-heading leading-tight">
+            Nos{" "}
+            <span className="text-primary">collaborateurs</span>
+          </h1>
+          <p className="mt-6 text-black/50 text-sm sm:text-base max-w-xl">
+            Nous collaborons avec des partenaires de confiance qui partagent
+            notre vision de l&apos;excellence et de l&apos;innovation.
+          </p>
+        </div>
+
+        {/* Partner grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 xl:gap-8">
+          {PARTNERS.map((partner) =>
+            partner.name ? (
+              <Link
+                key={partner.id}
+                href={partner.href!}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex flex-col gap-5 rounded-2xl border border-black/8 bg-white p-8 hover:shadow-md transition-shadow"
+              >
+                {/* Logo */}
+                <div className="h-14 flex items-center">
+                  {partner.logo ? (
+                    <div className={`flex items-center ${partner.logoDark ? "rounded-lg overflow-hidden" : ""}`}>
+                      <Image
+                        src={partner.logo}
+                        alt={partner.name}
+                        width={160}
+                        height={56}
+                        className="h-10 w-auto object-contain"
+                        unoptimized
+                      />
+                    </div>
+                  ) : (
+                    <span className="font-heading font-normal text-2xl text-heading">
+                      {partner.name}
+                    </span>
+                  )}
+                </div>
+
+                {/* Info */}
+                <div className="flex flex-col gap-1.5">
+                  <p className="text-xs font-semibold uppercase tracking-widest text-black/40">
+                    {partner.role}
+                  </p>
+                  <p className="text-sm text-black/60 leading-relaxed">
+                    {partner.description}
+                  </p>
+                </div>
+
+                <span className="text-xs text-primary group-hover:underline mt-auto">
+                  Visiter le site →
+                </span>
+              </Link>
+            ) : (
+              <div
+                key={partner.id}
+                className="flex flex-col items-center justify-center gap-4 rounded-2xl border border-dashed border-black/15 bg-black/2 p-10"
+              >
+                <div className="w-16 h-16 rounded-xl bg-black/5 flex items-center justify-center">
+                  <div className="w-8 h-8 rounded-lg bg-black/8" />
+                </div>
+                <div className="flex flex-col items-center gap-2 text-center">
+                  <div className="h-3.5 w-28 rounded-full bg-black/8" />
+                  <div className="h-2.5 w-16 rounded-full bg-black/5" />
+                </div>
+              </div>
+            )
+          )}
+        </div>
+
+        {/* Devenir collaborateur CTA */}
+        <div className="mt-16 rounded-2xl bg-primary-light border border-primary/15 p-10 md:p-14 flex flex-col md:flex-row items-center justify-between gap-8">
+          <div className="flex flex-col gap-3 text-center md:text-left">
+            <h2 className="font-heading font-normal text-2xl md:text-3xl text-heading">
+              Devenir un collaborateur
+            </h2>
+            <p className="text-sm text-black/50 max-w-md">
+              Vous partagez notre vision et souhaitez collaborer avec nous ?
+              Écrivez-nous, nous serons ravis d&apos;en discuter.
+            </p>
+          </div>
+          <Link
+            href="/contact"
+            className="shrink-0 inline-flex items-center gap-2 bg-primary text-white text-sm font-medium px-6 py-3 rounded-xl hover:opacity-90 transition-opacity whitespace-nowrap"
+          >
+            Envoyez-nous un courriel →
+          </Link>
+        </div>
+      </main>
+
+      <div id="contact">
+        <Footer />
+      </div>
+    </>
+  );
+}
