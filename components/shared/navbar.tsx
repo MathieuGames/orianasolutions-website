@@ -225,7 +225,7 @@ export default function Navbar() {
   const close = () => setOpen(false);
 
   return (
-    <div className={`backdrop-blur-[19.56px] transition-all duration-300 ${scrolled ? "bg-white border-b border-black/15" : "bg-primary-light border-b border-transparent"}`}>
+    <div className={`relative z-50 backdrop-blur-[19.56px] transition-all duration-300 ${scrolled ? "bg-white border-b border-black/15" : "bg-primary-light border-b border-transparent"}`}>
       <nav className="relative z-50 w-full px-6 sm:px-16 xl:px-25 py-3 2xl:px-35 max-w-[1980px] mx-auto">
         <div className="flex items-center justify-between">
           <Link href="/" onClick={close}>
