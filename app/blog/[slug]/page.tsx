@@ -119,9 +119,13 @@ export default async function BlogPostPage({ params }: Params) {
                       {section.heading}
                     </h2>
                   )}
-                  <p className="text-[17px] text-black/65 leading-8">
-                    {section.body}
-                  </p>
+                  <div className="flex flex-col gap-5">
+                    {section.body.split("\n\n").map((para, i) => (
+                      <p key={i} className="text-[17px] text-black/65 leading-8">
+                        {renderBold(para)}
+                      </p>
+                    ))}
+                  </div>
                 </div>
               ))}
             </article>
