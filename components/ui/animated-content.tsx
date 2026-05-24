@@ -1,122 +1,89 @@
 "use client";
 
-import { useRef, useEffect, ReactNode, HTMLAttributes } from "react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { motion, HTMLMotionProps } from "motion/react";
+import { ReactNode } from "react";
 
-gsap.registerPlugin(ScrollTrigger);
-
-interface AnimatedContentProps extends HTMLAttributes<HTMLDivElement> {
+interface AnimatedContentProps {
   children: ReactNode;
-  container?: string | HTMLElement | null;
   distance?: number;
   direction?: "vertical" | "horizontal";
   reverse?: boolean;
   duration?: number;
-  ease?: string;
   initialOpacity?: number;
   animateOpacity?: boolean;
   scale?: number;
-  threshold?: number;
   delay?: number;
+  className?: string;
+  // Legacy props kept for compatibility (ignored)
+  container?: string | HTMLElement | null;
+  threshold?: number;
+  ease?: string;
   disappearAfter?: number;
   disappearDuration?: number;
   disappearEase?: string;
   onComplete?: () => void;
   onDisappearanceComplete?: () => void;
-  className?: string;
+  [key: string]: unknown;
 }
 
 export default function AnimatedContent({
   children,
-  container,
-  distance = 100,
+  distance = 40,
   direction = "vertical",
   reverse = false,
-  duration = 0.8,
-  ease = "power3.out",
+  duration = 0.6,
   initialOpacity = 0,
   animateOpacity = true,
   scale = 1,
-  threshold = 0.1,
   delay = 0,
-  disappearAfter = 0,
-  disappearDuration = 0.5,
-  disappearEase = "power3.in",
-  onComplete,
-  onDisappearanceComplete,
   className = "",
-  ...props
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  container,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  threshold,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  ease,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  disappearAfter,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  disappearDuration,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  disappearEase,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  onComplete,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  onDisappearanceComplete,
+  ...rest
 }: AnimatedContentProps) {
-  const ref = useRef<HTMLDivElement>(null);
+  const axis = direction === "horizontal" ? "x" : "y";
+  const offset = reverse ? -distance : distance;
 
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
+  const initial: Record<string, number> = {
+    [axis]: offset,
+    scale,
+    opacity: animateOpacity ? initialOpacity : 1,
+  };
 
-    let scrollerTarget: Element | HTMLElement | null =
-      (container as HTMLElement) ||
-      document.getElementById("snap-main-container") ||
-      null;
-
-    if (typeof container === "string") {
-      scrollerTarget = document.querySelector(container);
-    }
-
-    const axis = direction === "horizontal" ? "x" : "y";
-    const offset = reverse ? -distance : distance;
-    const startPct = (1 - threshold) * 100;
-
-    gsap.set(el, {
-      [axis]: offset,
-      scale,
-      opacity: animateOpacity ? initialOpacity : 1,
-    });
-
-    const tl = gsap.timeline({
-      paused: true,
-      delay,
-      onComplete: () => {
-        if (onComplete) onComplete();
-        if (disappearAfter > 0) {
-          gsap.to(el, {
-            [axis]: reverse ? distance : -distance,
-            scale: 0.8,
-            opacity: animateOpacity ? initialOpacity : 0,
-            delay: disappearAfter,
-            duration: disappearDuration,
-            ease: disappearEase,
-            onComplete: () => onDisappearanceComplete?.(),
-          });
-        }
-      },
-    });
-
-    tl.to(el, { [axis]: 0, scale: 1, opacity: 1, duration, ease });
-
-    const st = ScrollTrigger.create({
-      trigger: el,
-      scroller: scrollerTarget,
-      start: `top ${startPct}%`,
-      once: true,
-      onEnter: () => tl.play(),
-    });
-
-    return () => {
-      st.kill();
-      tl.kill();
-      gsap.set(el, { clearProps: "all" });
-    };
-  }, [
-    container, distance, direction, reverse, duration, ease,
-    initialOpacity, animateOpacity, scale, threshold, delay,
-    disappearAfter, disappearDuration, disappearEase,
-    onComplete, onDisappearanceComplete,
-  ]);
+  const animate: Record<string, number> = {
+    [axis]: 0,
+    scale: 1,
+    opacity: 1,
+  };
 
   return (
-    <div ref={ref} className={className} {...props}>
+    <motion.div
+      initial={initial}
+      whileInView={animate}
+      viewport={{ once: true, margin: "-8% 0px" }}
+      transition={{
+        duration,
+        delay,
+        ease: [0.22, 1, 0.36, 1],
+      }}
+      className={className}
+      {...(rest as HTMLMotionProps<"div">)}
+    >
       {children}
-    </div>
+    </motion.div>
   );
 }

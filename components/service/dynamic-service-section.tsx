@@ -12,6 +12,7 @@ interface DynamicServiceSectionProps {
   headingClassName?: string;
   imageContainerClassName?: string;
   icon?: string;
+  priority?: boolean;
 }
 
 export default function DynamicServiceSection({
@@ -24,6 +25,7 @@ export default function DynamicServiceSection({
   headingClassName,
   imageContainerClassName,
   icon,
+  priority = false,
 }: DynamicServiceSectionProps) {
   return (
     <Container
@@ -76,6 +78,7 @@ export default function DynamicServiceSection({
               width={900}
               height={700}
               className="w-full h-full object-cover"
+              priority={priority}
             />
           </div>
         </div>

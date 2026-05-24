@@ -14,17 +14,26 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "Oriana Solutions",
+  metadataBase: new URL("https://orianasolutions.com"),
+  title: {
+    default: "Oriana Solutions | Développement d'applications web et mobiles à Montréal",
+    template: "%s | Oriana Solutions",
+  },
   description:
-    "Oriana Solutions, votre expert en applications mobiles, web, SaaS et automatisation.",
+    "Oriana Solutions — agence de développement logiciel à Montréal. Applications mobiles iOS/Android, web, SaaS et sites web sur mesure.",
   icons: {
-    icon: "/icon.png",
-    apple: "/icon.png",
+    icon: [
+      { url: "/icon.png", type: "image/png" },
+      { url: "/icon.png", sizes: "32x32", type: "image/png" },
+      { url: "/icon.png", sizes: "192x192", type: "image/png" },
+    ],
+    apple: [{ url: "/icon.png", sizes: "180x180", type: "image/png" }],
+    shortcut: [{ url: "/icon.png" }],
   },
   openGraph: {
-    title: "Oriana Solutions",
+    title: "Oriana Solutions | Développement d'applications web et mobiles à Montréal",
     description:
-      "Oriana Solutions, votre expert en applications mobiles, web, SaaS et automatisation.",
+      "Agence de développement logiciel à Montréal — applications mobiles, web, SaaS et sites sur mesure.",
     url: "https://orianasolutions.com",
     siteName: "Oriana Solutions",
     images: [
@@ -40,9 +49,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Oriana Solutions",
+    title: "Oriana Solutions | Développement d'applications web et mobiles à Montréal",
     description:
-      "Oriana Solutions, votre expert en applications mobiles, web, SaaS et automatisation.",
+      "Agence de développement logiciel à Montréal — applications mobiles, web, SaaS et sites sur mesure.",
     images: ["/opengraph-image.png"],
   },
 };

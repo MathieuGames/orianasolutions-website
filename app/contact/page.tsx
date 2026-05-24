@@ -1,4 +1,17 @@
+import type { Metadata } from "next";
 import ContactSection from "@/components/contact/contact-section";
+
+export const metadata: Metadata = {
+  title: "Contactez-nous | Oriana Solutions",
+  description:
+    "Discutez de votre projet avec notre équipe. Développement d'applications web, mobiles et SaaS à Montréal — répondons ensemble à vos questions.",
+  openGraph: {
+    title: "Contactez-nous | Oriana Solutions",
+    description:
+      "Parlez-nous de votre projet. Notre équipe basée à Montréal est disponible pour vous accompagner.",
+    url: "https://orianasolutions.com/contact",
+  },
+};
 import AboutSectionMobileBlock from "@/components/shared/about-section";
 import Breadcrumb from "@/components/shared/breadcrumb";
 import Footer from "@/components/shared/footer";

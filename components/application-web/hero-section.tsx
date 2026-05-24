@@ -28,6 +28,7 @@ export const HeroSectionWeb = () => {
         description="Une bonne application web, c'est d'abord une expérience fluide et rapide. On conçoit chaque interface en gardant l'utilisateur au centre, puis on développe avec des technologies modernes et évolutives."
         image="/png/service2.png"
         reverse
+        priority
       />
 
       <DynamicServiceSection

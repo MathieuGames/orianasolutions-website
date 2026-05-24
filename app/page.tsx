@@ -1,4 +1,17 @@
+import type { Metadata } from "next";
 import Navbar from "@/components/shared/navbar";
+
+export const metadata: Metadata = {
+  title: "Oriana Solutions | Développement d'applications web et mobiles à Montréal",
+  description:
+    "Oriana Solutions — agence de développement logiciel à Montréal. Applications mobiles iOS/Android, web, SaaS et sites web sur mesure pour entrepreneurs et entreprises.",
+  openGraph: {
+    title: "Oriana Solutions | Développement d'applications web et mobiles à Montréal",
+    description:
+      "Agence de développement logiciel à Montréal spécialisée en applications mobiles, web, SaaS et sites web sur mesure.",
+    url: "https://orianasolutions.com",
+  },
+};
 import HeroSection from "@/components/home/hero-section";
 import Experties from "@/components/home/experties";
 import ServicesSection from "@/components/home/services-section";

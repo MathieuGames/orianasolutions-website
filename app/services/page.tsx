@@ -1,4 +1,17 @@
+import type { Metadata } from "next";
 import ServicesHero from "@/components/service/hero-section";
+
+export const metadata: Metadata = {
+  title: "Nos services | Oriana Solutions",
+  description:
+    "Applications mobiles, web, SaaS et sites web sur mesure. Découvrez tous les services de développement logiciel d'Oriana Solutions à Montréal.",
+  openGraph: {
+    title: "Nos services | Oriana Solutions",
+    description:
+      "Applications mobiles iOS/Android, applications web & SaaS, sites web sur mesure — experts en développement logiciel à Montréal.",
+    url: "https://orianasolutions.com/services",
+  },
+};
 import ServicesSection from "@/components/service/services-section";
 import ProcessSection from "@/components/service/process-section";
 import ServiceAboutSection from "@/components/service/about-section";

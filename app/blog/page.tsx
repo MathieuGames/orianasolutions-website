@@ -1,4 +1,17 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Blogue | Ressources & conseils | Oriana Solutions",
+  description:
+    "Conseils pratiques, tendances tech et guides pour prendre les meilleures décisions numériques pour votre entreprise.",
+  openGraph: {
+    title: "Blogue | Ressources & conseils | Oriana Solutions",
+    description:
+      "Conseils, tendances et guides tech pour entrepreneurs et PME au Québec.",
+    url: "https://orianasolutions.com/blog",
+  },
+};
 import Navbar from "@/components/shared/navbar";
 import Footer from "@/components/shared/footer";
 import Breadcrumb from "@/components/shared/breadcrumb";

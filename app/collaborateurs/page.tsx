@@ -1,4 +1,17 @@
+import type { Metadata } from "next";
 import Image from "next/image";
+
+export const metadata: Metadata = {
+  title: "Nos collaborateurs | Oriana Solutions",
+  description:
+    "Découvrez les partenaires de confiance d'Oriana Solutions : designers, développeurs et experts marketing qui partagent notre vision.",
+  openGraph: {
+    title: "Nos collaborateurs | Oriana Solutions",
+    description:
+      "Partenaires de confiance en design, développement et marketing au Québec.",
+    url: "https://orianasolutions.com/collaborateurs",
+  },
+};
 import Link from "next/link";
 import Navbar from "@/components/shared/navbar";
 import Footer from "@/components/shared/footer";

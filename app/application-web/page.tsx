@@ -1,4 +1,17 @@
+import type { Metadata } from "next";
 import AboutSectionMobileBlock from "@/components/shared/about-section";
+
+export const metadata: Metadata = {
+  title: "Développement d'application web & SaaS | Oriana Solutions",
+  description:
+    "Nous développons des applications web et plateformes SaaS performantes, sécurisées et évolutives avec Next.js, React et .NET — basés à Montréal.",
+  openGraph: {
+    title: "Développement d'application web & SaaS | Oriana Solutions",
+    description:
+      "Plateformes web et SaaS sur mesure — Next.js, React, .NET, déploiement cloud Azure.",
+    url: "https://orianasolutions.com/application-web",
+  },
+};
 import Breadcrumb from "@/components/shared/breadcrumb";
 import Footer from "@/components/shared/footer";
 import Navbar from "@/components/shared/navbar";

@@ -29,6 +29,7 @@ export const HeroSection = ({ title = "Développement d'application mobile" }: {
         description="Une bonne application mobile, c'est d'abord une expérience fluide. On conçoit chaque écran en gardant l'utilisateur final au centre, puis on développe avec les meilleures technologies cross-platform pour iOS et Android simultanément."
         image="/png/Group 51.png"
         reverse
+        priority
       />
 
       <div className="">

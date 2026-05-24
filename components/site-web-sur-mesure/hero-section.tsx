@@ -28,6 +28,7 @@ export const HeroSectionSite = () => {
         description="Un site web sur mesure, c'est bien plus qu'un design. On conçoit chaque page pour guider vos visiteurs vers l'action, avec une expérience fluide sur tous les appareils."
         image="/png/service3.png"
         reverse
+        priority
       />
 
       <DynamicServiceSection

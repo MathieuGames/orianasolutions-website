@@ -1,4 +1,17 @@
+import type { Metadata } from "next";
 import AboutSectionMobileBlock from "@/components/shared/about-section";
+
+export const metadata: Metadata = {
+  title: "Création de site web sur mesure à Montréal | Oriana Solutions",
+  description:
+    "Sites web sur mesure rapides, SEO-optimisés et 100 % responsives. Design moderne et développement Next.js par notre équipe basée à Montréal.",
+  openGraph: {
+    title: "Création de site web sur mesure à Montréal | Oriana Solutions",
+    description:
+      "Sites web sur mesure performants et optimisés SEO — design moderne, Next.js, 100 % responsive.",
+    url: "https://orianasolutions.com/site-web-sur-mesure",
+  },
+};
 import Breadcrumb from "@/components/shared/breadcrumb";
 import Footer from "@/components/shared/footer";
 import Navbar from "@/components/shared/navbar";

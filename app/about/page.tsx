@@ -1,5 +1,17 @@
-
+import type { Metadata } from "next";
 import AboutHero from "@/components/about/hero-section";
+
+export const metadata: Metadata = {
+  title: "À propos | Oriana Solutions",
+  description:
+    "Découvrez Oriana Solutions : une jeune équipe montréalaise spécialisée en développement d'applications web, mobiles et SaaS sur mesure.",
+  openGraph: {
+    title: "À propos | Oriana Solutions",
+    description:
+      "Jeune équipe montréalaise spécialisée en développement logiciel — applications mobiles, web, SaaS et automatisation IA.",
+    url: "https://orianasolutions.com/about",
+  },
+};
 import AboutHighlight from "@/components/about/highlight";
 import AboutFAQ from "@/components/about/faq-section";
 import History from "@/components/about/history";
