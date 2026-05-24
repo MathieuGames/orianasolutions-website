@@ -47,7 +47,7 @@ const FloatingCTA = () => {
 
   return (
     <div
-      className={`fixed bottom-24 right-6 z-50 transition-all duration-500 ${
+      className={`fixed bottom-6 left-1/2 -translate-x-1/2 z-50 transition-all duration-500 ${
         visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6 pointer-events-none"
       }`}
     >

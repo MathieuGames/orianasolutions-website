@@ -225,68 +225,72 @@ export default function Navbar() {
   const close = () => setOpen(false);
 
   return (
-    <div className={`relative z-50 backdrop-blur-[19.56px] transition-all duration-300 ${scrolled ? "bg-white border-b border-black/15" : "bg-primary-light border-b border-transparent"}`}>
-      <nav className="relative z-50 w-full px-6 sm:px-16 xl:px-25 py-3 2xl:px-35 max-w-[1980px] mx-auto">
-        <div className="flex items-center justify-between">
-          <Link href="/" onClick={close}>
-            <LogoAnimation />
-          </Link>
+    <>
+      {/* Navbar bar */}
+      <div className={`relative z-50 backdrop-blur-[19.56px] transition-all duration-300 ${scrolled ? "bg-white border-b border-black/15" : "bg-primary-light border-b border-transparent"}`}>
+        <nav className="relative w-full px-6 sm:px-16 xl:px-25 py-3 2xl:px-35 max-w-[1980px] mx-auto">
+          <div className="flex items-center justify-between">
+            <Link href="/" onClick={close}>
+              <LogoAnimation />
+            </Link>
 
-          {/* Desktop links */}
-          <div className="hidden xl:flex items-center gap-6 2xl:gap-10">
-            <ServicesDropdown />
-            <ActiveNavLink href="/realisations">Nos réalisations</ActiveNavLink>
-            <AboutDropdown />
-            <ResourcesDropdown />
-          </div>
+            {/* Desktop links */}
+            <div className="hidden xl:flex items-center gap-6 2xl:gap-10">
+              <ServicesDropdown />
+              <ActiveNavLink href="/realisations">Nos réalisations</ActiveNavLink>
+              <AboutDropdown />
+              <ResourcesDropdown />
+            </div>
 
-          {/* Desktop CTA */}
-          <div className="hidden xl:block">
-            <Button href="/contact" className="text-sm! xl:text-base! 3xl:text-lg!">Contactez-nous</Button>
-          </div>
+            {/* Desktop CTA */}
+            <div className="hidden xl:block">
+              <Button href="/contact" className="text-sm! xl:text-base! 3xl:text-lg!">Contactez-nous</Button>
+            </div>
 
-          {/* Hamburger / Close button */}
-          <button
-            onClick={() => setOpen(!open)}
-            aria-label={open ? "Fermer le menu" : "Ouvrir le menu"}
-            aria-expanded={open}
-            className="xl:hidden p-2 z-50 relative"
-          >
-            <svg
-              width="28"
-              height="28"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
+            {/* Hamburger / Close button */}
+            <button
+              onClick={() => setOpen(!open)}
+              aria-label={open ? "Fermer le menu" : "Ouvrir le menu"}
+              aria-expanded={open}
+              className="xl:hidden p-2"
             >
-              {open ? (
-                <path d="M18 6L6 18M6 6l12 12" />
-              ) : (
-                <path d="M3 6h18M3 12h18M3 18h18" />
-              )}
-            </svg>
-          </button>
-        </div>
-      </nav>
+              <svg
+                width="28"
+                height="28"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+              >
+                {open ? (
+                  <path d="M18 6L6 18M6 6l12 12" />
+                ) : (
+                  <path d="M3 6h18M3 12h18M3 18h18" />
+                )}
+              </svg>
+            </button>
+          </div>
+        </nav>
+      </div>
 
-      {/* Dark overlay */}
+      {/* Dark overlay — outside backdrop-blur so fixed positioning is relative to viewport */}
       <div
         onClick={close}
         aria-hidden
-        className={`xl:hidden fixed inset-0 z-40 bg-black/50 backdrop-blur-sm transition-opacity duration-300 ${open
-          ? "opacity-100 pointer-events-auto"
-          : "opacity-0 pointer-events-none"
-          }`}
+        className={`xl:hidden fixed inset-0 z-30 bg-black/50 backdrop-blur-sm transition-opacity duration-300 ${
+          open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+        }`}
       />
 
-      {/* Mobile drawer */}
+      {/* Mobile drawer — outside backdrop-blur so it slides correctly */}
       <div
-        className={`xl:hidden fixed top-0 left-0 right-0 z-40 bg-primary-light shadow-xl transition-transform duration-300 ease-in-out ${open ? "translate-y-0" : "-translate-y-full"
-          }`}
+        className={`xl:hidden fixed top-0 left-0 right-0 z-40 bg-primary-light shadow-xl transition-transform duration-300 ease-in-out ${
+          open ? "translate-y-0" : "-translate-y-full"
+        }`}
       >
-        <div className="h-25 sm:h-30" />
+        {/* Spacer matching navbar height so links start below the bar */}
+        <div className="h-20 sm:h-24" />
 
         <div className="flex flex-col px-6 sm:px-16 py-10 gap-2">
           {navbarLinks.map(({ label, href }) => (
@@ -378,6 +382,6 @@ export default function Navbar() {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
