@@ -54,9 +54,9 @@ export default function Footer() {
 
               <Link
                 href="/services"
-                className="hidden lg:inline-flex items-center gap-1.5 text-white text-[15px] md:text-[17px] leading-6 tracking-[-0.3px] hover:underline transition-opacity hover:opacity-80"
+                className="inline-flex items-center gap-1.5 text-white text-[15px] md:text-[17px] leading-6 tracking-[-0.3px] hover:underline transition-opacity hover:opacity-80"
               >
-                En savoir plus
+                Découvrir nos services
                 <Arrow className="h-[20px]! w-[20px]! text-white" />
               </Link>
             </div>

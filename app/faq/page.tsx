@@ -43,52 +43,60 @@ export default function FAQPage() {
           </div>
 
           {/* Body */}
-          {faqSections.map((section) => (
-            <div key={section.category} className="mb-20">
+          <div className="flex flex-col gap-6">
+            {faqSections.map((section, sectionIndex) => (
+              <div key={section.category} className={`rounded-2xl border border-black/8 overflow-hidden ${sectionIndex === 0 ? "" : ""}`}>
 
-              <p className="text-lg font-semibold text-heading mb-8">
-                {section.category}
-              </p>
+                {/* Section header */}
+                <div className="flex items-center gap-3 px-7 py-5 border-b border-black/8 bg-[#F8F9FB]">
+                  <span className="w-2 h-2 rounded-full bg-primary shrink-0" />
+                  <p className="text-base font-semibold text-heading">
+                    {section.category}
+                  </p>
+                  <span className="ml-auto text-xs text-black/30 font-medium">
+                    {section.items.length} question{section.items.length > 1 ? "s" : ""}
+                  </span>
+                </div>
 
-              {/* Accordion */}
-              <div className="flex flex-col">
-                {section.items.map((item) => {
-                  const open = openId === item.id;
-                  return (
-                    <div key={item.id} className={`border-t border-black/8 transition-colors ${open ? "border-black/15" : ""}`}>
-                      <button
-                        onClick={() => setOpenId(open ? null : item.id)}
-                        className="flex items-start justify-between gap-6 py-7 text-left w-full group cursor-pointer"
-                        aria-expanded={open}
-                      >
-                        <span className={`font-heading font-normal text-lg md:text-xl transition-colors ${open ? "text-primary" : "text-heading group-hover:text-primary"}`}>
-                          {item.question}
-                        </span>
-                        <span className={`shrink-0 mt-1 w-7 h-7 rounded-full border-2 flex items-center justify-center transition-all ${open ? "border-primary bg-primary" : "border-black/20 group-hover:border-primary"}`}>
-                          <span className={`text-base leading-none transition-colors ${open ? "text-white" : "text-black/40 group-hover:text-primary"}`}>
-                            {open ? "−" : "+"}
+                {/* Accordion */}
+                <div className="flex flex-col px-2 sm:px-4">
+                  {section.items.map((item) => {
+                    const open = openId === item.id;
+                    return (
+                      <div key={item.id} className="border-b border-black/6 last:border-0">
+                        <button
+                          onClick={() => setOpenId(open ? null : item.id)}
+                          className="flex items-start justify-between gap-6 py-6 text-left w-full group cursor-pointer px-3"
+                          aria-expanded={open}
+                        >
+                          <span className={`font-heading font-normal text-base md:text-lg transition-colors ${open ? "text-primary" : "text-heading group-hover:text-primary"}`}>
+                            {item.question}
                           </span>
-                        </span>
-                      </button>
+                          <span className={`shrink-0 mt-0.5 w-7 h-7 rounded-full border-2 flex items-center justify-center transition-all ${open ? "border-primary bg-primary" : "border-black/20 group-hover:border-primary"}`}>
+                            <span className={`text-base leading-none transition-colors ${open ? "text-white" : "text-black/40 group-hover:text-primary"}`}>
+                              {open ? "−" : "+"}
+                            </span>
+                          </span>
+                        </button>
 
-                      <div className={`grid transition-all duration-300 ease-in-out ${open ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}>
-                        <div className="overflow-hidden">
-                          <div className="pb-8 pr-4 sm:pr-14 flex flex-col gap-4">
-                            {item.answer.split("\n\n").map((paragraph, i) => (
-                              <p key={i} className="text-[17px] text-black/70 leading-8 whitespace-pre-line">
-                                {renderBold(paragraph)}
-                              </p>
-                            ))}
+                        <div className={`grid transition-all duration-300 ease-in-out ${open ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}>
+                          <div className="overflow-hidden">
+                            <div className="px-3 pb-6 flex flex-col gap-4">
+                              {item.answer.split("\n\n").map((paragraph, i) => (
+                                <p key={i} className="text-[16px] text-black/60 leading-7 whitespace-pre-line">
+                                  {renderBold(paragraph)}
+                                </p>
+                              ))}
+                            </div>
                           </div>
                         </div>
                       </div>
-                    </div>
-                  );
-                })}
-                <div className="border-t border-black/8" />
+                    );
+                  })}
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
 
           {/* CTA */}
           <div className="rounded-3xl bg-primary-light border border-primary/15 p-10 md:p-14 flex flex-col md:flex-row items-center justify-between gap-8">
