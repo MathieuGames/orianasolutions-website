@@ -26,9 +26,9 @@ export default function page() {
       <div className="bg-primary-light md:bg-transparent">
         <Breadcrumb items={[{ label: "Services", href: "/services" }, { label: "Application web" }]} />
         <AboutSectionMobileBlock
-          tag="Développement"
-          title="Application web"
-          description="De l'idée au lancement — nous concevons des applications web sur mesure, performantes et évolutives."
+          tag="Service"
+          title="Développement d'application web"
+          description="Des plateformes web performantes, scalables et taillées pour votre croissance."
         />
       </div>
       <HeroSectionWeb />
