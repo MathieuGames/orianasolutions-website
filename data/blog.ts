@@ -18,7 +18,7 @@ export const blogPosts: BlogPost[] = [
   {
     id: 1,
     slug: "cout-application-mobile-2026",
-    title: "Quel est le coût d'une **application mobile** en **2026** ?",
+    title: "Quel est le coût d'une application mobile en 2026 ?",
     excerpt:
       "Il y a quelques années, développer une application mobile coûtait facilement 50 000 $ et plus. Aujourd'hui, l'IA a tout changé. Voici ce que ça coûte vraiment en 2026.",
     category: "Application mobile",
