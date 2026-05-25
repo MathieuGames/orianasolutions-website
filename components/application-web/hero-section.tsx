@@ -12,7 +12,7 @@ export const HeroSectionWeb = () => {
   return (
     <>
       <Container className="w-full max-w-[90%]">
-        <div className="flex flex-col items-center gap-6 pt-10">
+        <div className="sm:flex hidden flex-col items-center gap-6 pt-10">
           <Tag>Service</Tag>
           <Typography variant="h2" className="text-center">
             Développement d&apos;application web
