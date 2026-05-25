@@ -23,7 +23,6 @@ interface AnimatedContentProps {
   disappearEase?: string;
   onComplete?: () => void;
   onDisappearanceComplete?: () => void;
-  [key: string]: unknown;
 }
 
 export default function AnimatedContent({
@@ -37,22 +36,14 @@ export default function AnimatedContent({
   scale = 1,
   delay = 0,
   className = "",
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  container,
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  threshold,
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  ease,
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  disappearAfter,
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  disappearDuration,
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  disappearEase,
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  onComplete,
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  onDisappearanceComplete,
+  container: _container,
+  threshold: _threshold,
+  ease: _ease,
+  disappearAfter: _disappearAfter,
+  disappearDuration: _disappearDuration,
+  disappearEase: _disappearEase,
+  onComplete: _onComplete,
+  onDisappearanceComplete: _onDisappearanceComplete,
   ...rest
 }: AnimatedContentProps) {
   const axis = direction === "horizontal" ? "x" : "y";

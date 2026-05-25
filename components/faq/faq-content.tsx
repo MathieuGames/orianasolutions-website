@@ -3,19 +3,7 @@
 import { useState } from "react";
 import { faqSections } from "@/data/faq";
 import Link from "next/link";
-
-function renderBold(text: string) {
-  const parts = text.split(/\*\*(.*?)\*\*/g);
-  return parts.map((part, i) =>
-    i % 2 === 1 ? (
-      <strong key={i} className="font-semibold text-heading">
-        {part}
-      </strong>
-    ) : (
-      part
-    )
-  );
-}
+import { renderBold } from "@/lib/render-bold";
 
 export default function FAQContent() {
   const [openId, setOpenId] = useState<number | null>(null);

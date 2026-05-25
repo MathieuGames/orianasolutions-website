@@ -3,13 +3,7 @@ import Link from "next/link";
 import Navbar from "@/components/shared/navbar";
 import Footer from "@/components/shared/footer";
 import { blogPosts } from "@/data/blog";
-
-function renderBold(text: string) {
-  const parts = text.split(/\*\*(.*?)\*\*/g);
-  return parts.map((part, i) =>
-    i % 2 === 1 ? <strong key={i} className="font-semibold">{part}</strong> : part
-  );
-}
+import { renderBold } from "@/lib/render-bold";
 
 function slugify(text: string) {
   return text

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { projects, categories } from "@/data/projects";
@@ -9,15 +9,28 @@ import type { Category } from "@/data/projects";
 export default function RealisationsFilter() {
   const [active, setActive] = useState<Category>("Tous les projets");
 
-  const filtered =
-    active === "Tous les projets"
-      ? projects
-      : projects.filter((p) => p.category === active);
+  const filtered = useMemo(
+    () =>
+      active === "Tous les projets"
+        ? projects
+        : projects.filter((p) => p.category === active),
+    [active]
+  );
 
-  const countFor = (cat: Category) =>
-    cat === "Tous les projets"
-      ? projects.length
-      : projects.filter((p) => p.category === cat).length;
+  const counts = useMemo(
+    () =>
+      Object.fromEntries(
+        categories.map((cat) => [
+          cat,
+          cat === "Tous les projets"
+            ? projects.length
+            : projects.filter((p) => p.category === cat).length,
+        ])
+      ) as Record<Category, number>,
+    []
+  );
+
+  const countFor = (cat: Category) => counts[cat];
 
   return (
     <>

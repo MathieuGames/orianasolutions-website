@@ -16,13 +16,7 @@ import Navbar from "@/components/shared/navbar";
 import Footer from "@/components/shared/footer";
 import Breadcrumb from "@/components/shared/breadcrumb";
 import { blogPosts } from "@/data/blog";
-
-function renderBold(text: string) {
-  const parts = text.split(/\*\*(.*?)\*\*/g);
-  return parts.map((part, i) =>
-    i % 2 === 1 ? <strong key={i} className="font-semibold">{part}</strong> : part
-  );
-}
+import { renderBold } from "@/lib/render-bold";
 
 export default function BlogPage() {
   return (

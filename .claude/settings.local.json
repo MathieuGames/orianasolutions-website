@@ -3,7 +3,8 @@
     "allow": [
       "PowerShell(node \"C:\\\\Users\\\\malyn\\\\Downloads\\\\screenshot-tool\\\\screenshot.cjs\" 2>&1)",
       "WebSearch",
-      "PowerShell(vercel --version 2>&1)"
+      "PowerShell(vercel --version 2>&1)",
+      "Bash(git add *)"
     ]
   }
 }

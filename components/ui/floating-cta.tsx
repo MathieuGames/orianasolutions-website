@@ -7,27 +7,21 @@ const CALENDLY = "https://calendly.com/mathieumorinlamy/appel-exploratoire-de-15
 
 const FloatingCTA = () => {
   const [visible, setVisible] = useState(false);
-  const [dismissed, setDismissed] = useState(false);
 
   useEffect(() => {
-    // Don't show if already dismissed this session
     if (sessionStorage.getItem("cta-dismissed")) return;
 
+    const show = () => setVisible(true);
+
     const handleScroll = () => {
-      // Only show after scrolling past ~600px (past the hero section)
       if (window.scrollY > 600) {
-        setVisible(true);
+        show();
         window.removeEventListener("scroll", handleScroll);
       }
     };
 
-    // Also show after 3500ms even if no scroll (for desktop)
-    const timer = setTimeout(() => {
-      if (!sessionStorage.getItem("cta-dismissed")) {
-        setVisible(true);
-        window.removeEventListener("scroll", handleScroll);
-      }
-    }, 3500);
+    // Also show after 3500ms even without scrolling (desktop)
+    const timer = setTimeout(show, 3500);
 
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => {
@@ -39,11 +33,9 @@ const FloatingCTA = () => {
   const dismiss = (e: React.MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
-    setDismissed(true);
     sessionStorage.setItem("cta-dismissed", "1");
+    setVisible(false);
   };
-
-  if (dismissed) return null;
 
   return (
     <div

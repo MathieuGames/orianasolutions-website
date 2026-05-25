@@ -9,6 +9,15 @@ import LogoAnimation from "@/components/shared/logo-animation";
 
 import { navbarLinks } from "@/data/navigation";
 
+/** Closes the given dropdown when the user scrolls. */
+function useCloseOnScroll(setOpen: (v: false) => void) {
+  useEffect(() => {
+    const handler = () => setOpen(false);
+    window.addEventListener("scroll", handler, { passive: true });
+    return () => window.removeEventListener("scroll", handler);
+  }, [setOpen]);
+}
+
 const SERVICE_LINKS = [
   { label: "Application web", href: "/application-web" },
   { label: "Application mobile", href: "/developpement-application-mobile" },
@@ -54,12 +63,7 @@ function ServicesDropdown() {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
   const active = SERVICE_PREFIXES.some((p) => pathname === p || pathname.startsWith(p + "/"));
-
-  useEffect(() => {
-    const handleScroll = () => setOpen(false);
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  useCloseOnScroll(setOpen);
 
   return (
     <div
@@ -103,12 +107,7 @@ function AboutDropdown() {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
   const active = pathname === "/about" || pathname.startsWith("/about/") || pathname === "/collaborateurs";
-
-  useEffect(() => {
-    const handleScroll = () => setOpen(false);
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  useCloseOnScroll(setOpen);
 
   return (
     <div
@@ -156,12 +155,7 @@ function ResourcesDropdown() {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
   const active = pathname === "/blog" || pathname.startsWith("/blog/") || pathname === "/faq";
-
-  useEffect(() => {
-    const handleScroll = () => setOpen(false);
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  useCloseOnScroll(setOpen);
 
   return (
     <div
@@ -217,7 +211,10 @@ export default function Navbar() {
   }, [open]);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 10);
+    const onScroll = () => {
+      const next = window.scrollY > 10;
+      setScrolled((prev) => (prev === next ? prev : next));
+    };
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
@@ -311,9 +308,7 @@ export default function Navbar() {
               className="flex items-center justify-between w-full text-lg font-medium text-title py-3"
             >
               Nos services
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className={`transition-transform duration-200 ${servicesOpen ? "rotate-180" : ""}`}>
-                <path d="M6 9l6 6 6-6" />
-              </svg>
+              <ChevronIcon open={servicesOpen} />
             </button>
             {servicesOpen && (
               <div className="pb-3 pl-3 flex flex-col gap-1">
@@ -336,9 +331,7 @@ export default function Navbar() {
               className="flex items-center justify-between w-full text-lg font-medium text-title py-3"
             >
               À propos
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className={`transition-transform duration-200 ${aboutOpen ? "rotate-180" : ""}`}>
-                <path d="M6 9l6 6 6-6" />
-              </svg>
+              <ChevronIcon open={aboutOpen} />
             </button>
             {aboutOpen && (
               <div className="pb-3 pl-3 flex flex-col gap-1">
@@ -359,9 +352,7 @@ export default function Navbar() {
               className="flex items-center justify-between w-full text-lg font-medium text-title py-3"
             >
               Ressources
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className={`transition-transform duration-200 ${resourcesOpen ? "rotate-180" : ""}`}>
-                <path d="M6 9l6 6 6-6" />
-              </svg>
+              <ChevronIcon open={resourcesOpen} />
             </button>
             {resourcesOpen && (
               <div className="pb-3 pl-3 flex flex-col gap-1">
