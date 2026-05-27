@@ -38,21 +38,9 @@ export default function FAQPage() {
           <h1 className="font-heading font-normal text-4xl sm:text-5xl xl:text-6xl text-heading leading-tight mb-5">
             Questions <span className="text-primary">fréquentes</span>
           </h1>
-          <p className="text-black/50 text-base sm:text-lg max-w-lg mb-10">
+          <p className="text-black/50 text-base sm:text-lg max-w-lg">
             Tout ce que vous devez savoir avant de démarrer votre projet avec nous.
           </p>
-
-          <div className="flex items-center gap-8">
-            <div className="flex flex-col gap-0.5">
-              <span className="text-2xl font-heading font-normal text-heading">20</span>
-              <span className="text-xs text-black/40 uppercase tracking-wider">questions</span>
-            </div>
-            <div className="w-px h-10 bg-black/10" />
-            <div className="flex flex-col gap-0.5">
-              <span className="text-2xl font-heading font-normal text-heading">4</span>
-              <span className="text-xs text-black/40 uppercase tracking-wider">catégories</span>
-            </div>
-          </div>
         </Container>
       </div>
 
