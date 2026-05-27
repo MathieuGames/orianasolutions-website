@@ -21,7 +21,7 @@ export default function RealisationsSection({ excludeHref }: Props) {
         {/* HEADER */}
         <AnimatedContent distance={30} duration={0.7} threshold={0.2}>
           <Typography variant="h4" className={`shrink-0 text-center ${filtered.length >= 3 ? "sm:text-start" : ""}`}>
-            Nos autres réalisations
+            Nos réalisations
           </Typography>
         </AnimatedContent>
 

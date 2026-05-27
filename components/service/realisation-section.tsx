@@ -14,7 +14,7 @@ export default function RealisationsSection() {
 
         {/* HEADER */}
        <Typography variant="h4" className="shrink-0 text-center">
-            Nos autres réalisations
+            Nos réalisations
           </Typography>
           
 
