@@ -89,7 +89,7 @@ export default function LavalPage() {
 
             <AnimatedContent distance={0} duration={0.7} delay={0.35}>
               <p className="md:leading-7 text-[16px] md:text-[22px] xl:leading-8 2xl:text-[24px] 3xl:text-[31px] 3xl:leading-[43px] 2xl:tracking-[-1.1px] text-body md:max-w-[520px] lg:max-w-none">
-                Startup, OBNL ou PME — on développe des applications web,<br className="hidden md:block" /> des logiciels sur mesure et des plateformes SaaS.
+                Startup, OBNL ou PME, on développe des applications web,<br className="hidden md:block" /> des logiciels sur mesure et des plateformes SaaS.
               </p>
             </AnimatedContent>
 
@@ -133,14 +133,14 @@ export default function LavalPage() {
       {/* Sections service */}
       <DynamicServiceSection
         title="Une équipe qui comprend les affaires, pas juste le code."
-        description="Avant d'écrire la première ligne de code, on veut comprendre votre clientèle, vos contraintes et vos objectifs. C'est comme ça qu'on livre des logiciels qui servent vraiment à quelque chose — et pas juste des fonctionnalités qui s'accumulent."
+        description="Avant d'écrire la première ligne de code, on veut comprendre votre clientèle, vos contraintes et vos objectifs. C'est comme ça qu'on livre des logiciels qui servent vraiment à quelque chose. Pas juste des fonctionnalités qui s'accumulent."
         image="/png/service2.png"
         reverse
         priority
       />
 
       <DynamicServiceSection
-        title="Application web, SaaS ou logiciel — on gère tout."
+        title="Application web, SaaS ou logiciel : on gère tout."
         description="Architecture, design, développement, tests, déploiement. Que ce soit une plateforme SaaS, un outil interne ou une application web sur mesure, nos développeurs prennent en charge chaque étape pour que vous puissiez vous concentrer sur ce qui compte vraiment."
         image="/png/real5.png"
         parentStyle="bg-primary-light"
@@ -164,7 +164,7 @@ export default function LavalPage() {
             id: 1,
             question: "Vous travaillez vraiment avec des entreprises à Laval ?",
             answer:
-              "Oui. On travaille avec des clients à Laval, Montréal et partout au Québec. On peut se rencontrer en personne ou travailler entièrement à distance — c'est vous qui choisissez ce qui vous convient le mieux.",
+              "Oui. On travaille avec des clients à Laval, Montréal et partout au Québec. On peut se rencontrer en personne ou travailler entièrement à distance. C'est vous qui choisissez ce qui vous convient le mieux.",
           },
           {
             id: 2,
