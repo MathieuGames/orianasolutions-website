@@ -1,17 +1,18 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import Link from "next/link";
 import Navbar from "@/components/shared/navbar";
 import Footer from "@/components/shared/footer";
 import Button from "@/components/ui/button";
 import Tag from "@/components/ui/tag";
 import Container from "@/components/shared/container";
+import AnimatedContent from "@/components/ui/animated-content";
 import DynamicServiceSection from "@/components/service/dynamic-service-section";
 import ProcessSection from "@/components/service/process-section";
 import WhyUsSection from "@/components/service/why-us-section";
 import RealisationsSection from "@/components/case-study/realisation-section";
 import LogosMarquee from "@/components/ui/logos-marquee";
 import ServiceFAQ from "@/components/service/faq-section";
+import { Arrow } from "@/svgs";
 
 export const metadata: Metadata = {
   title: "Développement logiciel à Laval — Application web, SaaS & logiciel sur mesure | Oriana Solutions",
@@ -28,18 +29,18 @@ export const metadata: Metadata = {
 const clients = [
   {
     label: "Startups",
-    icon: "🚀",
-    description: "Vous avez une idée et vous voulez la valider rapidement ? On vous aide à construire un MVP solide sans brûler votre budget.",
+    description:
+      "Vous avez une idée et vous voulez la valider rapidement ? On vous aide à construire un MVP solide sans brûler votre budget.",
   },
   {
     label: "PME",
-    icon: "🏢",
-    description: "Vous avez besoin d'outils internes, d'un portail client ou d'une plateforme sur mesure ? On s'occupe de tout, de A à Z.",
+    description:
+      "Vous avez besoin d'outils internes, d'un portail client ou d'une plateforme sur mesure ? On s'occupe de tout, de A à Z.",
   },
   {
     label: "OBNL",
-    icon: "🤝",
-    description: "Mission importante, budget serré. On comprend vos contraintes et on trouve des solutions qui ont du sens pour votre organisation.",
+    description:
+      "Mission importante, budget serré. On comprend vos contraintes et on trouve des solutions qui ont du sens pour votre organisation.",
   },
 ];
 
@@ -50,78 +51,86 @@ export default function LavalPage() {
         <Navbar />
       </div>
 
-      {/* Hero */}
-      <div className="relative overflow-hidden bg-primary-light">
+      {/* Hero — même structure que la page d'accueil */}
+      <Container
+        parentStyle="bg-primary-light relative rounded-b-[30px] md:rounded-b-none overflow-hidden"
+        className="relative overflow-hidden min-h-[calc(100dvh-68px)] flex md:items-center"
+      >
         {/* Watermark logo */}
-        <div className="absolute -right-20 -bottom-10 2xl:-bottom-44 w-[340px] h-[310px] md:w-[480px] xl:h-[420px] 2xl:w-[680px] 2xl:h-[680px] pointer-events-none select-none">
+        <div className="absolute -right-20 -bottom-10 2xl:-bottom-44 2xl:-right-24 w-[340px] h-[310px] md:w-[480px] xl:h-[420px] 2xl:w-[730px] 2xl:h-[730px] flex items-end pointer-events-none select-none">
           <Image
             src="/svg/Logo_Oriana_Symbole_Noir.svg"
             alt=""
             aria-hidden
             width={900}
             height={900}
-            className="w-full"
+            className="w-full translate-x-3 translate-y-3"
             style={{
-              filter: "invert(27%) sepia(96%) saturate(1800%) hue-rotate(210deg) brightness(98%) contrast(88%)",
-              opacity: 0.18,
+              filter:
+                "invert(27%) sepia(96%) saturate(1800%) hue-rotate(210deg) brightness(98%) contrast(88%)",
+              opacity: 0.22,
             }}
             priority
           />
         </div>
 
-        <Container className="relative z-10 py-20! md:py-32!">
-          <div className="flex flex-col items-start gap-6 md:gap-8 max-w-3xl">
-            <Tag>Développement logiciel · Laval, Québec</Tag>
+        <div className="relative z-10 mt-3 md:-mt-16">
+          <div className="flex flex-col items-center text-center md:items-start md:text-left gap-5 md:gap-8 w-full md:max-w-[70%] 2xl:max-w-229.75 md:mx-auto">
 
-            <h1 className="font-heading font-normal text-[40px] sm:text-5xl xl:text-6xl 2xl:text-7xl text-heading leading-tight">
-              Des programmeurs à Laval pour bâtir votre prochain logiciel.
-            </h1>
+            <AnimatedContent distance={20} duration={0.6} delay={0.05} threshold={0.01} className="flex items-center">
+              <Tag>Développement logiciel · Laval, Québec</Tag>
+            </AnimatedContent>
 
-            <p className="text-base md:text-xl text-black/55 leading-relaxed max-w-2xl">
-              Startup, OBNL ou PME — on développe des applications web, des logiciels sur mesure et des plateformes SaaS qui s&apos;adaptent à votre réalité, pas l&apos;inverse.
-            </p>
+            <AnimatedContent distance={0} duration={0.7} delay={0.2}>
+              <h1 className="font-heading leading-none text-[42px] xs:text-[54px] xl:text-[72px] 2xl:text-[71px] 3xl:text-[91px] 3xl:leading-[91px] text-title sm:max-w-[85%] 3xl:max-w-full">
+                Des programmeurs à Laval pour bâtir votre prochain logiciel.
+              </h1>
+            </AnimatedContent>
 
-            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4 w-full sm:w-auto mt-2">
-              <Button href="/contact">
-                Discutons de votre projet
-              </Button>
-              <Link
-                href="#services"
-                className="inline-flex items-center gap-1.5 text-black/60 text-base hover:text-black transition-colors"
-              >
-                Voir nos services →
-              </Link>
-            </div>
+            <AnimatedContent distance={0} duration={0.7} delay={0.35}>
+              <p className="md:leading-7 text-[16px] md:text-[22px] xl:leading-8 2xl:text-[24px] 3xl:text-[31px] 3xl:leading-[43px] 2xl:tracking-[-1.1px] text-body md:max-w-[520px] lg:max-w-none">
+                Startup, OBNL ou PME — on développe des applications web,<br className="hidden md:block" /> des logiciels sur mesure et des plateformes SaaS.
+              </p>
+            </AnimatedContent>
+
+            <AnimatedContent distance={20} duration={0.7} delay={0.9} threshold={0.01} className="w-full">
+              <div className="flex flex-nowrap md:mt-8 gap-1.5 xs:gap-4 sm:gap-6 w-full">
+                <Button href="/contact" className="px-2! sm:px-4! 3xl:px-5!">
+                  Discutons de votre projet
+                </Button>
+                <Button
+                  variant="outline"
+                  href="#services"
+                  className="border-0! font-medium! whitespace-nowrap! lg:border-[0.61px]!"
+                  icon={<Arrow />}
+                >
+                  Nos services
+                </Button>
+              </div>
+            </AnimatedContent>
+
           </div>
-        </Container>
-      </div>
+        </div>
+      </Container>
 
-      {/* Who we work with */}
+      {/* On travaille avec */}
       <div className="bg-white border-b border-black/6" id="services">
         <Container className="py-14! md:py-18!">
-          <p className="text-xs font-semibold uppercase tracking-widest text-black/35 mb-8">
+          <p className="text-xs font-semibold uppercase tracking-widest text-black/35 mb-10">
             On travaille avec
           </p>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-            {clients.map(({ label, icon, description }) => (
-              <div
-                key={label}
-                className="flex flex-col gap-3 rounded-2xl border border-black/8 p-6 hover:border-primary/30 hover:shadow-sm transition-all"
-              >
-                <span className="text-2xl">{icon}</span>
-                <span className="font-heading font-normal text-lg text-heading">
-                  {label}
-                </span>
-                <p className="text-sm text-black/50 leading-6">
-                  {description}
-                </p>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
+            {clients.map(({ label, description }) => (
+              <div key={label} className="flex flex-col gap-3 pt-6 border-t border-black/10">
+                <span className="font-heading font-normal text-xl text-heading">{label}</span>
+                <p className="text-sm text-black/50 leading-6">{description}</p>
               </div>
             ))}
           </div>
         </Container>
       </div>
 
-      {/* Service sections */}
+      {/* Sections service */}
       <DynamicServiceSection
         title="Une équipe qui comprend les affaires, pas juste le code."
         description="Avant d'écrire la première ligne de code, on veut comprendre votre clientèle, vos contraintes et vos objectifs. C'est comme ça qu'on livre des logiciels qui servent vraiment à quelque chose — et pas juste des fonctionnalités qui s'accumulent."
@@ -143,7 +152,6 @@ export default function LavalPage() {
       <RealisationsSection />
       <LogosMarquee />
 
-      {/* FAQ */}
       <ServiceFAQ
         title={
           <>
