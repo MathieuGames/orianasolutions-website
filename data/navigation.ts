@@ -14,6 +14,7 @@ export const navColumns = [
       { label: "Site Web sur mesure", href: "/site-web-sur-mesure" },
       { label: "Développement à Laval", href: "/developpement-logiciel-laval" },
       { label: "Développement à Longueuil", href: "/developpement-logiciel-longueuil" },
+      { label: "Développement à Trois-Rivières", href: "/developpement-logiciel-trois-rivieres" },
     ],
   },
   {
