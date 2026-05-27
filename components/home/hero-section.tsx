@@ -4,7 +4,6 @@ import Container from "@/components/shared/container";
 import Tag from "../ui/tag";
 import { Arrow } from "@/svgs";
 import AnimatedContent from "@/components/ui/animated-content";
-import SplitText from "@/components/ui/split-text";
 
 export default function HeroSection() {
   return (
@@ -33,35 +32,17 @@ export default function HeroSection() {
             <Tag>Agence de développement logiciel</Tag>
           </AnimatedContent>
 
-          <SplitText
-            text="Développement d'applications web et mobiles sur mesure."
-            tag="h1"
-            className="font-heading leading-none text-[42px] xs:text-[54px] xl:text-[72px] 2xl:text-[71px] 3xl:text-[91px] 3xl:leading-[91px] text-title sm:max-w-[85%] 3xl:max-w-full"
-            splitType="chars"
-            delay={28}
-            startDelay={0.2}
-            duration={0.7}
-            ease="power3.out"
-            from={{ opacity: 0, y: 35 }}
-            to={{ opacity: 1, y: 0 }}
-            threshold={0.01}
-            rootMargin="0px"
-          />
+          <AnimatedContent distance={0} duration={0.7} delay={0.2}>
+            <h1 className="font-heading leading-none text-[42px] xs:text-[54px] xl:text-[72px] 2xl:text-[71px] 3xl:text-[91px] 3xl:leading-[91px] text-title sm:max-w-[85%] 3xl:max-w-full">
+              Développement d&apos;applications web et mobiles sur mesure.
+            </h1>
+          </AnimatedContent>
 
-          <SplitText
-            text={"Spécialistes en applications mobiles, plateformes SaaS\net sites web, basés à Montréal."}
-            tag="p"
-            className="md:leading-7 text-[16px] md:text-[22px] xl:leading-8 2xl:text-[24px] 3xl:text-[31px] 3xl:leading-[43px] 2xl:tracking-[-1.1px] text-body md:max-w-[520px] lg:max-w-none"
-            splitType="words"
-            delay={55}
-            startDelay={0.55}
-            duration={0.65}
-            ease="power3.out"
-            from={{ opacity: 0, y: 20 }}
-            to={{ opacity: 1, y: 0 }}
-            threshold={0.01}
-            rootMargin="0px"
-          />
+          <AnimatedContent distance={0} duration={0.7} delay={0.35}>
+            <p className="md:leading-7 text-[16px] md:text-[22px] xl:leading-8 2xl:text-[24px] 3xl:text-[31px] 3xl:leading-[43px] 2xl:tracking-[-1.1px] text-body md:max-w-[520px] lg:max-w-none">
+              Spécialistes en applications mobiles, plateformes SaaS<br className="hidden md:block" /> et sites web, basés à Montréal.
+            </p>
+          </AnimatedContent>
 
           <AnimatedContent distance={20} duration={0.7} delay={0.9} threshold={0.01} className="w-full">
             <div className="flex flex-nowrap md:mt-8 gap-1.5 xs:gap-4 sm:gap-6 w-full">
