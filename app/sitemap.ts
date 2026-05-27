@@ -19,5 +19,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE_URL}/developpement-logiciel-laval`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.85 },
     { url: `${SITE_URL}/developpement-logiciel-longueuil`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.85 },
     { url: `${SITE_URL}/developpement-logiciel-trois-rivieres`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.85 },
+    { url: `${SITE_URL}/developpement-logiciel-quebec`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.85 },
   ];
 }

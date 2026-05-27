@@ -15,6 +15,7 @@ export const navColumns = [
       { label: "Développement à Laval", href: "/developpement-logiciel-laval" },
       { label: "Développement à Longueuil", href: "/developpement-logiciel-longueuil" },
       { label: "Développement à Trois-Rivières", href: "/developpement-logiciel-trois-rivieres" },
+      { label: "Développement à Québec", href: "/developpement-logiciel-quebec" },
     ],
   },
   {
