@@ -26,24 +26,39 @@ export default function FAQPage() {
 
       <Breadcrumb items={[{ label: "FAQ" }]} />
 
-      <main className="w-full bg-[#F8F9FB] min-h-screen">
-        {/* Hero */}
-        <div className="bg-white border-b border-black/6">
-          <Container className="py-12! md:py-20!">
-            <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-4">
-              Ressources
-            </p>
-            <h1 className="font-heading font-normal text-4xl sm:text-5xl xl:text-6xl text-heading leading-tight mb-4">
-              Questions fréquentes
-            </h1>
-            <p className="text-black/50 text-base max-w-md">
-              Tout ce que vous devez savoir avant de démarrer votre projet avec nous.
-            </p>
-          </Container>
-        </div>
+      {/* Hero */}
+      <div className="relative overflow-hidden bg-primary-light">
+        <div className="absolute -top-32 -right-32 w-[600px] h-[600px] bg-primary/10 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute bottom-0 left-1/4 w-80 h-80 bg-primary/8 rounded-full blur-2xl pointer-events-none" />
 
-        {/* FAQ sections */}
-        <Container className="py-12! md:py-16!">
+        <Container className="relative py-16! md:py-24!">
+          <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-5">
+            Ressources
+          </p>
+          <h1 className="font-heading font-normal text-4xl sm:text-5xl xl:text-6xl text-heading leading-tight mb-5">
+            Questions <span className="text-primary">fréquentes</span>
+          </h1>
+          <p className="text-black/50 text-base sm:text-lg max-w-lg mb-10">
+            Tout ce que vous devez savoir avant de démarrer votre projet avec nous.
+          </p>
+
+          <div className="flex items-center gap-8">
+            <div className="flex flex-col gap-0.5">
+              <span className="text-2xl font-heading font-normal text-heading">20</span>
+              <span className="text-xs text-black/40 uppercase tracking-wider">questions</span>
+            </div>
+            <div className="w-px h-10 bg-black/10" />
+            <div className="flex flex-col gap-0.5">
+              <span className="text-2xl font-heading font-normal text-heading">4</span>
+              <span className="text-xs text-black/40 uppercase tracking-wider">catégories</span>
+            </div>
+          </div>
+        </Container>
+      </div>
+
+      {/* Content */}
+      <main className="w-full bg-[#F8F9FB]">
+        <Container className="py-14! md:py-20!">
           <FAQContent />
         </Container>
       </main>
