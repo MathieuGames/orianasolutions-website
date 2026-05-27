@@ -12,6 +12,7 @@ export const navColumns = [
       { label: "Application web", href: "/application-web" },
       { label: "Application mobile", href: "/developpement-application-mobile" },
       { label: "Site Web sur mesure", href: "/site-web-sur-mesure" },
+      { label: "Développement à Laval", href: "/developpement-logiciel-laval" },
     ],
   },
   {
