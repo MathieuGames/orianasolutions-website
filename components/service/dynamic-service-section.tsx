@@ -6,10 +6,12 @@ interface DynamicServiceSectionProps {
   title: React.ReactNode;
   description: React.ReactNode;
   image: string;
+  imageAlt?: string;
   reverse?: boolean;
   className?: string;
   parentStyle?: string;
   headingClassName?: string;
+  headingVariant?: "h2" | "h3" | "h4";
   imageContainerClassName?: string;
   icon?: string;
   priority?: boolean;
@@ -19,10 +21,12 @@ export default function DynamicServiceSection({
   title,
   description,
   image,
+  imageAlt = "service image",
   reverse = false,
   className,
   parentStyle,
   headingClassName,
+  headingVariant = "h4",
   imageContainerClassName,
   icon,
   priority = false,
@@ -39,7 +43,7 @@ export default function DynamicServiceSection({
       >
         <div className="flex-1 flex flex-col gap-6 sm:text-left text-center">
           <Typography
-            variant="h4"
+            variant={headingVariant}
             className={`max-w-[500px] ${headingClassName || ""}`}
           >
             {title}
@@ -74,7 +78,7 @@ export default function DynamicServiceSection({
           <div className={`sm:w-[320px] w-full lg:w-[420px] rounded-[24px] overflow-hidden bg-[#F3F3F3] ${imageContainerClassName || ""}`}>
             <Image
               src={image}
-              alt="service image"
+              alt={imageAlt}
               width={900}
               height={700}
               className="w-full h-full object-cover"

@@ -106,20 +106,102 @@ export default async function BlogPostPage({ params }: Params) {
                 <div
                   key={index}
                   id={section.heading ? slugify(section.heading) : undefined}
-                  className="flex flex-col gap-4"
+                  className="flex flex-col gap-6"
                 >
                   {section.heading && (
                     <h2 className="font-heading font-normal text-2xl md:text-3xl text-heading">
                       {section.heading}
                     </h2>
                   )}
-                  <div className="flex flex-col gap-5">
-                    {section.body.split("\n\n").map((para, i) => (
-                      <p key={i} className="text-[17px] text-black/65 leading-8">
-                        {renderBold(para)}
+
+                  {/* Body text */}
+                  {section.body && (
+                    <div className="flex flex-col gap-5">
+                      {section.body.split("\n\n").map((para, i) => (
+                        <p key={i} className="text-[17px] text-black/65 leading-8">
+                          {renderBold(para)}
+                        </p>
+                      ))}
+                    </div>
+                  )}
+
+                  {/* Comparison table */}
+                  {section.comparison && (
+                    <div className="overflow-x-auto rounded-2xl border border-black/8 mt-2">
+                      <table className="w-full text-sm">
+                        <thead>
+                          <tr className="bg-primary-light border-b border-black/8">
+                            {section.comparison.headers.map((h, i) => (
+                              <th key={i} className={`px-5 py-4 text-left font-semibold text-heading ${i === 0 ? "min-w-[140px]" : ""}`}>
+                                {h}
+                              </th>
+                            ))}
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {section.comparison.rows.map((row, ri) => (
+                            <tr key={ri} className={`border-b border-black/6 ${ri % 2 === 1 ? "bg-black/[0.015]" : "bg-white"}`}>
+                              <td className="px-5 py-4 font-medium text-heading">{row.label}</td>
+                              {row.values.map((val, vi) => (
+                                <td key={vi} className="px-5 py-4 text-black/60">{val}</td>
+                              ))}
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                      {section.comparison.note && (
+                        <p className="px-5 py-3 text-xs text-black/40 border-t border-black/6 bg-black/[0.015]">
+                          {section.comparison.note}
+                        </p>
+                      )}
+                    </div>
+                  )}
+
+                  {/* Checklist */}
+                  {section.checklist && (
+                    <ul className="flex flex-col gap-2.5 mt-1">
+                      {section.checklist.items.map((item, i) => (
+                        <li key={i} className="flex items-start gap-3">
+                          <span className={`mt-1 w-5 h-5 rounded-full flex items-center justify-center shrink-0 text-xs font-bold ${
+                            section.checklist!.variant === "red"
+                              ? "bg-red-100 text-red-600"
+                              : "bg-emerald-100 text-emerald-600"
+                          }`}>
+                            {section.checklist!.variant === "red" ? "✕" : "✓"}
+                          </span>
+                          <span className="text-[16px] text-black/65 leading-7">{renderBold(item.text)}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+
+                  {/* Callout */}
+                  {section.callout && (
+                    <div className={`rounded-2xl border px-6 py-5 mt-1 ${
+                      section.callout.variant === "warning"
+                        ? "bg-amber-50 border-amber-200"
+                        : section.callout.variant === "insight"
+                        ? "bg-violet-50 border-violet-200"
+                        : "bg-blue-50 border-blue-200"
+                    }`}>
+                      {(section.callout.icon || section.callout.title) && (
+                        <p className={`font-semibold text-sm mb-2 ${
+                          section.callout.variant === "warning" ? "text-amber-800"
+                          : section.callout.variant === "insight" ? "text-violet-800"
+                          : "text-blue-800"
+                        }`}>
+                          {section.callout.icon} {section.callout.title}
+                        </p>
+                      )}
+                      <p className={`text-sm leading-7 ${
+                        section.callout.variant === "warning" ? "text-amber-700"
+                        : section.callout.variant === "insight" ? "text-violet-700"
+                        : "text-blue-700"
+                      }`}>
+                        {renderBold(section.callout.body)}
                       </p>
-                    ))}
-                  </div>
+                    </div>
+                  )}
                 </div>
               ))}
             </article>

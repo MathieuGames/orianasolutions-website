@@ -32,8 +32,7 @@ export default function BlogPage() {
             Blogue
           </p>
           <h1 className="font-heading font-normal text-3xl sm:text-4xl xl:text-5xl 2xl:text-6xl text-heading leading-tight">
-            Ressources &{" "}
-            <span className="text-primary">conseils</span>
+            Ressources & conseils
           </h1>
           <p className="mt-6 text-black/50 text-sm sm:text-base max-w-xl">
             Conseils pratiques, tendances et guides pour vous aider à prendre les meilleures décisions technologiques pour votre entreprise.

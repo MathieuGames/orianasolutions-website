@@ -8,7 +8,7 @@ import AnimatedContent from "@/components/ui/animated-content";
 export default function HeroSection() {
   return (
     <Container parentStyle=" bg-primary-light relative rounded-b-[30px] md:rounded-b-none overflow-hidden " className=" relative overflow-hidden 4xl:h-auto min-h-[calc(100dvh-68px)] flex md:items-center">
-      <div className="  absolute -right-20 -bottom-10 2xl:-bottom-44 3xl:-bottom-64 4xl:-bottom-80 2xl:-right-24 3xl:-right-40 4xl:-right-40 w-[340px] h-[310px] md:w-[480px] xl:h-[420px] 2xl:w-[730px] 2xl:h-[730px] 3xl:w-[830px] 3xl:h-[830px] 4xl:w-[1010px] 4xl:h-[1010px] flex items-end">
+      <div className="  absolute -right-20 -bottom-20 2xl:-bottom-56 3xl:-bottom-72 4xl:-bottom-96 2xl:-right-24 3xl:-right-40 4xl:-right-40 w-[380px] h-[360px] md:w-[560px] md:h-[500px] xl:h-[500px] xl:w-[560px] 2xl:w-[800px] 2xl:h-[800px] 3xl:w-[900px] 3xl:h-[900px] 4xl:w-[1080px] 4xl:h-[1080px] flex items-end">
         <Image
           src="/svg/Logo_Oriana_Symbole_Noir.svg"
           alt=""
@@ -26,7 +26,7 @@ export default function HeroSection() {
       </div>
 
       <div className=" relative z-10 mt-3 md:-mt-16 ">
-        <div className="flex flex-col items-center text-center md:items-start md:text-left gap-5 md:gap-8 w-full md:max-w-[70%] 2xl:max-w-229.75 md:mx-auto">
+        <div className="flex flex-col items-center text-center md:items-start md:text-left gap-5 md:gap-8 w-full md:max-w-[70%] 2xl:max-w-229.75">
 
           <AnimatedContent distance={20} duration={0.6} delay={0.05} threshold={0.01} className="flex items-center">
             <Tag>Agence de développement logiciel</Tag>

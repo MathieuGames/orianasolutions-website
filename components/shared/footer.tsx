@@ -92,12 +92,17 @@ export default function Footer() {
               className="flex gap-4 sm:gap-8 flex-col justify-between md:flex-row"
             >
               {navColumns.map((col, i) => (
-                <ul key={i} className="flex flex-col gap-4  ">
+                <ul key={i} className="flex flex-col gap-3">
+                  {col.title && (
+                    <li className="text-xs font-semibold uppercase tracking-widest text-white/40 mb-1">
+                      {col.title}
+                    </li>
+                  )}
                   {col.links.map(({ label, href }) => (
                     <li key={label}>
                       <Link
                         href={href}
-                        className="text-base py-3 sm:px-5 leading-6 tracking-normal font-normal text-white hover:opacity-70 transition-opacity whitespace-nowrap"
+                        className="text-base py-1 sm:px-5 leading-6 tracking-normal font-normal text-white hover:opacity-70 transition-opacity whitespace-nowrap"
                       >
                         {label}
                       </Link>
