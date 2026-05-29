@@ -106,7 +106,7 @@ function ServicesDropdown() {
 function AboutDropdown() {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
-  const active = pathname === "/about" || pathname.startsWith("/about/") || pathname === "/collaborateurs";
+  const active = pathname === "/about" || pathname.startsWith("/about/") || pathname === "/collaborateurs" || pathname === "/carrieres";
   useCloseOnScroll(setOpen);
 
   return (
@@ -143,6 +143,13 @@ function AboutDropdown() {
               className="flex items-center px-4 py-2.5 text-sm text-black/70 hover:text-black hover:bg-black/4 transition-colors"
             >
               Nos collaborateurs
+            </Link>
+            <Link
+              href="/carrieres"
+              onClick={() => setOpen(false)}
+              className="flex items-center px-4 py-2.5 text-sm text-black/70 hover:text-black hover:bg-black/4 transition-colors"
+            >
+              Carrières
             </Link>
           </div>
         </div>
@@ -361,6 +368,9 @@ export default function Navbar() {
                 </Link>
                 <Link href="/collaborateurs" onClick={close} className="text-base text-black/60 py-1.5 hover:text-black transition-colors">
                   Nos collaborateurs
+                </Link>
+                <Link href="/carrieres" onClick={close} className="text-base text-black/60 py-1.5 hover:text-black transition-colors">
+                  Carrières
                 </Link>
               </div>
             )}
