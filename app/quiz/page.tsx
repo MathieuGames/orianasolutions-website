@@ -273,36 +273,54 @@ export default function QuizPage() {
 
             {/* ── Intro ── */}
             {isIntro && (
-              <div className="flex flex-col gap-8">
-                <div className="text-center flex flex-col items-center gap-4">
-                  <p className="text-xs font-semibold uppercase tracking-widest text-primary">Outil gratuit</p>
-                  <h1 className="font-heading font-normal text-3xl sm:text-4xl text-heading leading-tight">
-                    De quoi votre projet<br />a-t-il vraiment besoin ?
-                  </h1>
-                  <p className="text-black/50 text-base max-w-sm leading-relaxed">
-                    Site web, application web, app mobile ou logiciel sur mesure — 10 questions pour trouver la bonne réponse.
-                  </p>
-                </div>
+              <div className="flex flex-col items-center gap-7 text-center">
 
-                {/* Preview cards */}
-                <div className="grid grid-cols-2 gap-3">
-                  {previewCards.map((card) => (
-                    <div key={card.label} className={`rounded-2xl border ${card.color} px-5 py-4 flex items-center gap-3`}>
-                      <span className="text-2xl">{card.icon}</span>
-                      <span className="text-sm font-medium text-heading">{card.label}</span>
+                {/* Orbit visual */}
+                <div className="relative w-44 h-44 mx-auto">
+                  <div className="absolute inset-0 rounded-full border-2 border-dashed border-primary/20" />
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="w-16 h-16 rounded-full bg-primary shadow-lg flex items-center justify-center text-2xl">
+                      🎯
+                    </div>
+                  </div>
+                  {[
+                    { icon: "🌐", cls: "top-0 left-1/2 -translate-x-1/2 -translate-y-1/2" },
+                    { icon: "💻", cls: "right-0 top-1/2 -translate-y-1/2 translate-x-1/2" },
+                    { icon: "📱", cls: "bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2" },
+                    { icon: "⚙️", cls: "left-0 top-1/2 -translate-y-1/2 -translate-x-1/2" },
+                  ].map((item, i) => (
+                    <div key={i} className={`absolute ${item.cls} w-11 h-11 rounded-full bg-white border border-black/10 shadow-sm flex items-center justify-center text-xl`}>
+                      {item.icon}
                     </div>
                   ))}
                 </div>
 
-                <div className="flex flex-col items-center gap-3">
-                  <button
-                    onClick={() => setStep(1)}
-                    className="w-full inline-flex items-center justify-center gap-2 bg-primary text-white font-medium px-8 py-3.5 rounded-xl hover:bg-primary/90 transition-colors text-sm"
-                  >
-                    Commencer le quiz →
-                  </button>
-                  <p className="text-xs text-black/35">Sans inscription. Résultat immédiat. 2 minutes.</p>
+                <div className="flex flex-col gap-3">
+                  <p className="text-xs font-semibold uppercase tracking-widest text-primary">Quiz gratuit</p>
+                  <h1 className="font-heading font-normal text-3xl sm:text-4xl text-heading leading-tight">
+                    De quoi votre projet<br />a-t-il vraiment besoin ?
+                  </h1>
+                  <p className="text-black/50 text-base max-w-xs mx-auto leading-relaxed">
+                    10 questions pour savoir si c'est un site web, une app web, mobile ou un logiciel sur mesure.
+                  </p>
                 </div>
+
+                <div className="flex items-center gap-3 text-xs text-black/40 flex-wrap justify-center">
+                  <span>✓ Gratuit</span>
+                  <span className="text-black/20">·</span>
+                  <span>✓ 2 minutes</span>
+                  <span className="text-black/20">·</span>
+                  <span>✓ Résultat immédiat</span>
+                  <span className="text-black/20">·</span>
+                  <span>✓ Sans inscription</span>
+                </div>
+
+                <button
+                  onClick={() => setStep(1)}
+                  className="w-full max-w-xs inline-flex items-center justify-center gap-2 bg-primary text-white font-medium px-8 py-3.5 rounded-xl hover:bg-primary/90 transition-colors text-sm"
+                >
+                  Commencer le quiz →
+                </button>
               </div>
             )}
 
