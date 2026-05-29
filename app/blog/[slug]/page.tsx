@@ -232,6 +232,27 @@ export default async function BlogPostPage({ params }: Params) {
                     </div>
                   )}
 
+                  {/* Testimonial */}
+                  {section.testimonial && (
+                    <figure className="rounded-2xl bg-white border border-black/10 px-7 py-6 flex flex-col gap-4 mt-2 shadow-sm">
+                      <svg width="28" height="20" viewBox="0 0 28 20" fill="none" className="text-primary opacity-40 shrink-0">
+                        <path d="M0 20V12.667C0 9.481 .704 6.87 2.111 4.833 3.556 2.796 5.741 1.37 8.667.556L10 3.111C8.37 3.667 7.13 4.5 6.278 5.611 5.426 6.722 4.963 8.148 4.889 9.889H8.889V20H0Zm15.556 0V12.667c0-3.186.703-5.797 2.11-7.834 1.446-2.037 3.631-3.463 6.557-4.277L25.556 3.11c-1.63.556-2.87 1.389-3.723 2.5-.851 1.111-1.314 2.537-1.388 4.278H24.444V20H15.556Z" fill="currentColor"/>
+                      </svg>
+                      <blockquote className="text-[17px] text-black/70 leading-8 italic">
+                        {section.testimonial.quote}
+                      </blockquote>
+                      <figcaption className="flex items-center gap-3 pt-1 border-t border-black/6">
+                        <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white text-xs font-semibold shrink-0">
+                          {section.testimonial.author.charAt(0)}
+                        </div>
+                        <div>
+                          <p className="text-sm font-semibold text-heading">{section.testimonial.author}</p>
+                          <p className="text-xs text-black/45">{section.testimonial.role}</p>
+                        </div>
+                      </figcaption>
+                    </figure>
+                  )}
+
                   {/* Callout */}
                   {section.callout && (
                     <div className={`rounded-2xl border px-6 py-5 mt-1 ${

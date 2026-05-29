@@ -32,13 +32,6 @@ export const testimonials: Testimonial[] = [
     avatar: "/png/68992793_1075102852692716_4269992619519508480_n.jpg",
     avatarPosition: "top",
   },
-  {
-    id: 4,
-    quote: "Merci à l'équipe Oriana Solutions pour leur sérieux et leur professionnalisme dans la refonte du site Web. Je vous les recommande chaleureusement.",
-    author: "Michel Morin",
-    role: "Coach professionnel & Ingénieur",
-    avatar: "/png/author.png",
-  },
 ];
 
 export const testimonialsLogo = [
