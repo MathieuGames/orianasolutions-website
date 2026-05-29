@@ -154,7 +154,7 @@ function AboutDropdown() {
 function ResourcesDropdown() {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
-  const active = pathname === "/blog" || pathname.startsWith("/blog/") || pathname === "/faq" || pathname === "/calculateur-prix" || pathname === "/quiz";
+  const active = pathname === "/blog" || pathname.startsWith("/blog/") || pathname === "/faq" || pathname === "/calculateur-prix" || pathname === "/quiz" || pathname === "/audit-gratuit";
   useCloseOnScroll(setOpen);
 
   return (
@@ -202,6 +202,13 @@ function ResourcesDropdown() {
               className="flex items-center px-4 py-2.5 text-sm text-black/70 hover:text-black hover:bg-black/4 transition-colors"
             >
               Quel type de projet ? (Quiz)
+            </Link>
+            <Link
+              href="/audit-gratuit"
+              onClick={() => setOpen(false)}
+              className="flex items-center px-4 py-2.5 text-sm text-black/70 hover:text-black hover:bg-black/4 transition-colors"
+            >
+              Audit gratuit
             </Link>
           </div>
         </div>
@@ -381,6 +388,9 @@ export default function Navbar() {
                 </Link>
                 <Link href="/quiz" onClick={close} className="text-base text-black/60 py-1.5 hover:text-black transition-colors">
                   Quel type de projet ? (Quiz)
+                </Link>
+                <Link href="/audit-gratuit" onClick={close} className="text-base text-black/60 py-1.5 hover:text-black transition-colors">
+                  Audit gratuit
                 </Link>
               </div>
             )}
