@@ -71,14 +71,6 @@ export const blogPosts: BlogPost[] = [
           role: "Coach professionnel & Ingénieur",
         },
       },
-      {
-        cta: {
-          title: "Votre site vous ressemble ?",
-          body: "Si la réponse est non, c'est le bon moment pour en parler. On vous revient rapidement.",
-          label: "Discuter de ma refonte",
-          href: "/contact",
-        },
-      },
     ],
   },
   {
