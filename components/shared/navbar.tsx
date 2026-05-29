@@ -201,7 +201,7 @@ function ResourcesDropdown() {
               onClick={() => setOpen(false)}
               className="flex items-center px-4 py-2.5 text-sm text-black/70 hover:text-black hover:bg-black/4 transition-colors"
             >
-              Quel type de projet ?
+              Quel type de projet ? (Quiz)
             </Link>
           </div>
         </div>
@@ -380,7 +380,7 @@ export default function Navbar() {
                   Calculateur de prix
                 </Link>
                 <Link href="/quiz" onClick={close} className="text-base text-black/60 py-1.5 hover:text-black transition-colors">
-                  Quel type de projet ?
+                  Quel type de projet ? (Quiz)
                 </Link>
               </div>
             )}
