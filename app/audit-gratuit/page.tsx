@@ -15,36 +15,12 @@ const concerns = [
 ];
 
 const auditPoints = [
-  {
-    icon: "🔍",
-    title: "Référencement naturel (SEO)",
-    desc: "Balises title et meta, structure des titres H1-H6, mots-clés ciblés, données structurées, indexation Google.",
-  },
-  {
-    icon: "⚡",
-    title: "Vitesse et Core Web Vitals",
-    desc: "Score PageSpeed, LCP, CLS, FID — les métriques que Google utilise pour classer les sites.",
-  },
-  {
-    icon: "📱",
-    title: "Expérience mobile",
-    desc: "Affichage sur téléphone et tablette, taille des éléments, navigation tactile.",
-  },
-  {
-    icon: "🎯",
-    title: "Conversion et clarté",
-    desc: "Est-ce que votre message est clair en 5 secondes ? Les boutons d'action sont-ils visibles et efficaces ?",
-  },
-  {
-    icon: "🔒",
-    title: "Sécurité de base",
-    desc: "HTTPS actif, certificat SSL valide, formulaires protégés, redirections correctes.",
-  },
-  {
-    icon: "🗺️",
-    title: "Présence locale et technique",
-    desc: "Google Business, sitemap XML, robots.txt, balises Open Graph pour les réseaux sociaux.",
-  },
+  { title: "Référencement naturel (SEO)", desc: "Balises title et meta, structure des titres H1-H6, mots-clés ciblés, données structurées, indexation Google." },
+  { title: "Vitesse et Core Web Vitals", desc: "Score PageSpeed, LCP, CLS, FID : les métriques que Google utilise pour classer les sites." },
+  { title: "Expérience mobile", desc: "Affichage sur téléphone et tablette, taille des éléments, navigation tactile." },
+  { title: "Conversion et clarté", desc: "Est-ce que votre message est clair en 5 secondes ? Les boutons d'action sont-ils visibles et efficaces ?" },
+  { title: "Sécurité de base", desc: "HTTPS actif, certificat SSL valide, formulaires protégés, redirections correctes." },
+  { title: "Présence locale et technique", desc: "Google Business, sitemap XML, robots.txt, balises Open Graph pour les réseaux sociaux." },
 ];
 
 const faqItems = [
@@ -62,7 +38,7 @@ const faqItems = [
   },
   {
     q: "Mon site doit-il être fait par Oriana Solutions ?",
-    a: "Non. On audite n'importe quel site, peu importe qui l'a construit — WordPress, Wix, sur mesure ou autre.",
+    a: "Non. On audite n'importe quel site, peu importe qui l'a construit : WordPress, Wix, sur mesure ou autre.",
   },
 ];
 
@@ -102,7 +78,7 @@ export default function AuditGratuitPage() {
         <div className="max-w-5xl mx-auto px-6 md:px-10 pb-12 pt-2">
           <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-3">Gratuit, sans engagement</p>
           <h1 className="font-heading font-normal text-3xl sm:text-4xl xl:text-5xl text-heading leading-tight mb-4 max-w-2xl">
-            Audit de site web gratuit à Montréal — on vous dit ce qui cloche.
+            Audit de site web gratuit à Montréal. On vous dit ce qui cloche.
           </h1>
           <p className="text-black/55 text-base leading-relaxed max-w-xl">
             On regarde votre site de fond en comble : SEO, vitesse, mobile, conversion et sécurité. Vous recevez un rapport clair et un appel de 30 minutes pour en discuter.
@@ -123,7 +99,9 @@ export default function AuditGratuitPage() {
                 {auditPoints.map((p, i) => (
                   <div key={i} className="bg-white rounded-2xl border border-black/6 p-5">
                     <div className="flex items-center gap-3 mb-2">
-                      <span className="text-xl">{p.icon}</span>
+                      <span className="w-6 h-6 rounded-full bg-primary/10 text-primary text-[10px] font-bold flex items-center justify-center shrink-0">
+                        {String(i + 1).padStart(2, "0")}
+                      </span>
                       <p className="text-sm font-semibold text-heading">{p.title}</p>
                     </div>
                     <p className="text-xs text-black/45 leading-relaxed">{p.desc}</p>
@@ -137,13 +115,15 @@ export default function AuditGratuitPage() {
               <h2 className="font-heading font-normal text-xl text-heading">Ce que vous recevez</h2>
               <div className="flex flex-col gap-3">
                 {[
-                  { icon: "📄", label: "Un rapport complet", desc: "Points forts, lacunes et recommandations classées par priorité." },
-                  { icon: "📞", label: "Un appel de 30 minutes", desc: "On vous explique les résultats et on répond à vos questions." },
-                  { icon: "🗓️", label: "Dans les 72h ouvrables", desc: "On vous revient rapidement, pas dans trois semaines." },
-                  { icon: "🎁", label: "Sans frais, sans obligation", desc: "On ne facture rien. Si la suite vous intéresse, on en parle à ce moment-là." },
+                  { label: "Un rapport complet", desc: "Points forts, lacunes et recommandations classées par priorité." },
+                  { label: "Un appel de 30 minutes", desc: "On vous explique les résultats et on répond à vos questions." },
+                  { label: "Dans les 72h ouvrables", desc: "On vous revient rapidement, pas dans trois semaines." },
+                  { label: "Sans frais, sans obligation", desc: "On ne facture rien. Si la suite vous intéresse, on en parle à ce moment-là." },
                 ].map((item, i) => (
-                  <div key={i} className="flex items-start gap-4">
-                    <span className="text-xl shrink-0 mt-0.5">{item.icon}</span>
+                  <div key={i} className="flex items-start gap-3">
+                    <span className="w-5 h-5 rounded-full bg-primary flex items-center justify-center shrink-0 mt-0.5">
+                      <svg viewBox="0 0 12 12" className="w-2.5 h-2.5" fill="none" stroke="white" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><path d="M2 6.5l3 3L10 3"/></svg>
+                    </span>
                     <div>
                       <p className="text-sm font-semibold text-heading">{item.label}</p>
                       <p className="text-xs text-black/45 mt-0.5">{item.desc}</p>

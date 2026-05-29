@@ -104,11 +104,10 @@ export const blogPosts: BlogPost[] = [
       },
       {
         heading: "Ce que le calculateur ne fait pas",
-        body: "Il ne remplace pas une vraie conversation. Une fourchette, c'est un point de départ — pas un devis. Les vrais chiffres sortent après qu'on a pris le temps de comprendre votre projet, votre modèle d'affaires et ce que vous voulez accomplir.\n\nMais au moins, quand vous venez nous parler, vous savez dans quelle réalité budgétaire vous vous situez. Et ça change tout dans la qualité de la conversation.",
+        body: "Il ne remplace pas une vraie conversation. Une fourchette, c'est un point de départ, pas un devis. Les vrais chiffres sortent après qu'on a pris le temps de comprendre votre projet, votre modèle d'affaires et ce que vous voulez accomplir.\n\nMais au moins, quand vous venez nous parler, vous savez dans quelle réalité budgétaire vous vous situez. Et ça change tout dans la qualité de la conversation.",
         callout: {
-          icon: "💡",
           title: "Mon conseil",
-          body: "Commencez par le calculateur avant votre premier appel. Ça vous donnera un cadre de référence. Et si l'estimation vous surprend — dans un sens ou dans l'autre — c'est exactement le genre de conversation qu'on aime avoir.",
+          body: "Commencez par le calculateur avant votre premier appel. Ça vous donnera un cadre de référence. Et si l'estimation vous surprend, c'est exactement le genre de conversation qu'on aime avoir.",
           variant: "tip",
         },
       },

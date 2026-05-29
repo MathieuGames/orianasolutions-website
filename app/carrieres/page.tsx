@@ -1,28 +1,25 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import Navbar from "@/components/shared/navbar";
 import Footer from "@/components/shared/footer";
 import Breadcrumb from "@/components/shared/breadcrumb";
 
 const culture = [
   {
-    icon: "🚀",
     title: "On est en pleine croissance",
     desc: "On multiplie nos mandats chaque année. Rejoindre l'équipe maintenant, c'est avoir un impact direct sur la direction qu'on prend.",
   },
   {
-    icon: "🏆",
     title: "Des projets qui ont de l'impact",
-    desc: "Pas de code de remplissage. On livre des vraies applications à de vrais clients — des courtiers, des restos, des startups, des PME.",
+    desc: "Pas de code de remplissage. On livre des vraies applications à de vrais clients : des courtiers, des restos, des startups, des PME.",
   },
   {
-    icon: "🤝",
     title: "Une équipe soudée",
     desc: "On est une petite équipe où chaque personne compte. Pas de silos, pas de bureaucratie. Si t'as une bonne idée, elle s'entend.",
   },
   {
-    icon: "🌎",
     title: "Flexibilité et autonomie",
     desc: "On juge les gens sur leurs résultats, pas sur leurs heures. Remote possible, horaires flexibles, confiance mutuelle.",
   },
@@ -35,7 +32,7 @@ const jobs = [
     type: "Temps plein ou contrat",
     location: "Montréal / Remote",
     icon: "💻",
-    teaser: "Tu prends en charge des projets web complexes de A à Z — architecture, développement et mise en production sur des mandats variés.",
+    teaser: "Tu prends en charge des projets web complexes de A à Z : architecture, développement et mise en production.",
     intro: "On cherche un développeur senior capable de prendre en charge des projets web complexes de A à Z. Tu travailleras directement avec les clients et l'équipe sur des projets variés : SaaS, portails clients, applications web sur mesure.",
     responsibilities: [
       "Développer des applications web avec Next.js, React et TypeScript",
@@ -93,8 +90,8 @@ const jobs = [
     type: "Temps plein ou contrat",
     location: "Montréal / Remote",
     icon: "📱",
-    teaser: "Tu développes des applications iOS et Android sur des projets stimulants — des apps grand public jusqu'aux outils métier.",
-    intro: "On cherche un développeur mobile passionné pour travailler sur des applications iOS et Android. Nos projets mobiles sont parmi nos mandats les plus stimulants — apps grand public, outils métier, projets innovants avec de vrais utilisateurs.",
+    teaser: "Tu développes des applications iOS et Android sur des projets stimulants. Des apps grand public aux outils métier.",
+    intro: "On cherche un développeur mobile passionné pour travailler sur des applications iOS et Android. Nos projets mobiles sont parmi nos mandats les plus stimulants : apps grand public, outils métier, projets innovants avec de vrais utilisateurs.",
     responsibilities: [
       "Développer des applications iOS et Android avec Flutter ou React Native",
       "Assurer la publication sur l'App Store et Google Play",
@@ -144,17 +141,27 @@ export default function CarrieresPage() {
         <div className="max-w-5xl mx-auto px-6 md:px-10 flex flex-col gap-14">
 
           {/* Culture */}
-          <div>
-            <h2 className="font-heading font-normal text-2xl text-heading mb-2">Pourquoi nous rejoindre</h2>
-            <p className="text-black/50 text-sm mb-6 max-w-lg">On n'est pas une grande corporation. On est une équipe qui construit quelque chose de sérieux, et on cherche des gens qui veulent en faire partie.</p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {culture.map((item, i) => (
-                <div key={i} className="bg-white rounded-2xl border border-black/6 p-6 flex flex-col gap-3">
-                  <span className="text-3xl">{item.icon}</span>
-                  <p className="text-sm font-semibold text-heading">{item.title}</p>
-                  <p className="text-sm text-black/50 leading-relaxed">{item.desc}</p>
-                </div>
-              ))}
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr_420px] gap-10 items-start">
+            <div>
+              <h2 className="font-heading font-normal text-2xl text-heading mb-2">Pourquoi nous rejoindre</h2>
+              <p className="text-black/50 text-sm mb-6 max-w-lg">On n'est pas une grande corporation. On est une équipe qui construit quelque chose de sérieux, et on cherche des gens qui veulent en faire partie.</p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {culture.map((item, i) => (
+                  <div key={i} className="bg-white rounded-2xl border border-black/6 p-6 flex flex-col gap-2">
+                    <p className="text-sm font-semibold text-heading">{item.title}</p>
+                    <p className="text-sm text-black/50 leading-relaxed">{item.desc}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="rounded-2xl overflow-hidden border border-black/6 shadow-sm">
+              <Image
+                src="/png/finales_HR-11.jpg"
+                alt="L'équipe Oriana Solutions"
+                width={840}
+                height={560}
+                className="w-full h-64 lg:h-80 object-cover"
+              />
             </div>
           </div>
 
@@ -171,15 +178,12 @@ export default function CarrieresPage() {
                     onClick={() => setOpenJob(openJob === job.id ? null : job.id)}
                     className="w-full flex items-center gap-4 px-6 py-5 text-left"
                   >
-                    <div className="w-11 h-11 rounded-xl bg-primary-light flex items-center justify-center text-xl shrink-0">
-                      {job.icon}
-                    </div>
                     <div className="flex-1 min-w-0">
                       <p className="text-base font-semibold text-heading">{job.title}</p>
                       <div className="flex flex-wrap gap-3 mt-1">
-                        <span className="text-xs text-black/40">📍 {job.location}</span>
+                        <span className="text-xs text-black/40">{job.location}</span>
                         <span className="text-black/20 text-xs">·</span>
-                        <span className="text-xs text-black/40">🕐 {job.type}</span>
+                        <span className="text-xs text-black/40">{job.type}</span>
                       </div>
                       {openJob !== job.id && (
                         <p className="text-sm text-black/50 mt-1.5 leading-relaxed">{job.teaser}</p>
@@ -232,7 +236,7 @@ export default function CarrieresPage() {
                       </div>
 
                       <a
-                        href={`mailto:${email}?subject=Candidature — ${job.title}&body=Bonjour,%0A%0AJe vous fais parvenir ma candidature pour le poste de ${job.title}.%0A%0A`}
+                        href={`mailto:${email}?subject=Candidature : ${job.title}&body=Bonjour,%0A%0AJe vous fais parvenir ma candidature pour le poste de ${job.title}.%0A%0A`}
                         className="inline-flex items-center gap-2 bg-primary text-white text-sm font-medium px-6 py-3 rounded-xl hover:bg-primary/90 transition-colors w-fit"
                       >
                         Envoyer ma candidature à {email} →
@@ -244,18 +248,15 @@ export default function CarrieresPage() {
 
               {/* Candidature spontanée */}
               <div className="bg-white rounded-2xl border border-black/8 p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5">
-                <div className="flex items-start gap-4">
-                  <div className="w-11 h-11 rounded-xl bg-primary-light flex items-center justify-center text-xl shrink-0">✉️</div>
-                  <div>
+                <div>
                     <p className="text-base font-semibold text-heading">Candidature spontanée</p>
                     <p className="text-sm text-black/50 mt-1 max-w-sm leading-relaxed">
                       Vous ne trouvez pas le poste idéal mais vous voulez faire partie de l'équipe ? On est toujours ouverts à rencontrer des gens talentueux.
                     </p>
                     <p className="text-xs text-black/35 mt-1.5">CV + quelques lignes sur ce que vous apportez à l'équipe</p>
-                  </div>
                 </div>
                 <a
-                  href={`mailto:${email}?subject=Candidature spontanée — Oriana Solutions&body=Bonjour,%0A%0AJe souhaite vous soumettre ma candidature spontanée.%0A%0A`}
+                  href={`mailto:${email}?subject=Candidature spontanée, Oriana Solutions&body=Bonjour,%0A%0AJe souhaite vous soumettre ma candidature spontanée.%0A%0A`}
                   className="shrink-0 inline-flex items-center gap-2 border border-black/15 text-heading text-sm font-medium px-5 py-2.5 rounded-xl hover:border-black/30 transition-colors whitespace-nowrap"
                 >
                   Envoyer mon profil →

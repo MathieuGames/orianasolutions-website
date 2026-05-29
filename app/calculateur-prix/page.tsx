@@ -53,10 +53,10 @@ const Checkmark = () => (
   </svg>
 );
 
-const projectTypeOptions: { id: ProjectType; label: string; desc: string; icon: string }[] = [
-  { id: "site_web",   label: "Site web",           desc: "Vitrine, landing page, institutionnel", icon: "🌐" },
-  { id: "app_web",    label: "Application web",    desc: "SaaS, portail client, sur mesure",      icon: "💻" },
-  { id: "app_mobile", label: "Application mobile", desc: "iOS, Android ou les deux",              icon: "📱" },
+const projectTypeOptions: { id: ProjectType; label: string; desc: string }[] = [
+  { id: "site_web",   label: "Site web",           desc: "Vitrine, landing page, institutionnel" },
+  { id: "app_web",    label: "Application web",    desc: "SaaS, portail client, sur mesure"      },
+  { id: "app_mobile", label: "Application mobile", desc: "iOS, Android ou les deux"              },
 ];
 
 const pageCountOptions: { id: PageCount; label: string; desc: string }[] = [
@@ -154,7 +154,7 @@ export default function CalculateurPrixPage() {
                         }`}>
                           {active && <Checkmark />}
                         </div>
-                        <span className="text-base shrink-0">{type.icon}</span>
+
                         <span className="text-sm font-medium text-heading flex-1">{type.label}</span>
                         <span className="text-xs text-black/35 hidden sm:block">{type.desc}</span>
                       </button>

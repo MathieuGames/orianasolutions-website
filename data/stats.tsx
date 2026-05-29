@@ -2,7 +2,7 @@ export const stats = [
   {
     id: 1,
     label: "Lignes de code écrites",
-    numericValue: 250000,
+    numericValue: 424000,
     separator: " ",
   },
   {
