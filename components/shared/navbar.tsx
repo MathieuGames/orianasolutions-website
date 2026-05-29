@@ -154,7 +154,7 @@ function AboutDropdown() {
 function ResourcesDropdown() {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
-  const active = pathname === "/blog" || pathname.startsWith("/blog/") || pathname === "/faq" || pathname === "/calculateur-prix";
+  const active = pathname === "/blog" || pathname.startsWith("/blog/") || pathname === "/faq" || pathname === "/calculateur-prix" || pathname === "/quiz";
   useCloseOnScroll(setOpen);
 
   return (
@@ -195,6 +195,13 @@ function ResourcesDropdown() {
               className="flex items-center px-4 py-2.5 text-sm text-black/70 hover:text-black hover:bg-black/4 transition-colors"
             >
               Calculateur de prix
+            </Link>
+            <Link
+              href="/quiz"
+              onClick={() => setOpen(false)}
+              className="flex items-center px-4 py-2.5 text-sm text-black/70 hover:text-black hover:bg-black/4 transition-colors"
+            >
+              Quiz — App ou site web ?
             </Link>
           </div>
         </div>
@@ -371,6 +378,9 @@ export default function Navbar() {
                 </Link>
                 <Link href="/calculateur-prix" onClick={close} className="text-base text-black/60 py-1.5 hover:text-black transition-colors">
                   Calculateur de prix
+                </Link>
+                <Link href="/quiz" onClick={close} className="text-base text-black/60 py-1.5 hover:text-black transition-colors">
+                  Quiz — App ou site web ?
                 </Link>
               </div>
             )}
