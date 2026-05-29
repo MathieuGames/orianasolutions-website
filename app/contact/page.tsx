@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     title: "Contactez-nous | Oriana Solutions",
     description:
       "Parlez-nous de votre projet. Notre équipe basée à Montréal est disponible pour vous accompagner.",
-    url: "https://orianasolutions.com/contact",
+    url: "https://orianasolutions-site-mathieumorinlamy-8447s-projects.vercel.app/contact",
   },
 };
 

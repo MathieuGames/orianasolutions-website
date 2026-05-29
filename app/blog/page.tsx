@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     title: "Blogue | Ressources & conseils | Oriana Solutions",
     description:
       "Conseils, tendances et guides tech pour entrepreneurs et PME au Québec.",
-    url: "https://orianasolutions.com/blog",
+    url: "https://orianasolutions-site-mathieumorinlamy-8447s-projects.vercel.app/blog",
   },
 };
 import Navbar from "@/components/shared/navbar";

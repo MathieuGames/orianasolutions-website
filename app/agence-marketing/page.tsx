@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     title: "Partenaire technique pour agences marketing | Oriana Solutions",
     description:
       "Vous apportez les clients. On construit. White-label, NDA disponible, délais respectés. Le partenaire tech que votre agence cherchait.",
-    url: "https://orianasolutions.com/agence-marketing",
+    url: "https://orianasolutions-site-mathieumorinlamy-8447s-projects.vercel.app/agence-marketing",
   },
 };
 

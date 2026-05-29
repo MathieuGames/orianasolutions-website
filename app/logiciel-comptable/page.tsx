@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     title: "Logiciel pour comptables : application sur mesure | Oriana Solutions",
     description:
       "Automatisez vos tâches répétitives et offrez une meilleure expérience à vos clients avec un logiciel comptable développé selon vos besoins réels.",
-    url: "https://orianasolutions.com/logiciel-comptable",
+    url: "https://orianasolutions-site-mathieumorinlamy-8447s-projects.vercel.app/logiciel-comptable",
   },
 };
 

@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     title: "Oriana Solutions | Développement d'applications web et mobiles à Montréal",
     description:
       "Agence de développement logiciel à Montréal spécialisée en applications mobiles, web, SaaS et sites web sur mesure.",
-    url: "https://orianasolutions.com",
+    url: "https://orianasolutions-site-mathieumorinlamy-8447s-projects.vercel.app",
   },
 };
 
@@ -28,8 +28,8 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": ["Organization", "LocalBusiness"],
   name: "Oriana Solutions",
-  url: "https://orianasolutions.com",
-  logo: "https://orianasolutions.com/icon.png",
+  url: "https://orianasolutions-site-mathieumorinlamy-8447s-projects.vercel.app",
+  logo: "https://orianasolutions-site-mathieumorinlamy-8447s-projects.vercel.app/icon.png",
   description: "Agence de développement logiciel à Montréal — applications mobiles, web, SaaS et sites web sur mesure.",
   telephone: "+14383657789",
   email: "info@orianasolutions.com",

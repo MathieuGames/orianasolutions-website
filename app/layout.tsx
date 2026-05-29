@@ -14,7 +14,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://orianasolutions.com"),
+  metadataBase: new URL("https://orianasolutions-site-mathieumorinlamy-8447s-projects.vercel.app"),
   title: {
     default: "Oriana Solutions | Développement d'applications web et mobiles à Montréal",
     template: "%s | Oriana Solutions",
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     title: "Oriana Solutions | Développement d'applications web et mobiles à Montréal",
     description:
       "Agence de développement logiciel à Montréal — applications mobiles, web, SaaS et sites sur mesure.",
-    url: "https://orianasolutions.com",
+    url: "https://orianasolutions-site-mathieumorinlamy-8447s-projects.vercel.app",
     siteName: "Oriana Solutions",
     images: [
       {

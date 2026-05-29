@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     title: "Développement logiciel à Longueuil | Oriana Solutions",
     description:
       "Développeurs à Longueuil spécialisés en application web, SaaS et logiciel sur mesure pour startups, OBNL et PME de la Rive-Sud.",
-    url: "https://orianasolutions.com/developpement-logiciel-longueuil",
+    url: "https://orianasolutions-site-mathieumorinlamy-8447s-projects.vercel.app/developpement-logiciel-longueuil",
   },
 };
 

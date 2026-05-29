@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     title: "Partenaire technique pour Startup | MVP & SaaS | Oriana Solutions",
     description:
       "Votre startup a une idée. On a l'équipe pour la construire. MVP rapide, SaaS évolutif, propriété du code à 100%. Pour les fondateurs qui veulent avancer vite.",
-    url: "https://orianasolutions.com/startup-mvp-saas",
+    url: "https://orianasolutions-site-mathieumorinlamy-8447s-projects.vercel.app/startup-mvp-saas",
   },
 };
 

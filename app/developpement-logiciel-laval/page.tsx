@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     title: "Développement logiciel à Laval | Oriana Solutions",
     description:
       "Développeurs à Laval spécialisés en application web, SaaS et logiciel sur mesure pour startups, OBNL et PME.",
-    url: "https://orianasolutions.com/developpement-logiciel-laval",
+    url: "https://orianasolutions-site-mathieumorinlamy-8447s-projects.vercel.app/developpement-logiciel-laval",
   },
 };
 

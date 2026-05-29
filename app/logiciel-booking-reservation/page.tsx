@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     title: "Logiciel de réservation sur mesure | Système de booking | Oriana Solutions",
     description:
       "Votre propre système de réservation, sans frais de transaction, sans limitations. Calendrier synchronisé, paiements en ligne, rappels automatiques.",
-    url: "https://orianasolutions.com/logiciel-booking-reservation",
+    url: "https://orianasolutions-site-mathieumorinlamy-8447s-projects.vercel.app/logiciel-booking-reservation",
   },
 };
 

@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     title: "Nos réalisations | Oriana Solutions",
     description:
       "Applications mobiles, web et sites sur mesure — découvrez notre portfolio de projets réalisés.",
-    url: "https://orianasolutions.com/realisations",
+    url: "https://orianasolutions-site-mathieumorinlamy-8447s-projects.vercel.app/realisations",
   },
 };
 

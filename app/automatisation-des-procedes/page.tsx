@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     title: "Automatisation des procédés d'affaires sur mesure | Oriana Solutions",
     description:
       "Éliminez la saisie manuelle, automatisez vos rapports et synchronisez vos systèmes. Des automatisations solides qui s'intègrent directement dans vos outils existants.",
-    url: "https://orianasolutions.com/automatisation-des-procedes",
+    url: "https://orianasolutions-site-mathieumorinlamy-8447s-projects.vercel.app/automatisation-des-procedes",
   },
 };
 

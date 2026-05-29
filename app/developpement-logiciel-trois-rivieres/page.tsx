@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     title: "Développement logiciel à Trois-Rivières | Oriana Solutions",
     description:
       "Développeurs à Trois-Rivières spécialisés en application web, SaaS et logiciel sur mesure pour startups, OBNL et PME de la Mauricie.",
-    url: "https://orianasolutions.com/developpement-logiciel-trois-rivieres",
+    url: "https://orianasolutions-site-mathieumorinlamy-8447s-projects.vercel.app/developpement-logiciel-trois-rivieres",
   },
 };
 

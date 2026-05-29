@@ -4,7 +4,19 @@
       "PowerShell(node \"C:\\\\Users\\\\malyn\\\\Downloads\\\\screenshot-tool\\\\screenshot.cjs\" 2>&1)",
       "WebSearch",
       "PowerShell(vercel --version 2>&1)",
-      "Bash(git add *)"
+      "Bash(git add *)",
+      "Bash(xargs cat)",
+      "Bash(cp \"/Users/mathieu/Desktop/Capture d'écran, le 2026-05-27 à 22.09.01.png\" \"/Users/mathieu/Desktop/Prog-mathieu/ori-web/orianasolutions-website/public/png/saas-sales-pitch.png\")",
+      "Bash(python3 -c ' *)",
+      "Bash(npx playwright *)",
+      "Bash(curl -s http://localhost:3000/sales-pitch)",
+      "Bash(ls ~/.npm/_npx/*/node_modules/playwright/index.js 2>/dev/null | head -3; find ~/.npm -name \"playwright\" -maxdepth 6 -type d 2>/dev/null | head -5)",
+      "Read(//Users/mathieu/.npm/_npx/**)",
+      "Read(//Users/mathieu/.npm/**)",
+      "Bash(npm run *)"
+    ],
+    "additionalDirectories": [
+      "/Users/mathieu/Desktop"
     ]
   }
 }

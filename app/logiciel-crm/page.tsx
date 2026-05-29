@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     title: "CRM sur mesure : gestion relation client | Oriana Solutions",
     description:
       "Un CRM développé selon votre processus de vente. Ne perdez plus de prospects, automatisez vos suivis, et prenez de meilleures décisions avec vos données.",
-    url: "https://orianasolutions.com/logiciel-crm",
+    url: "https://orianasolutions-site-mathieumorinlamy-8447s-projects.vercel.app/logiciel-crm",
   },
 };
 

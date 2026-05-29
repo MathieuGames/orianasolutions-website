@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     title: "Création de site web sur mesure à Montréal | Oriana Solutions",
     description:
       "Sites web sur mesure performants et optimisés SEO — design moderne, Next.js, 100 % responsive.",
-    url: "https://orianasolutions.com/site-web-sur-mesure",
+    url: "https://orianasolutions-site-mathieumorinlamy-8447s-projects.vercel.app/site-web-sur-mesure",
   },
 };
 import Breadcrumb from "@/components/shared/breadcrumb";

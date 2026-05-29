@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     title: "Logiciel pour agents immobiliers : CRM et outil sur mesure | Oriana Solutions",
     description:
       "Gérez vos prospects, vos listings et vos clients dans un seul outil pensé pour la réalité des agents immobiliers.",
-    url: "https://orianasolutions.com/logiciel-agent-immobilier",
+    url: "https://orianasolutions-site-mathieumorinlamy-8447s-projects.vercel.app/logiciel-agent-immobilier",
   },
 };
 

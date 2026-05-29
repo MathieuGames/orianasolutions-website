@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     title: "Développement d'application mobile iOS & Android | Oriana Solutions",
     description:
       "Apps iOS et Android sur mesure avec React Native ou Flutter, de la conception au déploiement.",
-    url: "https://orianasolutions.com/developpement-application-mobile",
+    url: "https://orianasolutions-site-mathieumorinlamy-8447s-projects.vercel.app/developpement-application-mobile",
   },
 };
 import Breadcrumb from "@/components/shared/breadcrumb";

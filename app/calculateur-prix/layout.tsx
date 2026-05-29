@@ -15,11 +15,11 @@ export const metadata: Metadata = {
     title: "Calculateur de prix — Développement logiciel & web | Oriana Solutions",
     description:
       "Estimez le coût de votre projet web, mobile ou SaaS en quelques clics. Outil gratuit basé sur des projets réels livrés à Montréal.",
-    url: "https://orianasolutions.com/calculateur-prix",
+    url: "https://orianasolutions-site-mathieumorinlamy-8447s-projects.vercel.app/calculateur-prix",
     type: "website",
   },
   alternates: {
-    canonical: "https://orianasolutions.com/calculateur-prix",
+    canonical: "https://orianasolutions-site-mathieumorinlamy-8447s-projects.vercel.app/calculateur-prix",
   },
 };
 
@@ -29,7 +29,7 @@ const jsonLd = {
   name: "Calculateur de prix — Oriana Solutions",
   description:
     "Estimez le coût de développement de votre projet web, mobile ou logiciel sur mesure.",
-  url: "https://orianasolutions.com/calculateur-prix",
+  url: "https://orianasolutions-site-mathieumorinlamy-8447s-projects.vercel.app/calculateur-prix",
   applicationCategory: "BusinessApplication",
   operatingSystem: "Web",
   offers: {
@@ -41,7 +41,7 @@ const jsonLd = {
   provider: {
     "@type": "Organization",
     name: "Oriana Solutions",
-    url: "https://orianasolutions.com",
+    url: "https://orianasolutions-site-mathieumorinlamy-8447s-projects.vercel.app",
   },
 };
 

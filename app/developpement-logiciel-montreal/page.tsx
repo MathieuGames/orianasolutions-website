@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     title: "Développement logiciel à Montréal | Oriana Solutions",
     description:
       "Développeurs à Montréal spécialisés en application web, SaaS et logiciel sur mesure pour startups, OBNL et PME du Grand Montréal.",
-    url: "https://orianasolutions.com/developpement-logiciel-montreal",
+    url: "https://orianasolutions-site-mathieumorinlamy-8447s-projects.vercel.app/developpement-logiciel-montreal",
   },
 };
 
@@ -81,7 +81,7 @@ const localBusinessSchema = {
   name: "Oriana Solutions",
   description:
     "Agence de développement logiciel à Montréal spécialisée en applications web, applications mobiles, logiciels sur mesure et plateformes SaaS.",
-  url: "https://orianasolutions.com",
+  url: "https://orianasolutions-site-mathieumorinlamy-8447s-projects.vercel.app",
   telephone: "+14383657789",
   email: "info@orianasolutions.com",
   address: {

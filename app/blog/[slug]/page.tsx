@@ -36,20 +36,20 @@ export default async function BlogPostPage({ params }: Params) {
     author: {
       "@type": "Organization",
       name: "Oriana Solutions",
-      url: "https://orianasolutions.com",
+      url: "https://orianasolutions-site-mathieumorinlamy-8447s-projects.vercel.app",
     },
     publisher: {
       "@type": "Organization",
       name: "Oriana Solutions",
       logo: {
         "@type": "ImageObject",
-        url: "https://orianasolutions.com/icon.png",
+        url: "https://orianasolutions-site-mathieumorinlamy-8447s-projects.vercel.app/icon.png",
       },
     },
-    url: `https://orianasolutions.com/blog/${post.slug}`,
+    url: `https://orianasolutions-site-mathieumorinlamy-8447s-projects.vercel.app/blog/${post.slug}`,
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": `https://orianasolutions.com/blog/${post.slug}`,
+      "@id": `https://orianasolutions-site-mathieumorinlamy-8447s-projects.vercel.app/blog/${post.slug}`,
     },
   };
 

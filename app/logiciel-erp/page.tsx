@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     title: "ERP sur mesure : système de gestion intégré | Oriana Solutions",
     description:
       "Remplacez vos outils disparates par un ERP développé selon vos processus réels. Centralisez, automatisez, décidez mieux.",
-    url: "https://orianasolutions.com/logiciel-erp",
+    url: "https://orianasolutions-site-mathieumorinlamy-8447s-projects.vercel.app/logiciel-erp",
   },
 };
 

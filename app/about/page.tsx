@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     title: "À propos | Oriana Solutions",
     description:
       "Jeune équipe montréalaise spécialisée en développement logiciel — applications mobiles, web, SaaS et automatisation IA.",
-    url: "https://orianasolutions.com/about",
+    url: "https://orianasolutions-site-mathieumorinlamy-8447s-projects.vercel.app/about",
   },
 };
 import AboutHighlight from "@/components/about/highlight";

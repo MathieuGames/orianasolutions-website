@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     title: "Intégration IA sur mesure & agents autonomes | Oriana Solutions",
     description:
       "L'IA qui fait vraiment quelque chose dans votre entreprise. Agents autonomes, RAG, traitement de documents et workflows intelligents. On comprend l'IA pour les affaires.",
-    url: "https://orianasolutions.com/integration-ia-agents",
+    url: "https://orianasolutions-site-mathieumorinlamy-8447s-projects.vercel.app/integration-ia-agents",
   },
 };
 

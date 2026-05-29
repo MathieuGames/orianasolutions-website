@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     title: "Développement d'application web & SaaS | Oriana Solutions",
     description:
       "Plateformes web et SaaS sur mesure — Next.js, React, .NET, déploiement cloud Azure.",
-    url: "https://orianasolutions.com/application-web",
+    url: "https://orianasolutions-site-mathieumorinlamy-8447s-projects.vercel.app/application-web",
   },
 };
 import Breadcrumb from "@/components/shared/breadcrumb";

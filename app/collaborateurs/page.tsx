@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     title: "Nos collaborateurs | Oriana Solutions",
     description:
       "Partenaires de confiance en design, développement et marketing au Québec.",
-    url: "https://orianasolutions.com/collaborateurs",
+    url: "https://orianasolutions-site-mathieumorinlamy-8447s-projects.vercel.app/collaborateurs",
   },
 };
 import Link from "next/link";

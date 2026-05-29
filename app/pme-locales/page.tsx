@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     title: "Logiciel sur mesure pour PME | Automatisez vos opérations | Oriana Solutions",
     description:
       "L'IA a rendu le logiciel sur mesure accessible aux PME. On livre des solutions en 6 semaines, à des prix que vous ne pensiez pas possibles.",
-    url: "https://orianasolutions.com/pme-locales",
+    url: "https://orianasolutions-site-mathieumorinlamy-8447s-projects.vercel.app/pme-locales",
   },
 };
 

@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     title: "FAQ — Questions fréquentes | Oriana Solutions",
     description:
       "Tout ce que vous devez savoir avant de démarrer votre projet avec Oriana Solutions.",
-    url: "https://orianasolutions.com/faq",
+    url: "https://orianasolutions-site-mathieumorinlamy-8447s-projects.vercel.app/faq",
   },
 };
 

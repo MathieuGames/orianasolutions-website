@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     title: "Développement logiciel à Québec | Oriana Solutions",
     description:
       "Développeurs à Québec spécialisés en application web, SaaS et logiciel sur mesure pour startups, OBNL et PME.",
-    url: "https://orianasolutions.com/developpement-logiciel-quebec",
+    url: "https://orianasolutions-site-mathieumorinlamy-8447s-projects.vercel.app/developpement-logiciel-quebec",
   },
 };
 

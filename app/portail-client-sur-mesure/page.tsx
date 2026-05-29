@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     title: "Portail client sur mesure | Espace client sécurisé | Oriana Solutions",
     description:
       "Remplacez vos échanges par courriel par un portail client professionnel. Documents, factures, suivi de projet et messagerie dans un seul espace sécurisé.",
-    url: "https://orianasolutions.com/portail-client-sur-mesure",
+    url: "https://orianasolutions-site-mathieumorinlamy-8447s-projects.vercel.app/portail-client-sur-mesure",
   },
 };
 

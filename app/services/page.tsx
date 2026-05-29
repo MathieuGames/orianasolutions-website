@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     title: "Nos services | Oriana Solutions",
     description:
       "Applications mobiles iOS/Android, applications web & SaaS, sites web sur mesure — experts en développement logiciel à Montréal.",
-    url: "https://orianasolutions.com/services",
+    url: "https://orianasolutions-site-mathieumorinlamy-8447s-projects.vercel.app/services",
   },
 };
 import ServicesSection from "@/components/service/services-section";

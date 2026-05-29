@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     title: "SalesPitch : Bâtissez des pitchs qui convertissent",
     description:
       "Créé par Oriana Solutions. Structurez vos pitchs, personnalisez votre approche et fermez plus de deals.",
-    url: "https://orianasolutions.com/salespitch",
+    url: "https://orianasolutions-site-mathieumorinlamy-8447s-projects.vercel.app/salespitch",
   },
 };
 
