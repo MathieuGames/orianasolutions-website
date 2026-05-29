@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Quiz — App ou site web ? Trouvez la bonne solution | Oriana Solutions",
+  title: "Quiz — De quoi votre projet a-t-il besoin ? | Oriana Solutions",
   description:
-    "Répondez à 6 questions et découvrez si vous avez besoin d'un site web, d'une application web, d'une app mobile ou d'un logiciel sur mesure. Gratuit, 2 minutes.",
+    "Site web, application web, app mobile ou logiciel sur mesure ? Répondez à 6 questions et découvrez la bonne solution pour votre projet. Gratuit, 2 minutes.",
   openGraph: {
-    title: "Quiz — App ou site web ? Trouvez la bonne solution",
+    title: "Quiz — De quoi votre projet a-t-il besoin ?",
     description:
-      "6 questions pour savoir de quoi votre projet a vraiment besoin. Gratuit et sans inscription.",
+      "Site web, app web, mobile ou logiciel sur mesure ? 6 questions pour trouver la bonne réponse. Gratuit et sans inscription.",
     url: "https://orianasolutions-site-mathieumorinlamy-8447s-projects.vercel.app/quiz",
   },
   alternates: {

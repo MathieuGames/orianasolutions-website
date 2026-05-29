@@ -202,10 +202,10 @@ export default function QuizPage() {
                 <div>
                   <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-3">Outil gratuit</p>
                   <h1 className="font-heading font-normal text-3xl sm:text-4xl text-heading leading-tight mb-4">
-                    App ou site web ?<br />Trouvez la bonne solution.
+                    De quoi votre projet<br />a-t-il vraiment besoin ?
                   </h1>
                   <p className="text-black/50 text-base max-w-sm mx-auto leading-relaxed">
-                    6 questions, 2 minutes. On vous dit exactement ce dont votre projet a besoin.
+                    Site web, application web, app mobile ou logiciel sur mesure — 6 questions pour trouver la bonne réponse.
                   </p>
                 </div>
                 <button
