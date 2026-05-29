@@ -1,4 +1,8 @@
-Hoimport type { Metadata } from "next";
+import type { Metadata } from "next";
+import AboutSectionMobileBlock from "@/components/shared/about-section";
+import Breadcrumb from "@/components/shared/breadcrumb";
+import Footer from "@/components/shared/footer";
+import Navbar from "@/components/shared/navbar";
 import ContactSection from "@/components/contact/contact-section";
 
 export const metadata: Metadata = {
@@ -12,10 +16,6 @@ export const metadata: Metadata = {
     url: "https://orianasolutions.com/contact",
   },
 };
-import AboutSectionMobileBlock from "@/components/shared/about-section";
-import Breadcrumb from "@/components/shared/breadcrumb";
-import Footer from "@/components/shared/footer";
-import Navbar from "@/components/shared/navbar";
 
 export default function page() {
   return (
