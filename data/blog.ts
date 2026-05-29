@@ -37,6 +37,49 @@ export interface BlogSection {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: 6,
+    slug: "refonte-site-web-michel-morin-consultants",
+    title: "Nouveau mandat : on a refondu le site web de Michel Morin, coach professionnel avec 30 ans d'expérience.",
+    excerpt:
+      "Michel avait un site qui ne reflétait plus ce qu'il était devenu. On lui a livré une refonte complète — moderne, crédible, et qui met enfin ses partenaires et certifications de l'avant.",
+    category: "Étude de cas",
+    readTime: "4 min",
+    date: "29 mai 2026",
+    content: [
+      {
+        body: "Il y a des clients qui arrivent avec un brief de 10 pages. Michel, lui, avait une phrase claire : \"Mon site ne me ressemble plus.\"\n\nMichel Morin est coach professionnel et ingénieur, avec plus de 30 ans d'expérience en développement du leadership, en médiation et en accompagnement organisationnel. Son expertise est réelle, reconnue, et appuyée par des certifications sérieuses. Mais son site web, lui, ne racontait pas cette histoire-là.\n\nLe mandat : refonte complète. Design moderne, contenu restructuré, crédibilité mise de l'avant.",
+      },
+      {
+        heading: "Ce que Michel voulait vraiment",
+        body: "Quand on a fait notre premier appel, trois choses sont ressorties clairement.\n\nD'abord, son site devait refléter qui il est aujourd'hui — pas qui il était il y a cinq ans. Ensuite, ses certifications et ses accréditations devaient être visibles dès le départ. Dans le monde du coaching professionnel, la crédibilité se bâtit sur des titres concrets. Et finalement, ses partenaires devaient avoir une place centrale sur le site — parce que la collaboration, c'est au cœur de son modèle de travail.",
+      },
+      {
+        heading: "Ce qu'on a livré",
+        body: "On a entièrement revu l'architecture du site : une page d'accueil qui positionne Michel comme l'expert qu'il est, une section services claire qui présente le coaching individuel, la médiation, l'évaluation psychométrique (EQ-i 2.0, NOVA), les groupes de codéveloppement et les cercles de coaching.\n\nOn a aussi bâti une section partenaires dédiée. Chacun des collaborateurs de Michel est présenté avec soin : **Julie Dubuc**, **Daniel Fillion CRHA**, **Michel Gagnon CRIA** et **Maryse Lepage**. Ce n'est pas juste une liste de noms — c'est une démonstration que Michel travaille en réseau, et que ses clients ont accès à un écosystème de compétences.",
+        callout: {
+          icon: "🤝",
+          title: "Pourquoi ça compte",
+          body: "Dans le coaching B2B, les co-mandats sont fréquents. Présenter ses partenaires sur son site, c'est faciliter ces collaborations et envoyer un signal fort : Michel n'est pas un consultant isolé, il est ancré dans un réseau solide.",
+          variant: "insight",
+        },
+      },
+      {
+        heading: "Le résultat",
+        body: "On est fiers de ce qu'on a livré. Le site est moderne, épuré, et professionnel — à l'image de Michel. Les certifications sont en évidence, les services sont clairs, et les partenaires ont enfin la visibilité qu'ils méritent.\n\nMerci à toute l'équipe derrière ce mandat : **Hugo Bouchard**, **Samuel Bergeron** et moi-même.\n\nSi vous voulez voir le résultat, c'est par ici 👉 michelmorinconsultants.com",
+      },
+      {
+        heading: "Vous êtes dans la même situation ?",
+        body: "Un site qui ne vous ressemble plus, c'est plus qu'un problème esthétique. C'est une occasion manquée à chaque fois que quelqu'un cherche vos services en ligne et ne comprend pas en 5 secondes pourquoi vous choisir.\n\nOn fait des refontes de sites pour des professionnels, des PME et des consultants qui veulent que leur présence en ligne soit à la hauteur de leur expertise.",
+        cta: {
+          title: "Votre site vous ressemble ?",
+          body: "Si la réponse est non, c'est le bon moment pour en parler. On vous revient rapidement.",
+          label: "Discuter de ma refonte",
+          href: "/contact",
+        },
+      },
+    ],
+  },
+  {
     id: 5,
     slug: "calculateur-prix-logiciel-sur-mesure",
     title: "On a créé un calculateur de prix pour que vous sachiez à quoi vous attendre.",
