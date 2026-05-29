@@ -41,7 +41,7 @@ export const blogPosts: BlogPost[] = [
     slug: "refonte-site-web-michel-morin-consultants",
     title: "Nouveau mandat : on a refondu le site web de Michel Morin, coach professionnel avec 30 ans d'expérience.",
     excerpt:
-      "Michel avait un site qui ne reflétait plus ce qu'il était devenu. On lui a livré une refonte complète — moderne, crédible, et qui met enfin ses partenaires et certifications de l'avant.",
+      "Michel avait un site qui ne reflétait plus ce qu'il était devenu. On lui a livré une refonte complète : moderne, crédible, et qui met enfin ses partenaires et certifications de l'avant.",
     category: "Étude de cas",
     readTime: "4 min",
     date: "29 mai 2026",
@@ -55,7 +55,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         heading: "Ce qu'on a livré",
-        body: "On a entièrement revu l'architecture du site : une page d'accueil qui positionne Michel comme l'expert qu'il est, une section services claire qui présente le coaching individuel, la médiation, l'évaluation psychométrique (EQ-i 2.0, NOVA), les groupes de codéveloppement et les cercles de coaching.\n\nOn a aussi bâti une section partenaires dédiée. Chacun des collaborateurs de Michel est présenté avec soin : **Julie Dubuc**, **Daniel Fillion CRHA**, **Michel Gagnon CRIA** et **Maryse Lepage**. Ce n'est pas juste une liste de noms — c'est une démonstration que Michel travaille en réseau, et que ses clients ont accès à un écosystème de compétences.",
+        body: "On a entièrement revu l'architecture du site : une page d'accueil qui positionne Michel comme l'expert qu'il est, une section services claire qui présente le coaching individuel, la médiation, l'évaluation psychométrique (EQ-i 2.0, NOVA), les groupes de codéveloppement et les cercles de coaching.\n\nOn a aussi bâti une section partenaires dédiée. Chacun des collaborateurs de Michel est présenté avec soin : **Julie Dubuc**, **Daniel Fillion CRHA**, **Michel Gagnon CRIA** et **Maryse Lepage**. Ce n'est pas juste une liste de noms. C'est une démonstration que Michel travaille en réseau, et que ses clients ont accès à un écosystème de compétences.",
         callout: {
           icon: "🤝",
           title: "Pourquoi ça compte",
@@ -65,7 +65,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         heading: "Le résultat",
-        body: "On est fiers de ce qu'on a livré. Le site est moderne, épuré, et professionnel — à l'image de Michel. Les certifications sont en évidence, les services sont clairs, et les partenaires ont enfin la visibilité qu'ils méritent.\n\nMerci à toute l'équipe derrière ce mandat : **Hugo Bouchard**, **Samuel Bergeron** et moi-même.\n\nSi vous voulez voir le résultat, c'est par ici 👉 michelmorinconsultants.com",
+        body: "On est fiers de ce qu'on a livré. Le site est moderne, épuré, et professionnel. À l'image de Michel. Les certifications sont en évidence, les services sont clairs, et les partenaires ont enfin la visibilité qu'ils méritent.\n\nMerci à toute l'équipe derrière ce mandat : **Hugo Bouchard**, **Samuel Bergeron** et moi-même.\n\nSi vous voulez voir le résultat, c'est par ici 👉 michelmorinconsultants.com",
       },
       {
         heading: "Vous êtes dans la même situation ?",
