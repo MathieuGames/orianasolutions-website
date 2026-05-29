@@ -32,6 +32,7 @@ export default function Home() {
       </div>
       <div className="relative z-10">
         <HeroSection />
+        <Testimonial />
         <div id="a-propos">
           <Experties />
         </div>
@@ -43,7 +44,6 @@ export default function Home() {
           <RealisationsSection />
         </div>
         <AboutSection />
-        <Testimonial />
         <FAQHome />
         <div id="contact">
           <Footer />

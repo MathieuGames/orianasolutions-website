@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+Hoimport type { Metadata } from "next";
 import ContactSection from "@/components/contact/contact-section";
 
 export const metadata: Metadata = {

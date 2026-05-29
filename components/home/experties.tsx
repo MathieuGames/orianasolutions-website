@@ -19,8 +19,7 @@ export default function Experties() {
               </Typography>
 
               <Typography variant="p-base" className="sm:max-w-full! max-w-[350px]!">
-                Oriana Solutions est une agence digitale <br className="hidden 2xl:flex" /> spécialisée dans le
-                développement <br className="hidden 2xl:flex" />  d&apos;applications sur mesure.
+                Lauréate du 1er prix national au Défi Entreprendre, Oriana Solutions est une agence spécialisée dans le développement d&apos;applications sur mesure.
               </Typography>
             </div>
 

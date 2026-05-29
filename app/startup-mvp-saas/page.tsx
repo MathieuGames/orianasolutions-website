@@ -243,7 +243,7 @@ export default function StartupMVPSaaSPage() {
         items={faqItems}
       />
 
-      {/* Cross-sell : Sales Pitch */}
+      {/* Cross-sell : SalesPitch */}
       <Container className="py-10! md:py-14!">
         <div className="rounded-2xl bg-primary-light border border-primary/15 p-8 md:p-10 grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
           <div className="md:col-span-2 flex flex-col gap-3">
@@ -252,7 +252,7 @@ export default function StartupMVPSaaSPage() {
               Bâtissez votre processus de vente dès le départ.
             </h2>
             <p className="text-sm text-black/55 leading-7">
-              Les startups qui réussissent ne vendent pas à l&apos;improviste. Sales Pitch vous aide à structurer un discours de vente répétable pour convertir vos premiers clients et aligner toute votre équipe sur le même message.
+              Les startups qui réussissent ne vendent pas à l&apos;improviste. SalesPitch vous aide à structurer un discours de vente répétable pour convertir vos premiers clients et aligner toute votre équipe sur le même message.
             </p>
             <Link
               href="https://www.usesalespitch.com/"
@@ -260,7 +260,7 @@ export default function StartupMVPSaaSPage() {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-primary text-white text-sm font-medium px-5 py-2.5 rounded-xl hover:opacity-90 transition-opacity w-fit mt-1"
             >
-              Essayer Sales Pitch <Arrow className="w-4 h-4" />
+              Essayer SalesPitch <Arrow className="w-4 h-4" />
             </Link>
           </div>
           <div className="flex flex-col gap-3 bg-white rounded-xl border border-black/8 px-6 py-5">

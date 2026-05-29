@@ -1,6 +1,3 @@
-"use client";
-
-import { useState } from "react";
 import AboutSectionMobileBlock from "@/components/shared/about-section";
 import Breadcrumb from "@/components/shared/breadcrumb";
 import Footer from "@/components/shared/footer";
@@ -47,7 +44,6 @@ const features = [
 ];
 
 export default function AntoineBarilPage() {
-  const [activeFeature, setActiveFeature] = useState(0);
 
   return (
     <>
@@ -92,7 +88,7 @@ export default function AntoineBarilPage() {
         <ServiceStats service={service} />
       </AnimatedContent>
 
-      {/* Ce qu'on a livré — image principale + liste */}
+      {/* Ce qu'on a livré */}
       <AnimatedContent distance={40} duration={0.8} delay={0.1} threshold={0.1}>
         <Container className="w-full max-w-[90%]">
           <div className="flex flex-col gap-10">
@@ -103,47 +99,25 @@ export default function AntoineBarilPage() {
               </p>
             </div>
 
-            <div className="flex flex-col lg:flex-row gap-8 items-stretch">
-              {/* Image principale — change selon le hover */}
-              <div className="lg:w-1/2 rounded-3xl overflow-hidden bg-[#F8F8F8] min-h-[320px]">
-                <Image
-                  src={features[activeFeature].image}
-                  alt={features[activeFeature].title}
-                  width={800}
-                  height={600}
-                  className="w-full h-full object-cover object-top transition-all duration-500"
-                />
-              </div>
-
-              {/* Liste de fonctionnalités */}
-              <div className="lg:w-1/2 flex flex-col gap-4 justify-center">
-                {features.map((feature, i) => (
-                  <div
-                    key={feature.title}
-                    onMouseEnter={() => setActiveFeature(i)}
-                    className={`flex gap-5 items-start p-5 rounded-2xl cursor-pointer transition-colors ${
-                      activeFeature === i ? "bg-[#F0F4FF] border border-primary/10" : "bg-[#F8F8F8] hover:bg-[#F0F4FF]"
-                    }`}
-                  >
-                    <div className="shrink-0 w-12 h-12 rounded-xl overflow-hidden">
-                      <Image
-                        src={feature.image}
-                        alt={feature.title}
-                        width={48}
-                        height={48}
-                        className="w-full h-full object-cover object-top"
-                      />
-                    </div>
-                    <div className="flex flex-col gap-1">
-                      <div className="flex items-center gap-3">
-                        <span className="text-xs font-semibold text-primary/60 tracking-widest">0{i + 1}</span>
-                        <h3 className="font-heading font-medium text-base text-heading">{feature.title}</h3>
-                      </div>
-                      <p className="text-sm text-black/50 leading-relaxed">{feature.description}</p>
-                    </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {features.map((feature, i) => (
+                <div key={feature.title} className="flex flex-col rounded-2xl overflow-hidden border border-black/8 bg-white">
+                  <div className="w-full aspect-[4/3] overflow-hidden bg-[#F8F8F8]">
+                    <Image
+                      src={feature.image}
+                      alt={feature.title}
+                      width={600}
+                      height={450}
+                      className="w-full h-full object-cover object-top"
+                    />
                   </div>
-                ))}
-              </div>
+                  <div className="flex flex-col gap-2 p-5">
+                    <span className="text-xs font-semibold text-primary/60 tracking-widest">0{i + 1}</span>
+                    <h3 className="font-heading font-medium text-base text-heading">{feature.title}</h3>
+                    <p className="text-sm text-black/50 leading-relaxed">{feature.description}</p>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </Container>

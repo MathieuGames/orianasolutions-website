@@ -6,14 +6,14 @@ import Container from "@/components/shared/container";
 import { Arrow } from "@/svgs";
 
 export const metadata: Metadata = {
-  title: "Sales Pitch — Bâtissez des pitchs qui convertissent | Oriana Solutions",
+  title: "SalesPitch : Bâtissez des pitchs qui convertissent | Oriana Solutions",
   description:
-    "Sales Pitch est le SaaS créé par Oriana pour aider les équipes de vente à structurer des pitchs percutants, personnalisés et efficaces. Augmentez votre taux de conversion dès la première semaine.",
+    "SalesPitch est l'outil créé par Oriana pour aider les équipes de vente à structurer des pitchs percutants, personnalisés et efficaces. Augmentez votre taux de conversion dès la première semaine.",
   openGraph: {
-    title: "Sales Pitch — Bâtissez des pitchs qui convertissent",
+    title: "SalesPitch : Bâtissez des pitchs qui convertissent",
     description:
       "Créé par Oriana Solutions. Structurez vos pitchs, personnalisez votre approche et fermez plus de deals.",
-    url: "https://orianasolutions.com/sales-pitch",
+    url: "https://orianasolutions.com/salespitch",
   },
 };
 
@@ -21,7 +21,7 @@ const features = [
   {
     num: "01",
     titre: "Pitchs structurés en quelques minutes",
-    desc: "Une méthode de vente éprouvée intégrée directement dans l'outil. Remplissez les informations du client, Sales Pitch génère une structure de présentation claire et percutante.",
+    desc: "Une méthode de vente éprouvée intégrée directement dans l'outil. Remplissez les informations du client, SalesPitch génère une structure de présentation claire et percutante.",
   },
   {
     num: "02",
@@ -55,26 +55,25 @@ export default function SalesPitchPage() {
       </div>
 
       {/* Hero */}
-      <div className="bg-heading overflow-hidden relative">
-        <div className="absolute inset-0 bg-gradient-to-br from-heading via-heading to-primary/20 pointer-events-none" />
-        <div className="absolute -top-40 -right-40 w-[600px] h-[600px] bg-primary/10 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute bottom-0 left-1/3 w-80 h-80 bg-primary/8 rounded-full blur-2xl pointer-events-none" />
+      <div className="w-full relative overflow-hidden bg-primary-light">
+        <div className="absolute -top-32 -right-32 w-[600px] h-[600px] bg-primary/10 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute bottom-0 left-1/4 w-80 h-80 bg-primary/8 rounded-full blur-2xl pointer-events-none" />
 
         <Container className="py-24! md:py-32! relative z-10">
           <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 bg-white/8 border border-white/15 rounded-full px-4 py-1.5 mb-8">
+            <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 rounded-full px-4 py-1.5 mb-8">
               <span className="w-2 h-2 rounded-full bg-primary shrink-0" />
-              <span className="text-xs font-semibold uppercase tracking-widest text-white/60">
+              <span className="text-xs font-semibold uppercase tracking-widest text-primary/80">
                 Créé par Oriana Solutions
               </span>
             </div>
 
-            <h1 className="font-heading font-normal text-4xl sm:text-6xl xl:text-7xl text-white leading-tight mb-6">
+            <h1 className="font-heading font-normal text-4xl sm:text-6xl xl:text-7xl text-heading leading-tight mb-6">
               Des pitchs qui convertissent, à chaque fois.
             </h1>
 
-            <p className="text-white/60 text-lg md:text-xl leading-relaxed mb-10 max-w-2xl">
-              Sales Pitch est l&apos;outil qu&apos;on a bâti pour arrêter d&apos;improviser en présentation client. Structurez vos pitchs, personnalisez votre approche et fermez plus de deals, sans y passer des heures.
+            <p className="text-black/60 text-lg md:text-xl leading-relaxed mb-10 max-w-2xl">
+              SalesPitch est l&apos;outil qu&apos;on a bâti pour arrêter d&apos;improviser en présentation client. Structurez vos pitchs, personnalisez votre approche et fermez plus de deals, sans y passer des heures.
             </p>
 
             <div className="flex flex-wrap gap-4">
@@ -84,15 +83,15 @@ export default function SalesPitchPage() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-primary text-white font-medium px-8 py-4 rounded-xl hover:opacity-90 transition-opacity text-sm"
               >
-                Essayer Sales Pitch gratuitement <Arrow className="w-4 h-4" />
+                Essayer SalesPitch gratuitement <Arrow className="w-4 h-4" />
               </Link>
               <Link
                 href="https://www.usesalespitch.com/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-white/60 font-medium px-6 py-4 rounded-xl border border-white/15 hover:border-white/30 transition-colors text-sm"
+                className="inline-flex items-center gap-2 text-heading font-medium px-6 py-4 rounded-xl border border-black/15 hover:border-black/30 transition-colors text-sm"
               >
-                usesalespitch.com
+                Voir SalesPitch <Arrow className="w-4 h-4" />
               </Link>
             </div>
           </div>
@@ -133,14 +132,14 @@ export default function SalesPitchPage() {
                 Résultat : des pitchs incohérents, des occasions manquées et un taux de conversion qui plafonne alors qu&apos;il pourrait facilement doubler avec la bonne structure.
               </p>
               <p>
-                Sales Pitch règle exactement ce problème. On a pris ce qu&apos;on connaît du développement de produits et on a bâti un outil simple, rapide et efficace pour que chaque membre de votre équipe présente comme votre meilleur vendeur.
+                SalesPitch règle exactement ce problème. On a pris ce qu&apos;on connaît du développement de produits et on a bâti un outil simple, rapide et efficace pour que chaque membre de votre équipe présente comme votre meilleur vendeur.
               </p>
             </div>
           </div>
 
           {/* Visual */}
           <div className="bg-primary-light rounded-3xl p-8 flex flex-col gap-4 border border-primary/15">
-            <p className="text-xs font-semibold uppercase tracking-widest text-black/35 mb-2">Sans Sales Pitch</p>
+            <p className="text-xs font-semibold uppercase tracking-widest text-black/35 mb-2">Sans SalesPitch</p>
             {[
               "Chaque vendeur improvise sa présentation",
               "Arguments inconsistants d'un appel à l'autre",
@@ -155,7 +154,7 @@ export default function SalesPitchPage() {
 
             <div className="border-t border-primary/15 my-2" />
 
-            <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-2">Avec Sales Pitch</p>
+            <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-2">Avec SalesPitch</p>
             {[
               "Structure de vente éprouvée pour chaque pitch",
               "Personnalisation rapide selon le prospect",
@@ -207,15 +206,15 @@ export default function SalesPitchPage() {
       </Container>
 
       {/* CTA final */}
-      <div className="bg-heading">
+      <div className="bg-primary-light">
         <Container className="py-16! md:py-20!">
           <div className="flex flex-col md:flex-row items-center justify-between gap-8">
             <div>
-              <h2 className="font-heading font-normal text-3xl md:text-4xl text-white leading-tight mb-3">
+              <h2 className="font-heading font-normal text-3xl md:text-4xl text-heading leading-tight mb-3">
                 Prêt à doubler votre taux de conversion ?
               </h2>
-              <p className="text-white/55 text-base max-w-lg">
-                Commencez gratuitement sur Sales Pitch, l&apos;outil de vente qu&apos;on a bâti chez Oriana. Aucune carte de crédit requise.
+              <p className="text-black/55 text-base max-w-lg">
+                Commencez gratuitement sur SalesPitch, l&apos;outil de vente qu&apos;on a bâti chez Oriana. Aucune carte de crédit requise.
               </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-3 shrink-0">
@@ -229,7 +228,7 @@ export default function SalesPitchPage() {
               </Link>
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center gap-2 text-white/60 font-medium px-6 py-4 rounded-xl border border-white/15 hover:border-white/30 transition-colors text-sm whitespace-nowrap"
+                className="inline-flex items-center justify-center gap-2 text-heading font-medium px-6 py-4 rounded-xl border border-black/15 hover:border-black/30 transition-colors text-sm whitespace-nowrap"
               >
                 Nous parler du projet
               </Link>

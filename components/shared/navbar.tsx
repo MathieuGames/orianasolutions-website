@@ -297,17 +297,6 @@ export default function Navbar() {
         <div className="h-20 sm:h-24" />
 
         <div className="flex flex-col px-6 sm:px-16 py-10 gap-2">
-          {navbarLinks.map(({ label, href }) => (
-            <Link
-              key={href}
-              href={href}
-              onClick={close}
-              className="text-lg font-medium text-title py-3 border-b border-black/10 hover:opacity-70 transition-opacity"
-            >
-              {label}
-            </Link>
-          ))}
-
           {/* Services mobile */}
           <div className="border-b border-black/10">
             <button
@@ -330,6 +319,17 @@ export default function Navbar() {
               </div>
             )}
           </div>
+
+          {navbarLinks.map(({ label, href }) => (
+            <Link
+              key={href}
+              href={href}
+              onClick={close}
+              className="text-lg font-medium text-title py-3 border-b border-black/10 hover:opacity-70 transition-opacity"
+            >
+              {label}
+            </Link>
+          ))}
 
           {/* À propos mobile */}
           <div className="border-b border-black/10">

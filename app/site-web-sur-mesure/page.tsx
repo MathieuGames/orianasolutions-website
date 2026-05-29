@@ -14,6 +14,7 @@ export const metadata: Metadata = {
 };
 import Breadcrumb from "@/components/shared/breadcrumb";
 import Footer from "@/components/shared/footer";
+import CalculatorBanner from "@/components/shared/calculator-banner";
 import Navbar from "@/components/shared/navbar";
 import { HeroSectionSite } from "@/components/site-web-sur-mesure/hero-section";
 
@@ -33,6 +34,7 @@ export default function page() {
       </div>
       <HeroSectionSite />
       <div id="contact">
+        <CalculatorBanner />
         <Footer />
       </div>
     </>

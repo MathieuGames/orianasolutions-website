@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import Navbar from "@/components/shared/navbar";
 import Footer from "@/components/shared/footer";
+import CalculatorBanner from "@/components/shared/calculator-banner";
 import Button from "@/components/ui/button";
 import Tag from "@/components/ui/tag";
 import Container from "@/components/shared/container";
@@ -221,6 +222,7 @@ export default function LogicielBookingPage() {
       </Container>
 
       <div id="contact">
+        <CalculatorBanner />
         <Footer />
       </div>
     </>

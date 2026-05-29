@@ -68,9 +68,20 @@ export default async function BlogPostPage({ params }: Params) {
           <div className="w-16 h-1 bg-primary rounded-full mb-8" />
 
           {/* Excerpt */}
-          <p className="text-black/60 text-base sm:text-xl leading-relaxed max-w-2xl">
+          <p className="text-black/60 text-base sm:text-xl leading-relaxed max-w-2xl mb-8">
             {post.excerpt}
           </p>
+
+          {/* Author */}
+          <div className="flex items-center gap-3">
+            <div className="w-9 h-9 rounded-full bg-primary flex items-center justify-center text-white text-sm font-semibold shrink-0">
+              M
+            </div>
+            <div>
+              <p className="text-sm font-medium text-heading">Mathieu Morin-Lamy</p>
+              <p className="text-xs text-black/45">Co-fondateur, Oriana Solutions Inc.</p>
+            </div>
+          </div>
 
         </div>
       </div>
@@ -175,6 +186,22 @@ export default async function BlogPostPage({ params }: Params) {
                     </ul>
                   )}
 
+                  {/* CTA */}
+                  {section.cta && (
+                    <div className="rounded-2xl bg-primary-light border border-primary/20 px-8 py-8 flex flex-col sm:flex-row items-center justify-between gap-6 mt-2">
+                      <div className="flex flex-col gap-1.5 text-center sm:text-left">
+                        <p className="font-heading font-normal text-xl text-heading">{section.cta.title}</p>
+                        <p className="text-sm text-black/55">{section.cta.body}</p>
+                      </div>
+                      <Link
+                        href={section.cta.href}
+                        className="shrink-0 inline-flex items-center gap-2 bg-primary text-white text-sm font-medium px-7 py-3.5 rounded-xl hover:opacity-90 transition-opacity whitespace-nowrap"
+                      >
+                        {section.cta.label} →
+                      </Link>
+                    </div>
+                  )}
+
                   {/* Callout */}
                   {section.callout && (
                     <div className={`rounded-2xl border px-6 py-5 mt-1 ${
@@ -215,15 +242,23 @@ export default async function BlogPostPage({ params }: Params) {
                 Prêt à lancer votre projet ?
               </h3>
               <p className="text-sm text-black/50">
-                Parlons de vos besoins lors d&apos;une consultation gratuite.
+                Estimez votre budget ou parlons-en directement.
               </p>
             </div>
-            <Link
-              href="/contact"
-              className="shrink-0 inline-flex items-center gap-2 bg-primary text-white text-sm font-medium px-7 py-3.5 rounded-xl hover:opacity-90 transition-opacity whitespace-nowrap"
-            >
-              Nous contacter →
-            </Link>
+            <div className="flex flex-col sm:flex-row gap-3 shrink-0">
+              <Link
+                href="/calculateur-prix"
+                className="inline-flex items-center justify-center gap-2 bg-primary text-white text-sm font-medium px-7 py-3.5 rounded-xl hover:opacity-90 transition-opacity whitespace-nowrap"
+              >
+                Estimer mon projet →
+              </Link>
+              <Link
+                href="/contact"
+                className="inline-flex items-center justify-center gap-2 border border-black/15 text-heading text-sm font-medium px-7 py-3.5 rounded-xl hover:border-black/30 transition-colors whitespace-nowrap"
+              >
+                Nous contacter
+              </Link>
+            </div>
           </div>
 
           {/* Other articles */}

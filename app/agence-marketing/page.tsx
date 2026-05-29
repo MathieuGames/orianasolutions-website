@@ -199,7 +199,7 @@ export default function AgenceMarketingPage() {
       {/* Pourquoi nous */}
       <WhyUsSection />
 
-      {/* Cross-sell : Sales Pitch */}
+      {/* Cross-sell : SalesPitch */}
       <Container className="py-14! md:py-18!">
         <div className="rounded-3xl bg-primary-light border border-primary/15 overflow-hidden flex flex-col md:flex-row">
           {/* Texte */}
@@ -211,7 +211,7 @@ export default function AgenceMarketingPage() {
               Votre agence veut convertir plus de prospects ?
             </h2>
             <p className="text-black/55 text-sm leading-7 max-w-lg">
-              On a bâti Sales Pitch, un SaaS qui aide les équipes de vente à structurer des pitchs percutants en quelques minutes. Moins d&apos;improvisation, meilleur taux de conversion.
+              On a bâti SalesPitch, un SaaS qui aide les équipes de vente à structurer des pitchs percutants en quelques minutes. Moins d&apos;improvisation, meilleur taux de conversion.
             </p>
             <div className="flex flex-wrap gap-3 mt-2">
               <Link
@@ -223,7 +223,7 @@ export default function AgenceMarketingPage() {
                 Essayer gratuitement <Arrow className="w-4 h-4" />
               </Link>
               <Link
-                href="/sales-pitch"
+                href="/salespitch"
                 className="inline-flex items-center gap-2 text-sm font-medium text-heading px-6 py-3 rounded-xl border border-black/12 hover:border-black/30 transition-colors"
               >
                 En savoir plus
@@ -234,7 +234,7 @@ export default function AgenceMarketingPage() {
           <div className="md:w-[55%] shrink-0 flex items-center justify-center p-6 md:p-8">
             <Image
               src="/png/saas-sales-pitch.png"
-              alt="Interface de Sales Pitch — outil de structuration de pitchs de vente"
+              alt="Interface de SalesPitch — outil de structuration de pitchs de vente"
               width={1430}
               height={777}
               className="w-full rounded-xl shadow-md"

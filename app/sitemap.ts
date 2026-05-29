@@ -33,6 +33,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE_URL}/logiciel-booking-reservation`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.85 },
     { url: `${SITE_URL}/integration-ia-agents`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.85 },
     { url: `${SITE_URL}/automatisation-des-procedes`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.85 },
-    { url: `${SITE_URL}/sales-pitch`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
+    { url: `${SITE_URL}/salespitch`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
   ];
 }

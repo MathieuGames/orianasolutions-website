@@ -27,9 +27,173 @@ export interface BlogSection {
     body: string;
     variant?: "tip" | "warning" | "insight";
   };
+  cta?: {
+    title: string;
+    body: string;
+    label: string;
+    href: string;
+  };
 }
 
 export const blogPosts: BlogPost[] = [
+  {
+    id: 5,
+    slug: "calculateur-prix-logiciel-sur-mesure",
+    title: "On a créé un calculateur de prix pour qu'vous sachiez à quoi vous attendre.",
+    excerpt:
+      "Personne ne devrait commencer une conversation avec une agence sans avoir la moindre idée du budget. On a bâti un outil gratuit pour changer ça.",
+    category: "Développement logiciel",
+    readTime: "3 min",
+    date: "28 mai 2026",
+    content: [
+      {
+        body: "Une des premières choses que les clients me disent en début d'appel, c'est : \"Je sais pas du tout combien ça coûte. J'ai peur de me faire avoir.\"\n\nC'est une peur légitime. Le développement logiciel a longtemps été une boîte noire côté prix. Une agence peut vous sortir un chiffre de 15 000 $, une autre 80 000 $ pour le même projet. Sans contexte, impossible de savoir si c'est raisonnable.\n\nC'est pour ça qu'on a bâti notre calculateur de prix. Gratuit, en temps réel, sans avoir à parler à personne.",
+      },
+      {
+        heading: "Ce que le calculateur fait",
+        body: "Vous sélectionnez le type de projet (site web, application web ou mobile), la taille, les fonctionnalités souhaitées, et l'outil vous donne une fourchette de prix instantanément.\n\nC'est basé sur les vrais projets qu'on a livrés. Pas des chiffres inventés pour impressionner ou pour avoir l'air compétitif. Des fourchettes honnêtes, issues de notre expérience terrain.",
+      },
+      {
+        heading: "Les fourchettes qu'on utilise",
+        comparison: {
+          headers: ["Type de projet", "Fourchette typique"],
+          rows: [
+            { label: "Site web sur mesure", values: ["2 000 $ à 30 000 $"] },
+            { label: "Application web", values: ["8 000 $ à 200 000 $+"] },
+            { label: "Application mobile", values: ["15 000 $ à 200 000 $+"] },
+          ],
+          note: "Les fourchettes varient selon la complexité, les intégrations et la taille de l'équipe. Le calculateur affine l'estimation selon vos réponses.",
+        },
+      },
+      {
+        heading: "Ce que le calculateur ne fait pas",
+        body: "Il ne remplace pas une vraie conversation. Une fourchette, c'est un point de départ — pas un devis. Les vrais chiffres sortent après qu'on a pris le temps de comprendre votre projet, votre modèle d'affaires et ce que vous voulez accomplir.\n\nMais au moins, quand vous venez nous parler, vous savez dans quelle réalité budgétaire vous vous situez. Et ça change tout dans la qualité de la conversation.",
+        callout: {
+          icon: "💡",
+          title: "Mon conseil",
+          body: "Commencez par le calculateur avant votre premier appel. Ça vous donnera un cadre de référence. Et si l'estimation vous surprend — dans un sens ou dans l'autre — c'est exactement le genre de conversation qu'on aime avoir.",
+          variant: "tip",
+        },
+      },
+      {
+        heading: "Pourquoi on l'a rendu gratuit",
+        body: "Parce qu'on croit que la transparence, c'est une marque de respect envers nos clients potentiels. Vous ne devriez pas avoir à signer un NDA ou endurer trois appels de vente pour savoir si un projet est dans vos moyens.\n\nLe calculateur, c'est notre façon de dire : voilà ce qu'on pense que ça coûte, et voilà pourquoi. Faites-en ce que vous voulez.",
+      },
+      {
+        cta: {
+          title: "Essayez le calculateur maintenant",
+          body: "Aucun compte requis. Le prix s'affiche en temps réel selon vos choix.",
+          label: "Calculer le prix de mon projet",
+          href: "/calculateur-prix",
+        },
+      },
+    ],
+  },
+  {
+    id: 4,
+    slug: "combien-coute-logiciel-sur-mesure",
+    title: "Combien coûte un logiciel sur mesure ? La vraie réponse.",
+    excerpt:
+      "Site web, application web, application mobile : les prix varient énormément. Voici ce que ça coûte vraiment, avec des chiffres réels, un cas client, et mon opinion franche après des dizaines de projets livrés.",
+    category: "Développement logiciel",
+    readTime: "6 min",
+    date: "28 mai 2026",
+    content: [
+      {
+        body: "C'est la première question que presque tous les clients me posent. Et ma vraie réponse, celle que j'ai envie de donner, c'est : ça dépend. Pas pour éviter la question, mais parce que c'est la seule réponse honnête.\n\nÇa dépend de si c'est un site web, une application web ou une application mobile. Ça dépend du nombre de pages, des fonctionnalités, et surtout des décisions que vous prenez en début de projet. Ce que je propose toujours, c'est de faire un estimatif en direct lors d'un premier appel, et de revenir ensuite avec une soumission formelle avec le vrai prix.\n\nCet article, c'est une synthèse de ce que j'explique à chaque client. Avec des chiffres réels, un cas client qui m'a coûté cher (à moi), et mon opinion sur les pièges à éviter.",
+      },
+      {
+        heading: "Les fourchettes de prix selon le type de projet",
+        body: "Voici les fourchettes qu'on utilise comme point de départ chez Oriana Solutions. Ce ne sont pas des prix plafonds. C'est là où ça commence.",
+        comparison: {
+          headers: ["Type de projet", "Fourchette typique", "Pour quoi"],
+          rows: [
+            { label: "Site web sur mesure", values: ["2 000 $ à 10 000 $", "Vitrine, landing page, portfolio professionnel"] },
+            { label: "Application web", values: ["10 000 $ à 25 000 $", "Plateforme, outil interne, SaaS simple"] },
+            { label: "Application mobile", values: ["15 000 $ à 35 000 $", "iOS/Android, app avec backend et authentification"] },
+          ],
+          note: "Ces fourchettes couvrent le développement, l'intégration, l'hébergement initial et les révisions. Elles varient selon la complexité des fonctionnalités choisies.",
+        },
+      },
+      {
+        heading: "Ce qui fait vraiment monter le prix",
+        body: "La vraie variable, ce n'est pas le nombre de pages. C'est le niveau de perfection que vous visez dès le départ, et le nombre de fonctionnalités complexes que vous intégrez avant même d'avoir validé votre idée.\n\nVoici ce que je vois régulièrement faire doubler un budget :",
+        checklist: {
+          variant: "red",
+          items: [
+            { text: "**Vouloir tout avoir dès le début** au lieu de lancer un MVP et d'itérer selon les retours réels." },
+            { text: "**Intégrer l'authentification complète dès le lancement** alors qu'un accès manuel peut suffire pour les premiers utilisateurs." },
+            { text: "**Configurer Stripe dès le jour 1** alors que les premiers clients peuvent payer par virement." },
+            { text: "**Demander un design parfait** avant même de savoir si le produit va fonctionner sur le marché." },
+          ],
+        },
+      },
+      {
+        heading: "L'approche MVP : commencer petit pour aller plus loin",
+        body: "Mon conseil le plus fréquent : commencez avec un MVP. Un produit minimum viable, c'est la version la plus simple de votre idée qui permet de la tester auprès de vrais utilisateurs.\n\nÇa coûte moins cher, ça se livre plus vite, et ça vous donne des données réelles avant d'investir davantage. Plusieurs de nos meilleurs projets ont commencé à 8 000 $, ont été testés, validés, et sont devenus des plateformes à 30 000 $ et plus au fil des mois.",
+        callout: {
+          icon: "💡",
+          title: "La règle du MVP",
+          body: "Si vous pouvez faire les 5 premières ventes sans une fonctionnalité, c'est qu'elle n'est pas dans le MVP. Ajoutez-la après, quand vous savez que le marché répond.",
+          variant: "tip",
+        },
+      },
+      {
+        heading: "Un cas réel : l'application d'épicerie à 10 000 $",
+        body: "Un de nos premiers clients voulait une plateforme pour comparer les prix d'épicerie en temps réel et livrer aux clients les produits les moins chers, regroupés dans une même boîte. Un projet ambitieux.\n\nOn a tout livré : authentification sécurisée, backend complet, hébergement, refonte graphique complète, intégration des paiements avec Stripe. Le prix facturé : 10 000 $. La valeur réelle du projet : entre 25 000 $ et 30 000 $.\n\nOn n'a pas fait beaucoup d'argent sur ce contrat. Mais c'était un de nos premiers projets, et on voulait livrer quelque chose dont on serait fiers. Ce qui nous a permis de tenir le budget malgré la complexité, c'est l'IA, qui nous a permis d'avancer beaucoup plus vite que prévu.",
+        callout: {
+          icon: "📦",
+          title: "Ce qu'on a appris",
+          body: "Ce projet nous a appris à mieux évaluer la valeur réelle d'un livrable, pas seulement le temps. Une plateforme avec Stripe, auth, backend et design custom, ce n'est pas un projet à 10 000 $. C'est un projet à 25 000 $. Aujourd'hui, nos soumissions reflètent cette réalité.",
+          variant: "insight",
+        },
+      },
+      {
+        heading: "L'IA a tout changé, et ça joue en votre faveur",
+        body: "Il y a deux ans, un projet de 3 mois prenait 3 mois. Aujourd'hui, le même projet nous prend environ un mois. L'IA nous permet d'avancer trois fois plus vite sans sacrifier la qualité.\n\nEt cette économie de temps, on la répercute directement sur le client. Vous payez moins cher. On peut prendre plus de projets. Tout le monde y gagne.\n\nC'est une des raisons pour lesquelles les fourchettes que je vous donne aujourd'hui sont plus accessibles qu'elles ne l'étaient il y a 24 mois.",
+      },
+      {
+        heading: "\"J'ai trouvé quelqu'un en Inde pour 3 000 $\"",
+        body: "Je l'entends souvent. Et voici ma réponse honnête : les développeurs offshore vont faire exactement ce que vous leur dites. Ce qui peut sembler être un avantage est souvent un piège.\n\nIls vont accepter des projets sans savoir s'ils sont capables de les réaliser. Ils vont livrer ce qui est demandé, pas ce qui est nécessaire. La communication est difficile : décalage horaire, barrière culturelle, rétroactions qui se perdent. Et dès qu'ils sont payés, le projet est terminé pour eux.\n\nNous, on ne fait pas que coder. On comprend votre modèle d'affaires. On agit comme partenaire technologique, pas comme sous-traitant. Si on pense que votre idée a un problème, on vous le dit avant d'écrire la première ligne de code.",
+        checklist: {
+          variant: "red",
+          items: [
+            { text: "Vous ne pouvez pas valider si le code est de qualité ou s'il est maintenable à long terme." },
+            { text: "Les modifications après livraison sont souvent impossibles ou coûteuses à obtenir." },
+            { text: "La communication en temps réel est quasi inexistante selon les fuseaux horaires." },
+            { text: "Vous n'aurez pas de partenaire qui comprend vos objectifs d'affaires." },
+          ],
+        },
+      },
+      {
+        heading: "L'histoire du client qui a essayé Lovable d'abord",
+        body: "Un client est venu nous voir après avoir investi 1 000 $ en tokens sur Lovable, un outil no-code/IA pour générer des applications. Il avait réussi à construire environ 80 % de son application : l'interface, les pages principales, la structure de base.\n\nMais le dernier 20 %, les fonctionnalités complexes spécifiques à son business, il n'a jamais réussi à les faire. Ces fonctionnalités n'étaient pas supportées par l'outil. Il s'est retrouvé avec une coquille belle à regarder, mais inutilisable dans son contexte.\n\nOn a repris le projet. Et on l'a livré.",
+        callout: {
+          icon: "⚠️",
+          title: "Les outils no-code ont des limites",
+          body: "Lovable, Bubble et les outils similaires sont excellents pour valider rapidement une idée. Mais dès que vous avez des besoins spécifiques (intégrations sur mesure, logique métier complexe, performance à l'échelle), vous atteignez rapidement le mur. Et migrer hors d'un outil no-code coûte souvent plus cher que de bien bâtir dès le départ.",
+          variant: "warning",
+        },
+      },
+      {
+        heading: "Comment savoir si vous avez trouvé le bon partenaire",
+        body: "Je dis souvent que choisir une firme de développement, c'est comme choisir un partenaire de vie. Vous allez partager les frustrations, les décisions difficiles, les mauvaises nouvelles autant que les bonnes.\n\nIl faut s'assurer d'avoir une vision commune, des valeurs similaires, et surtout une communication franche. Faites affaires avec des gens qui tiennent vraiment à ce que votre projet fonctionne, pas avec des gens qui veulent juste fermer le contrat.",
+        checklist: {
+          variant: "green",
+          items: [
+            { text: "Ils posent des questions sur vos utilisateurs et vos objectifs avant de parler de technologies." },
+            { text: "Ils vous proposent un MVP plutôt que de tout construire d'un coup." },
+            { text: "Ils vous disent non quand une décision n'est pas dans votre intérêt." },
+            { text: "Ils peuvent vous expliquer leurs choix techniques en termes simples." },
+            { text: "Ils ont des références clients que vous pouvez contacter directement." },
+          ],
+        },
+      },
+      {
+        body: "Si vous voulez savoir combien coûterait votre projet spécifiquement, on offre un estimatif en direct lors d'un premier appel gratuit de 30 minutes. Pas de soumission inventée en cinq minutes. Une vraie conversation pour comprendre ce que vous voulez bâtir, et vous donner un chiffre honnête.",
+      },
+    ],
+  },
   {
     id: 3,
     slug: "salesforce-ou-crm-sur-mesure",

@@ -11,10 +11,10 @@ type Complexity  = "mvp" | "standard" | "avance" | "entreprise";
 type Integration = "auth" | "paiement" | "db" | "hebergement" | "support" | "domaine";
 type PageCount   = "small" | "medium" | "large";
 
-const typeScores: Record<ProjectType, number> = { site_web: 0, app_web: 1.5, app_mobile: 2.5 };
-const complexityScores: Record<Complexity, number> = { mvp: 0, standard: 1, avance: 2, entreprise: 4 };
-const pageCountScores: Record<PageCount, number>   = { small: 0, medium: 1.0, large: 2.0 };
-const integrationDevScores: Partial<Record<Integration, number>> = { auth: 0.5, paiement: 0.5, db: 0.3 };
+const typeScores: Record<ProjectType, number> = { site_web: 1, app_web: 3, app_mobile: 5 };
+const complexityScores: Record<Complexity, number> = { mvp: 0, standard: 2, avance: 4, entreprise: 8 };
+const pageCountScores: Record<PageCount, number>   = { small: 0, medium: 2, large: 4 };
+const integrationDevScores: Partial<Record<Integration, number>> = { auth: 1, paiement: 1, db: 0.5 };
 
 const monthlyRanges: Record<Complexity, { hebergement: [number, number]; support: [number, number] }> = {
   mvp:        { hebergement: [30, 80],    support: [150, 300] },
@@ -23,22 +23,17 @@ const monthlyRanges: Record<Complexity, { hebergement: [number, number]; support
   entreprise: { hebergement: [200, 500],  support: [1000, 2500] },
 };
 
-const PHASES = [
-  { label: "Analyse",            pct: "10 à 15%", min: 0.10, max: 0.15 },
-  { label: "Conception & design",pct: "10 à 15%", min: 0.10, max: 0.15 },
-  { label: "Développement",      pct: "40 à 50%", min: 0.40, max: 0.50 },
-  { label: "Assurance qualité",  pct: "~15%",     min: 0.15, max: 0.15 },
-  { label: "Gestion de projet",  pct: "15 à 20%", min: 0.15, max: 0.20 },
-];
 
-type Tier = { range: string; label: string; minVal: number; maxVal: number; };
+type Tier = { range: string; label: string };
 
 function getDevTier(score: number): Tier {
-  if (score < 1) return { range: "3 000 $ à 5 000 $",   label: "Projet simple",    minVal: 3000,  maxVal: 5000   };
-  if (score < 2) return { range: "8 000 $ à 15 000 $",  label: "Projet standard",  minVal: 8000,  maxVal: 15000  };
-  if (score < 3) return { range: "20 000 $ à 40 000 $", label: "Projet avancé",    minVal: 20000, maxVal: 40000  };
-  if (score < 5) return { range: "40 000 $ à 80 000 $", label: "Projet complexe",  minVal: 40000, maxVal: 80000  };
-  return          { range: "80 000 $+",                  label: "Projet entreprise",minVal: 80000, maxVal: 150000 };
+  if (score < 2)  return { range: "2 000 $ à 8 000 $",     label: "Projet simple"        };
+  if (score < 4)  return { range: "8 000 $ à 15 000 $",    label: "Projet standard"      };
+  if (score < 6)  return { range: "15 000 $ à 30 000 $",   label: "Projet intermédiaire" };
+  if (score < 8)  return { range: "30 000 $ à 60 000 $",   label: "Projet avancé"        };
+  if (score < 10) return { range: "60 000 $ à 100 000 $",  label: "Projet complexe"      };
+  if (score < 14) return { range: "100 000 $ à 200 000 $", label: "Projet entreprise"    };
+  return           { range: "200 000 $+",                   label: "Grand projet"         };
 }
 
 function getMonthlyItems(complexity: Complexity, integrations: Set<Integration>) {
@@ -107,7 +102,7 @@ export default function CalculateurPrixPage() {
 
   const typeScore           = Array.from(selectedTypes).reduce((s, t) => s + typeScores[t], 0);
   const pageScore           = selectedTypes.has("site_web") ? pageCountScores[pageCount] : 0;
-  const brandingScore       = needsBranding ? 0.5 : 0;
+  const brandingScore       = needsBranding ? 1 : 0;
   const integrationDevScore = Array.from(integrations).reduce((s, id) => s + (integrationDevScores[id] ?? 0), 0);
   const devScore            = typeScore + pageScore + complexityScores[complexity] + brandingScore + integrationDevScore;
   const tier                = getDevTier(devScore);
@@ -338,51 +333,6 @@ export default function CalculateurPrixPage() {
                 {tier.range}<span className="text-base align-super text-black/30">*</span>
               </div>
               <p className="text-[11px] font-semibold uppercase tracking-widest mt-1 text-primary">{tier.label}</p>
-            </div>
-
-            <div className="w-full h-px bg-black/8" />
-
-            {/* Répartition par phase */}
-            <div>
-              <p className="text-[10px] font-semibold uppercase tracking-widest mb-3 text-black/40">
-                Répartition par phase
-              </p>
-
-              {/* Stacked bar */}
-              <div className="flex rounded-full overflow-hidden h-3 mb-3.5">
-                {PHASES.map((phase, i) => {
-                  const avg = ((phase.min + phase.max) / 2) * 100;
-                  const colors = ["bg-sky-400", "bg-violet-400", "bg-primary", "bg-amber-400", "bg-rose-400"];
-                  return <div key={phase.label} style={{ width: `${avg}%` }} className={colors[i]} />;
-                })}
-              </div>
-
-              <div className="flex flex-col gap-2">
-                {PHASES.map((phase, i) => {
-                  const phaseMin = Math.round(tier.minVal * phase.min);
-                  const phaseMax = Math.round(tier.maxVal * phase.max);
-                  const dots = ["bg-sky-400", "bg-violet-400", "bg-primary", "bg-amber-400", "bg-rose-400"];
-                  return (
-                    <div key={phase.label} className="flex items-center gap-2">
-                      <div className={`w-2 h-2 rounded-full shrink-0 ${dots[i]}`} />
-                      <span className="text-xs text-black/55 flex-1">{phase.label}</span>
-                      <span className="text-[10px] text-black/35 mr-1">{phase.pct}</span>
-                      <span className="text-xs font-semibold text-heading">{fmt(phaseMin)} à {fmt(phaseMax)}</span>
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
-
-            {/* Contingence */}
-            <div className="rounded-xl border border-black/8 bg-black/[0.015] px-3 py-2.5">
-              <div className="flex items-center justify-between text-xs mb-1">
-                <span className="font-semibold text-heading">Contingence (risques)</span>
-                <span className="font-semibold text-heading">{fmt(Math.round(tier.minVal * 0.05))} à {fmt(Math.round(tier.maxVal * 0.25))}</span>
-              </div>
-              <p className="text-[10px] leading-relaxed text-black/40">
-                Selon la nature des risques, 5 à 25% du budget total s&apos;ajoute en contingence.
-              </p>
             </div>
 
             {/* Frais mensuels */}

@@ -9,10 +9,15 @@ export const navColumns = [
       { label: "Accueil", href: "/" },
       { label: "À propos", href: "/about" },
       { label: "Nos réalisations", href: "/realisations" },
+    ],
+  },
+  {
+    title: "Ressources",
+    links: [
       { label: "Blogue", href: "/blog" },
       { label: "FAQ", href: "/faq" },
       { label: "Calculateur de prix", href: "/calculateur-prix" },
-      { label: "Sales Pitch", href: "/sales-pitch" },
+      { label: "SalesPitch", href: "/salespitch" },
     ],
   },
   {
@@ -30,7 +35,7 @@ export const navColumns = [
     ],
   },
   {
-    title: "Public cible",
+    title: "Types d'entreprises",
     links: [
       { label: "Logiciel comptable", href: "/logiciel-comptable" },
       { label: "Agent immobilier", href: "/logiciel-agent-immobilier" },

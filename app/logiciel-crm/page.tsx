@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Navbar from "@/components/shared/navbar";
 import Footer from "@/components/shared/footer";
+import CalculatorBanner from "@/components/shared/calculator-banner";
 import Button from "@/components/ui/button";
 import Tag from "@/components/ui/tag";
 import Container from "@/components/shared/container";
@@ -220,13 +221,13 @@ export default function LogicielCRMPage() {
 
       <WhyUsSection />
 
-      {/* Cross-sell : Sales Pitch */}
+      {/* Cross-sell : SalesPitch */}
       <Container className="py-10! md:py-12!">
         <div className="rounded-2xl border border-black/8 bg-white px-8 py-7 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
           <div className="flex flex-col gap-1.5">
             <span className="text-[11px] font-semibold uppercase tracking-widest text-primary">Outil créé par Oriana</span>
             <p className="font-heading font-normal text-xl text-heading">
-              Votre CRM suit vos clients. Sales Pitch vous aide à les convertir.
+              Votre CRM suit vos clients. SalesPitch vous aide à les convertir.
             </p>
             <p className="text-sm text-black/50 mt-1 max-w-lg">
               On a bâti un SaaS pour structurer des pitchs de vente percutants en quelques minutes. Le complément naturel d&apos;un bon CRM.
@@ -239,10 +240,10 @@ export default function LogicielCRMPage() {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-primary text-white text-sm font-medium px-5 py-2.5 rounded-xl hover:opacity-90 transition-opacity whitespace-nowrap"
             >
-              Voir Sales Pitch <Arrow className="w-4 h-4" />
+              Voir SalesPitch <Arrow className="w-4 h-4" />
             </Link>
             <Link
-              href="/sales-pitch"
+              href="/salespitch"
               className="inline-flex items-center gap-2 text-sm font-medium text-heading px-5 py-2.5 rounded-xl border border-black/12 hover:border-black/30 transition-colors whitespace-nowrap"
             >
               En savoir plus
@@ -283,6 +284,7 @@ export default function LogicielCRMPage() {
       />
 
       <div id="contact">
+        <CalculatorBanner />
         <Footer />
       </div>
     </>
