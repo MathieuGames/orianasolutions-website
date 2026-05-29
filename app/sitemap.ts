@@ -1,9 +1,17 @@
 import type { MetadataRoute } from "next";
 import { SITE_URL } from "@/lib/constants";
+import { blogPosts } from "@/data/blog";
 
 export const revalidate = 86400; // regenerate once per day
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  const blogArticles: MetadataRoute.Sitemap = blogPosts.map((post) => ({
+    url: `${SITE_URL}/blog/${post.slug}`,
+    lastModified: new Date(),
+    changeFrequency: "monthly",
+    priority: 0.75,
+  }));
+
   return [
     { url: SITE_URL, lastModified: new Date(), changeFrequency: "monthly", priority: 1.0 },
     { url: `${SITE_URL}/services`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
@@ -34,5 +42,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE_URL}/integration-ia-agents`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.85 },
     { url: `${SITE_URL}/automatisation-des-procedes`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.85 },
     { url: `${SITE_URL}/salespitch`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
+    ...blogArticles,
   ];
 }

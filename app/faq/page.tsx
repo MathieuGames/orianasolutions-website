@@ -4,6 +4,7 @@ import Footer from "@/components/shared/footer";
 import Container from "@/components/shared/container";
 import Breadcrumb from "@/components/shared/breadcrumb";
 import FAQContent from "@/components/faq/faq-content";
+import { faqSections } from "@/data/faq";
 
 export const metadata: Metadata = {
   title: "FAQ — Questions fréquentes | Oriana Solutions",
@@ -17,9 +18,26 @@ export const metadata: Metadata = {
   },
 };
 
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqSections.flatMap((s) => s.items).map((item) => ({
+    "@type": "Question",
+    name: item.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.answer.replace(/\*\*/g, ""),
+    },
+  })),
+};
+
 export default function FAQPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       <div className="sticky top-0 z-50">
         <Navbar />
       </div>

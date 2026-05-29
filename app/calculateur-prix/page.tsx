@@ -87,7 +87,6 @@ export default function CalculateurPrixPage() {
   const [complexity,        setComplexity]        = useState<Complexity>("standard");
   const [needsBranding,     setNeedsBranding]     = useState(false);
   const [integrations,      setIntegrations]      = useState<Set<Integration>>(new Set());
-  const [integrationsOpen,  setIntegrationsOpen]  = useState(false);
 
   function toggleType(t: ProjectType) {
     setSelectedTypes((prev) => {
@@ -102,9 +101,10 @@ export default function CalculateurPrixPage() {
 
   const typeScore           = Array.from(selectedTypes).reduce((s, t) => s + typeScores[t], 0);
   const pageScore           = selectedTypes.has("site_web") ? pageCountScores[pageCount] : 0;
-  const brandingScore       = needsBranding ? 1 : 0;
+  const brandingScore       = needsBranding ? 2 : 0;
   const integrationDevScore = Array.from(integrations).reduce((s, id) => s + (integrationDevScores[id] ?? 0), 0);
-  const devScore            = typeScore + pageScore + complexityScores[complexity] + brandingScore + integrationDevScore;
+  const hasApp              = selectedTypes.has("app_web") || selectedTypes.has("app_mobile");
+  const devScore            = typeScore + pageScore + (hasApp ? complexityScores[complexity] : 0) + brandingScore + integrationDevScore;
   const tier                = getDevTier(devScore);
   const monthlyItems = getMonthlyItems(complexity, integrations);
   const monthlyTotal = monthlyItems.reduce((acc, i) => ({ min: acc.min + i.min, max: acc.max + i.max }), { min: 0, max: 0 });
@@ -127,7 +127,7 @@ export default function CalculateurPrixPage() {
       </div>
 
       {/* Main */}
-      <div className="px-6 md:px-10 xl:px-16 py-5 md:py-7 bg-white">
+      <div className="px-6 md:px-10 xl:px-16 py-5 md:py-7 pb-24 lg:pb-7 bg-white">
         <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-[1fr_310px] xl:grid-cols-[1fr_330px] gap-7 xl:gap-10 items-start">
 
           {/* ── Left ── */}
@@ -251,71 +251,30 @@ export default function CalculateurPrixPage() {
                 <h2 className="font-heading text-base text-heading">Intégrations & services</h2>
               </div>
 
-              <div className="rounded-xl border-2 border-black/12 overflow-hidden bg-white">
-                {/* Accordion trigger — styled as a clear button */}
-                <button
-                  onClick={() => setIntegrationsOpen((v) => !v)}
-                  className={`w-full flex items-center gap-3 px-4 py-3 text-left transition-colors ${integrationsOpen ? "bg-black/[0.02]" : "hover:bg-black/[0.02]"}`}
-                >
-                  <div className={`shrink-0 w-4 h-4 rounded border-2 flex items-center justify-center transition-all ${
-                    integrations.size > 0 ? "bg-primary border-primary" : "border-black/25"
-                  }`}>
-                    {integrations.size > 0 && <Checkmark />}
-                  </div>
-                  <span className="text-sm font-medium text-heading flex-1">
-                    {integrations.size === 0
-                      ? <span className="text-black/50">Cliquez pour sélectionner les intégrations</span>
-                      : <span className="text-primary">{integrations.size} intégration{integrations.size > 1 ? "s" : ""} sélectionnée{integrations.size > 1 ? "s" : ""}</span>
-                    }
-                  </span>
-                  <span className="text-xs text-black/40 shrink-0 mr-1">
-                    {integrationsOpen ? "Fermer" : "Modifier"}
-                  </span>
-                  <svg viewBox="0 0 10 6" className={`w-3 h-3 fill-current text-black/40 transition-transform duration-200 shrink-0 ${integrationsOpen ? "rotate-180" : ""}`}>
-                    <path d="M0 0l5 6 5-6z" />
-                  </svg>
-                </button>
-
-                {integrationsOpen && (
-                  <div className="border-t border-black/8">
-                    <button onClick={() => setIntegrations(new Set())}
-                      className={`w-full flex items-center gap-3 px-4 py-2.5 text-left transition-colors border-b border-black/8 ${
-                        integrations.size === 0 ? "bg-primary/[0.07]" : "hover:bg-black/[0.02]"
-                      }`}
+              <div className="rounded-xl border border-black/12 overflow-hidden bg-white">
+                {integrationOptions.map((opt, i) => {
+                  const active = integrations.has(opt.id);
+                  return (
+                    <button key={opt.id} onClick={() => toggleIntegration(opt.id)}
+                      className={`w-full flex items-center gap-3 px-4 py-2.5 text-left transition-all ${
+                        i < integrationOptions.length - 1 ? "border-b border-black/8" : ""
+                      } ${active ? "bg-primary/[0.07]" : "hover:bg-black/[0.02]"}`}
                     >
-                      <div className={`shrink-0 w-4 h-4 rounded-full border-2 flex items-center justify-center ${
-                        integrations.size === 0 ? "bg-primary border-primary" : "border-black/25"
+                      <div className={`shrink-0 w-4 h-4 rounded border-2 flex items-center justify-center transition-all ${
+                        active ? "bg-primary border-primary" : "border-black/25"
                       }`}>
-                        {integrations.size === 0 && <div className="w-1.5 h-1.5 rounded-full bg-white" />}
+                        {active && <Checkmark />}
                       </div>
-                      <span className={`text-sm font-medium ${integrations.size === 0 ? "text-primary" : "text-heading"}`}>Aucune intégration</span>
+                      <div className="min-w-0 flex-1">
+                        <span className={`text-sm transition-all ${active ? "font-semibold text-primary" : "font-medium text-heading"}`}>{opt.label}</span>
+                        <span className="text-xs text-black/40 ml-2 hidden sm:inline">{opt.desc}</span>
+                      </div>
+                      {opt.monthly && (
+                        <span className="shrink-0 text-[10px] font-semibold uppercase tracking-wider text-black/30 bg-black/5 px-2 py-0.5 rounded-full">mensuel</span>
+                      )}
                     </button>
-
-                    {integrationOptions.map((opt, i) => {
-                      const active = integrations.has(opt.id);
-                      return (
-                        <button key={opt.id} onClick={() => toggleIntegration(opt.id)}
-                          className={`w-full flex items-center gap-3 px-4 py-2.5 text-left transition-all ${
-                            i < integrationOptions.length - 1 ? "border-b border-black/8" : ""
-                          } ${active ? "bg-primary/[0.07]" : "hover:bg-black/[0.02]"}`}
-                        >
-                          <div className={`shrink-0 w-4 h-4 rounded border-2 flex items-center justify-center transition-all ${
-                            active ? "bg-primary border-primary" : "border-black/25"
-                          }`}>
-                            {active && <Checkmark />}
-                          </div>
-                          <div className="min-w-0 flex-1">
-                            <span className={`text-sm transition-all ${active ? "font-semibold text-primary" : "font-medium text-heading"}`}>{opt.label}</span>
-                            <span className="text-xs text-black/40 ml-2">{opt.desc}</span>
-                          </div>
-                          {opt.monthly && (
-                            <span className="shrink-0 text-[10px] font-semibold uppercase tracking-wider text-black/30 bg-black/5 px-2 py-0.5 rounded-full">mensuel</span>
-                          )}
-                        </button>
-                      );
-                    })}
-                  </div>
-                )}
+                  );
+                })}
               </div>
             </div>
 
@@ -382,6 +341,19 @@ export default function CalculateurPrixPage() {
       </div>
 
       <div id="contact"><Footer /></div>
+
+      {/* Sticky mobile price bar */}
+      <div className="lg:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-sm border-t border-black/10 px-5 py-3 flex items-center justify-between gap-4">
+        <div>
+          <p className="text-[10px] font-semibold uppercase tracking-widest text-black/40">Estimation</p>
+          <p className="text-base font-heading text-heading leading-tight">{tier.range}</p>
+        </div>
+        <Link href="/contact"
+          className="shrink-0 inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-primary text-white font-medium text-sm hover:bg-primary/90 transition-colors"
+        >
+          Discutons
+        </Link>
+      </div>
     </>
   );
 }

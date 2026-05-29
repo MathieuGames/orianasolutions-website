@@ -1,0 +1,110 @@
+# Oriana Solutions
+
+Oriana Solutions is a custom software development agency based in Montreal, Quebec, Canada. We design and build web applications, iOS/Android mobile apps, custom SaaS software, and websites for entrepreneurs, SMEs, and startups across Quebec and Canada.
+
+## About
+
+- **Location**: Montreal, Quebec, Canada
+- **Specialty**: Custom software development, web apps, mobile apps, SaaS, AI integration
+- **Target market**: Quebec SMEs, startups, entrepreneurs, marketing agencies
+- **Languages**: French, English
+- **Email**: info@orianasolutions.com
+- **Phone**: 438 365-7789
+- **Award**: 1st place winners at Défi OSEntreprendre — 2025 national finals (largest entrepreneurship competition in Quebec)
+
+## Services
+
+- **Web Application & SaaS**: Web platforms, client portals, internal tools, multi-user SaaS. Stack: Next.js, React, TypeScript, .NET Core, Azure. [/application-web]
+- **Mobile Application iOS & Android**: Native and cross-platform development (React Native, Flutter). App Store and Google Play submission included. [/developpement-application-mobile]
+- **Custom Website**: Showcase sites, landing pages, institutional sites. Modern design, fast, SEO-optimized. [/site-web-sur-mesure]
+- **Custom Software**: ERP, CRM, accounting software, booking software, client portal, real estate agent software. [/services]
+- **AI Integration & Agents**: Process automation, AI agents, LLM integration into existing applications. [/integration-ia-agents]
+- **Startup & MVP SaaS**: Rapid MVP development to validate ideas and raise funding. [/startup-mvp-saas]
+
+## Technologies
+
+- **Front-end**: Next.js, React, TypeScript
+- **Back-end**: .NET Core (C#), Node.js
+- **Mobile**: React Native, Flutter (iOS & Android)
+- **Database**: PostgreSQL, Supabase, Firebase
+- **Hosting**: Microsoft Azure, Vercel
+- **Payments**: Stripe
+- **Auth**: Firebase Auth, JWT, OAuth
+
+## Areas Served
+
+Montreal, Laval, Longueuil, Quebec City, Trois-Rivières — and across Canada remotely.
+
+- Software development Montreal: [/developpement-logiciel-montreal]
+- Software development Laval: [/developpement-logiciel-laval]
+- Software development Longueuil: [/developpement-logiciel-longueuil]
+- Software development Quebec City: [/developpement-logiciel-quebec]
+- Software development Trois-Rivières: [/developpement-logiciel-trois-rivieres]
+
+## Typical Clients
+
+- Restaurants and bars
+- Real estate brokers
+- Local SMEs
+- SaaS startups and founders
+- Marketing agencies
+- Independent coaches and professionals
+
+## Pricing (indicative)
+
+- Simple showcase website: from $2,500
+- Standard web application: $8,000–$30,000
+- Mobile application: $15,000–$60,000
+- Complex custom software: $30,000+
+- Monthly fees (hosting, support): $30–$2,500/month depending on project
+
+Free price calculator: [/calculateur-prix]
+
+## Key Pages
+
+- Home: [/]
+- Services: [/services]
+- Portfolio: [/realisations]
+- About: [/about]
+- Blog: [/blog]
+- FAQ: [/faq]
+- Contact: [/contact]
+- Price Calculator: [/calculateur-prix]
+
+## Social Media
+
+- LinkedIn: https://www.linkedin.com/company/oriana-solutions-inc
+- Instagram: https://www.instagram.com/oriana.solutions/
+- Facebook: https://www.facebook.com/profile.php?id=61585300808083
+
+---
+
+# Oriana Solutions (Français)
+
+Oriana Solutions est une agence de développement logiciel basée à Montréal, Québec, Canada. On conçoit et développe des applications web, des applications mobiles iOS/Android, des logiciels SaaS sur mesure et des sites web pour des entrepreneurs, des PME et des startups au Québec.
+
+## Services
+
+- **Application web & SaaS** : Plateformes web, portails clients, outils internes, SaaS multi-utilisateurs. [/application-web]
+- **Application mobile iOS & Android** : Développement React Native et Flutter. Publication App Store et Google Play incluse. [/developpement-application-mobile]
+- **Site web sur mesure** : Sites vitrines, landing pages, design moderne, rapide, optimisé SEO. [/site-web-sur-mesure]
+- **Logiciel sur mesure** : ERP, CRM, logiciel comptable, logiciel de réservation, portail client, logiciel agent immobilier. [/services]
+- **Intégration IA & agents** : Automatisation des procédés, agents IA, intégration LLM. [/integration-ia-agents]
+- **Startup & MVP SaaS** : Développement rapide de MVP pour valider des idées. [/startup-mvp-saas]
+
+## Zones desservies
+
+Montréal, Laval, Longueuil, Québec, Trois-Rivières — et partout au Canada en remote.
+
+## Tarifs indicatifs
+
+- Site vitrine simple : à partir de 2 500 $
+- Application web standard : 8 000 $ à 30 000 $
+- Application mobile : 15 000 $ à 60 000 $
+- Logiciel sur mesure complexe : 30 000 $ et plus
+
+Outil de calcul de prix gratuit : [/calculateur-prix]
+
+## Site web
+
+https://orianasolutions.com

@@ -39,7 +39,7 @@ export const blogPosts: BlogPost[] = [
   {
     id: 5,
     slug: "calculateur-prix-logiciel-sur-mesure",
-    title: "On a créé un calculateur de prix pour qu'vous sachiez à quoi vous attendre.",
+    title: "On a créé un calculateur de prix pour que vous sachiez à quoi vous attendre.",
     excerpt:
       "Personne ne devrait commencer une conversation avec une agence sans avoir la moindre idée du budget. On a bâti un outil gratuit pour changer ça.",
     category: "Développement logiciel",

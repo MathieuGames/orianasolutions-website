@@ -27,8 +27,38 @@ export default async function BlogPostPage({ params }: Params) {
   const otherPosts = blogPosts.filter((p) => p.slug !== slug).slice(0, 2);
   const headings = post.content.filter((s) => s.heading);
 
+  const articleJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: post.title,
+    description: post.excerpt,
+    datePublished: post.date,
+    author: {
+      "@type": "Organization",
+      name: "Oriana Solutions",
+      url: "https://orianasolutions.com",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "Oriana Solutions",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://orianasolutions.com/icon.png",
+      },
+    },
+    url: `https://orianasolutions.com/blog/${post.slug}`,
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `https://orianasolutions.com/blog/${post.slug}`,
+    },
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+      />
       <div className="sticky top-0 z-50">
         <Navbar />
       </div>
