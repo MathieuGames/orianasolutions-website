@@ -60,7 +60,7 @@ export default function RealisationsSection() {
           ))}
         </AnimatedContent>
 
-        <AnimatedContent distance={30} duration={0.7} delay={0.2} threshold={0.1} className="hidden sm:flex justify-center">
+        <AnimatedContent distance={30} duration={0.7} delay={0.2} threshold={0.1} className="flex justify-center">
           <Link
             href="/realisations"
             className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-black/15 text-sm font-medium text-black hover:bg-black hover:text-white transition-colors"

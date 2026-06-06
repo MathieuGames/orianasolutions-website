@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl -sL \"https://usesalespitch.com\")",
+      "Bash(curl -sI \"https://usesalespitch.com/logo.png\")",
+      "Bash(curl -sI \"https://www.usesalespitch.com/logo.png\")"
+    ]
+  }
+}
