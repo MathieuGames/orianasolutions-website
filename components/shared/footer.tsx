@@ -66,9 +66,9 @@ export default function Footer() {
       <Container parentStyle="bg-primary" className="py-10!">
 
         <footer className="flex flex-col gap-13">
-          <div className="flex flex-col gap-12 2xl:gap-52 lg:flex-row lg:justify-between  ">
-            {/* Left: Logo + description */}
-            <div className="flex flex-col gap-5 w-[300px] 2xl:w-[592px]">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[auto_1fr_auto] gap-10 lg:gap-12 2xl:gap-20">
+            {/* Logo + description */}
+            <div className="flex flex-col gap-5">
               <Link href="/" aria-label="Oriana Solutions – accueil">
                 <Image
                   src="/svg/Logo_Oriana_Primaire_Blanc.svg"
@@ -80,19 +80,18 @@ export default function Footer() {
                   priority
                 />
               </Link>
-
-              <p className="text-base leading-6 tracking-[-0.02em] font-normal text-[#B7B7B7]  ">
+              <p className="text-base leading-6 tracking-[-0.02em] font-normal text-[#B7B7B7] max-w-[280px]">
                 Votre partenaire en développement web et mobile au Québec.
               </p>
             </div>
 
-            {/* Middle: Nav columns */}
+            {/* Nav columns */}
             <nav
               aria-label="Footer navigation"
-              className="flex gap-4 sm:gap-8 flex-col justify-between md:flex-row"
+              className="flex gap-8 md:gap-6 lg:gap-10 flex-wrap md:flex-nowrap md:col-span-1 lg:col-span-1 lg:justify-center"
             >
               {navColumns.map((col, i) => (
-                <ul key={i} className="flex flex-col gap-3">
+                <ul key={i} className="flex flex-col gap-3 min-w-[120px]">
                   {col.title && (
                     <li className="text-xs font-semibold uppercase tracking-widest text-white/40 mb-1">
                       {col.title}
@@ -102,7 +101,7 @@ export default function Footer() {
                     <li key={label}>
                       <Link
                         href={href}
-                        className="text-base py-1 sm:px-5 leading-6 tracking-normal font-normal text-white hover:opacity-70 transition-opacity whitespace-nowrap"
+                        className="text-base py-1 leading-6 font-normal text-white hover:opacity-70 transition-opacity whitespace-nowrap"
                       >
                         {label}
                       </Link>
@@ -112,56 +111,31 @@ export default function Footer() {
               ))}
             </nav>
 
-            <address className="not-italic z-10 flex flex-col gap-4 w-full lg:w-48.5 text-base leading-6 text-white">
+            {/* Contact + socials */}
+            <address className="not-italic z-10 flex flex-col gap-4 text-base leading-6 text-white">
               <span className="font-medium">Nous contacter</span>
 
-              <span className="text-white/80 z-10">
-                Basé à Montréal,
-                <br />
-                Québec, Canada
+              <span className="text-white/80">
+                Basé à Montréal,<br />Québec, Canada
               </span>
 
-              <div className="flex flex-col gap-1 text-white/80 z-10">
-                <a
-                  href="mailto:info@orianasolutions.com"
-                  className="hover:underline transition-opacity hover:opacity-80"
-                >
-                  info@orianasolutions.com
+              <div className="flex flex-col gap-1 text-white/80">
+                <a href="mailto:info@orianasolutions.ca" className="hover:underline transition-opacity hover:opacity-80">
+                  info@orianasolutions.ca
                 </a>
-                <a
-                  href="tel:+14383657789"
-                  className="hover:underline transition-opacity hover:opacity-80"
-                >
+                <a href="tel:+14383657789" className="hover:underline transition-opacity hover:opacity-80">
                   438-365-7789
                 </a>
               </div>
 
-              <div className="flex items-center justify-center sm:justify-start gap-6 sm:gap-2.5 mt-1">
-                <Link
-                  href="https://www.instagram.com/oriana.solutions/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Instagram"
-                  className="hover:opacity-70 transition-opacity"
-                >
+              <div className="flex items-center gap-4 mt-1">
+                <Link href="https://www.instagram.com/oriana.solutions/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="hover:opacity-70 transition-opacity">
                   <IconInstagram />
                 </Link>
-                <Link
-                  href="https://www.facebook.com/profile.php?id=61585300808083"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Facebook"
-                  className="hover:opacity-70 transition-opacity"
-                >
+                <Link href="https://www.facebook.com/profile.php?id=61585300808083" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="hover:opacity-70 transition-opacity">
                   <IconFacebook />
                 </Link>
-                <Link
-                  href="https://www.linkedin.com/company/oriana-solutions-inc"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="LinkedIn"
-                  className="hover:opacity-70 transition-opacity"
-                >
+                <Link href="https://www.linkedin.com/company/oriana-solutions-inc" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="hover:opacity-70 transition-opacity">
                   <IconLinkedIn />
                 </Link>
               </div>
@@ -170,7 +144,7 @@ export default function Footer() {
 
           <div className=" flex flex-col gap-4 sm:flex-row items-center sm:items-center sm:justify-between">
             <p className="text-sm leading-6 tracking-[-0.02em] text-[#B7B7B7]">
-              © 2025 Oriana Solutions. Tous droits réservés.
+              © 2026 Oriana Solutions. Tous droits réservés.
             </p>
 
             <ul className="flex flex-wrap items-center justify-center gap-6">

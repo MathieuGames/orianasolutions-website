@@ -148,7 +148,7 @@ export default function AntoineBarilPage() {
               </p>
               <div>
                 <p className="font-semibold text-white">Antoine Baril</p>
-                <p className="text-sm text-white/60">Courtier immobilier — Proprio Direct</p>
+                <p className="text-sm text-white/60">Courtier immobilier, Proprio Direct</p>
               </div>
             </div>
           </div>

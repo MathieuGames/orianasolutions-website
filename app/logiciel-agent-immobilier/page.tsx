@@ -183,7 +183,7 @@ export default function LogicielAgentImmobilierPage() {
       <DynamicServiceSection
         title="Un CRM immobilier qui correspond à votre réalité, pas à celle d'une grande entreprise."
         description="Les CRM génériques sont conçus pour des équipes de vente de 50 personnes. Un agent immobilier a besoin d'un outil simple, rapide, adapté au cycle immobilier : premiers contacts, visites, offres, notarisation. On le bâtit selon votre processus exact."
-        image="/png/service1-2.png"
+        image="/png/crm-pipeline.jpg"
         imageAlt="CRM immobilier sur mesure pour agents et courtiers"
         headingVariant="h2"
         reverse

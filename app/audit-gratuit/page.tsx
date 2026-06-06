@@ -110,7 +110,7 @@ export default function AuditGratuitPage() {
             {/* FAQ */}
             <div className="flex flex-col gap-4">
               <p className="text-xs font-semibold uppercase tracking-widest text-black/40">Questions fréquentes</p>
-              <div className="flex flex-col divide-y divide-black/6 border-y border-black/6">
+              <div className="flex flex-col divide-y divide-black/6 border-b border-black/6">
                 {faqItems.map((item, i) => (
                   <div key={i}>
                     <button

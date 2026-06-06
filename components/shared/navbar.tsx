@@ -161,7 +161,7 @@ function AboutDropdown() {
 function ResourcesDropdown() {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
-  const active = pathname === "/blog" || pathname.startsWith("/blog/") || pathname === "/faq" || pathname === "/calculateur-prix" || pathname === "/quiz" || pathname === "/audit-gratuit";
+  const active = pathname === "/blogue" || pathname.startsWith("/blogue/") || pathname === "/faq" || pathname === "/calculateur-prix" || pathname === "/quiz" || pathname === "/audit-gratuit";
   useCloseOnScroll(setOpen);
 
   return (
@@ -183,7 +183,7 @@ function ResourcesDropdown() {
         <div className="absolute left-1/2 -translate-x-1/2 top-full pt-3 z-50">
           <div className="bg-white rounded-2xl shadow-xl border border-black/8 py-2 w-44">
             <Link
-              href="/blog"
+              href="/blogue"
               onClick={() => setOpen(false)}
               className="flex items-center px-4 py-2.5 text-sm text-black/70 hover:text-black hover:bg-black/4 transition-colors"
             >
@@ -387,7 +387,7 @@ export default function Navbar() {
             </button>
             {resourcesOpen && (
               <div className="pb-3 pl-3 flex flex-col gap-1">
-                <Link href="/blog" onClick={close} className="text-base text-black/60 py-1.5 hover:text-black transition-colors">
+                <Link href="/blogue" onClick={close} className="text-base text-black/60 py-1.5 hover:text-black transition-colors">
                   Blogue
                 </Link>
                 <Link href="/faq" onClick={close} className="text-base text-black/60 py-1.5 hover:text-black transition-colors">

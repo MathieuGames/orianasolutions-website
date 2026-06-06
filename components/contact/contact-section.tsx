@@ -54,7 +54,7 @@ export default function ContactSection() {
       lastName: data.lastName ? "" : "Le nom est requis",
       email: data.email ? "" : "Le courriel est requis",
       phone: data.phone ? "" : "Le téléphone est requis",
-      company: data.company ? "" : "La compagnie est requise",
+      company: "",
       budget: budget ? "" : "Veuillez choisir un budget",
       message: data.message ? "" : "Le message est requis",
     };
@@ -116,8 +116,7 @@ export default function ContactSection() {
 
             {/* Row 3 — Compagnie */}
             <div>
-              <Input label="Nom de la compagnie" placeholder="Votre compagnie" name="company" required onChange={handleFieldInput("company")} />
-              {errors.company && <p className="text-red-500 text-xs mt-1">{errors.company}</p>}
+              <Input label="Nom de la compagnie" placeholder="Votre compagnie" name="company" onChange={handleFieldInput("company")} />
             </div>
 
             {/* Budget — pill selector */}

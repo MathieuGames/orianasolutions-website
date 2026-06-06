@@ -9,15 +9,18 @@ export const navColumns = [
       { label: "Accueil", href: "/" },
       { label: "À propos", href: "/about" },
       { label: "Nos réalisations", href: "/realisations" },
+      { label: "Carrières", href: "/carrieres" },
+      { label: "Collaborateurs", href: "/collaborateurs" },
     ],
   },
   {
     title: "Ressources",
     links: [
-      { label: "Blogue", href: "/blog" },
+      { label: "Blogue", href: "/blogue" },
       { label: "FAQ", href: "/faq" },
+      { label: "Audit gratuit", href: "/audit-gratuit" },
       { label: "Calculateur de prix", href: "/calculateur-prix" },
-      { label: "SalesPitch", href: "/salespitch" },
+      { label: "Quiz", href: "/quiz" },
     ],
   },
   {
@@ -57,7 +60,7 @@ export const navColumns = [
 ];
 
 export const bottomLinks = [
-  { label: "Privacy Policy", href: "#" },
-  { label: "Terms of Service", href: "#" },
-  { label: "Cookies Settings", href: "#" },
+  { label: "Politique de confidentialité", href: "/politique-confidentialite" },
+  { label: "Conditions d'utilisation", href: "/conditions-utilisation" },
+  { label: "Politique de cookies", href: "/politique-cookies" },
 ];

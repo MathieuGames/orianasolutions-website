@@ -4,6 +4,7 @@ import Breadcrumb from "@/components/shared/breadcrumb";
 import Footer from "@/components/shared/footer";
 import Navbar from "@/components/shared/navbar";
 import ContactSection from "@/components/contact/contact-section";
+import CalendlyInline from "@/components/shared/calendly-inline";
 
 export const metadata: Metadata = {
   title: "Contactez-nous | Oriana Solutions",
@@ -32,6 +33,7 @@ export default function page() {
         />
       </div>
       <ContactSection />
+      <CalendlyInline />
       <div id="contact">
         <Footer />
       </div>

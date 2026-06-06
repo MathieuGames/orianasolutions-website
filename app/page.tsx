@@ -32,7 +32,7 @@ const jsonLd = {
   logo: "https://orianasolutions-site-mathieumorinlamy-8447s-projects.vercel.app/icon.png",
   description: "Agence de développement logiciel à Montréal — applications mobiles, web, SaaS et sites web sur mesure.",
   telephone: "+14383657789",
-  email: "info@orianasolutions.com",
+  email: "info@orianasolutions.ca",
   address: {
     "@type": "PostalAddress",
     addressLocality: "Montréal",

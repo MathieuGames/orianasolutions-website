@@ -160,7 +160,7 @@ export default function CarrieresPage() {
                 alt="L'équipe Oriana Solutions"
                 width={840}
                 height={560}
-                className="w-full h-64 lg:h-80 object-cover"
+                className="w-full h-[32rem] lg:h-[40rem] object-cover object-top"
               />
             </div>
           </div>

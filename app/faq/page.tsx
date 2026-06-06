@@ -42,10 +42,9 @@ export default function FAQPage() {
         <Navbar />
       </div>
 
-      <Breadcrumb items={[{ label: "FAQ" }]} />
-
       {/* Hero */}
       <div className="relative overflow-hidden bg-primary-light">
+        <Breadcrumb items={[{ label: "FAQ" }]} />
         <div className="absolute -top-32 -right-32 w-[600px] h-[600px] bg-primary/10 rounded-full blur-3xl pointer-events-none" />
         <div className="absolute bottom-0 left-1/4 w-80 h-80 bg-primary/8 rounded-full blur-2xl pointer-events-none" />
 

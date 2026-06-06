@@ -2,7 +2,7 @@
 export const contactInfo = [
   {
     title: "Courriel",
-    value: "info@orianasolutions.com",
+    value: "info@orianasolutions.ca",
   },
   {
     title: "Téléphone",

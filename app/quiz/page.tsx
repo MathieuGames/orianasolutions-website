@@ -207,6 +207,7 @@ export default function QuizPage() {
   const [scores, setScores] = useState<Partial<Record<Category, number>>>({});
   const [selected, setSelected] = useState<number | null>(null);
   const [copied, setCopied] = useState(false);
+  const [history, setHistory] = useState<{ answer: Answer; index: number }[]>([]);
 
   const currentQuestion = questions[step - 1];
   const isIntro = step === 0;
@@ -222,15 +223,30 @@ export default function QuizPage() {
         newScores[cat] = (newScores[cat] ?? 0) + pts;
       }
       setScores(newScores);
+      setHistory((h) => [...h, { answer, index }]);
       setSelected(null);
       setStep((s) => s + 1);
     }, 220);
+  }
+
+  function handleBack() {
+    if (history.length === 0) return;
+    const last = history[history.length - 1];
+    const newScores = { ...scores };
+    for (const [cat, pts] of Object.entries(last.answer.scores) as [Category, number][]) {
+      newScores[cat] = Math.max(0, (newScores[cat] ?? 0) - pts);
+    }
+    setScores(newScores);
+    setHistory((h) => h.slice(0, -1));
+    setSelected(null);
+    setStep((s) => s - 1);
   }
 
   function reset() {
     setStep(0);
     setScores({});
     setSelected(null);
+    setHistory([]);
   }
 
   async function handleShare() {
@@ -350,6 +366,14 @@ export default function QuizPage() {
                 {/* Header */}
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-3">
+                    {step > 1 && (
+                      <button onClick={handleBack} className="flex items-center gap-1 text-xs text-black/40 hover:text-black/70 transition-colors">
+                        <svg viewBox="0 0 16 16" className="w-3.5 h-3.5" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                          <path d="M10 3L5 8l5 5" />
+                        </svg>
+                        Retour
+                      </button>
+                    )}
                     <span className="text-xs font-semibold text-primary bg-primary/10 px-3 py-1 rounded-full">
                       {step} / {questions.length}
                     </span>
@@ -505,7 +529,14 @@ export default function QuizPage() {
                   </button>
                 </div>
 
-                <div className="text-center">
+                <div className="flex items-center justify-center gap-6">
+                  <button onClick={handleBack} className="flex items-center gap-1.5 text-sm text-black/40 hover:text-black/65 transition-colors">
+                    <svg viewBox="0 0 16 16" className="w-3.5 h-3.5" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M10 3L5 8l5 5" />
+                    </svg>
+                    Revoir mes réponses
+                  </button>
+                  <span className="text-black/15">·</span>
                   <button onClick={reset} className="text-sm text-black/35 hover:text-black/55 transition-colors">
                     Recommencer le quiz
                   </button>

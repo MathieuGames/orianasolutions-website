@@ -83,7 +83,7 @@ const localBusinessSchema = {
     "Agence de développement logiciel à Montréal spécialisée en applications web, applications mobiles, logiciels sur mesure et plateformes SaaS.",
   url: "https://orianasolutions-site-mathieumorinlamy-8447s-projects.vercel.app",
   telephone: "+14383657789",
-  email: "info@orianasolutions.com",
+  email: "info@orianasolutions.ca",
   address: {
     "@type": "PostalAddress",
     addressLocality: "Montréal",

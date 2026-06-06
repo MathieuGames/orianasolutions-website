@@ -6,6 +6,7 @@ export interface BlogPost {
   category: string;
   readTime: string;
   date: string;
+  image?: string;
   content: BlogSection[];
 }
 
@@ -45,6 +46,7 @@ export const blogPosts: BlogPost[] = [
     id: 7,
     slug: "salespitch-saas-vente-ia-oriana-solutions",
     title: "On a développé notre propre logiciel de vente. Voici ce que ça a donné.",
+    image: "/png/Salespitchs.png",
     excerpt:
       "SalesPitch est un copilot de vente IA qu'on a conçu, développé et lancé en interne. Pas pour montrer qu'on en était capables. Parce qu'on avait un vrai problème à régler.",
     category: "Étude de cas",
