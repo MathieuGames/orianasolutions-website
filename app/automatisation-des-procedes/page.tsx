@@ -107,7 +107,9 @@ export default function AutomatisationDesProcedesPage() {
         <Navbar />
       </div>
 
-      <Breadcrumb items={[{ label: "Automatisation des procédés" }]} />
+      <div className="bg-primary-light">
+        <Breadcrumb items={[{ label: "Automatisation des procédés" }]} />
+      </div>
 
       {/* Hero */}
       <Container
@@ -171,7 +173,7 @@ export default function AutomatisationDesProcedesPage() {
       <DynamicServiceSection
         title="Pas du RPA. Du code qui s'intègre vraiment à vos systèmes."
         description="Le RPA (Robotic Process Automation) simule des clics dans une interface graphique. C'est fragile, c'est lent et ça casse dès qu'une interface change. On développe des intégrations directes via API et base de données. Vos systèmes se parlent au niveau du code, pas à travers des captures d'écran. C'est plus rapide, plus fiable et ça évolue avec vos besoins."
-        image="/png/service1-2.png"
+        image="/png/automatisation.jpg"
         imageAlt="Automatisation des procédés d'affaires sur mesure pour entreprises québécoises"
         reverse
         headingVariant="h2"

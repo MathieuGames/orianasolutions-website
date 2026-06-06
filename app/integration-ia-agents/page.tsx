@@ -111,7 +111,9 @@ export default function IntegrationIAAgentsPage() {
         <Navbar />
       </div>
 
-      <Breadcrumb items={[{ label: "Intégration IA et agents autonomes" }]} />
+      <div className="bg-primary-light">
+        <Breadcrumb items={[{ label: "Intégration IA et agents autonomes" }]} />
+      </div>
 
       {/* Hero */}
       <Container
@@ -197,7 +199,7 @@ export default function IntegrationIAAgentsPage() {
       <DynamicServiceSection
         title="On ne vend pas du buzz IA. On livre des résultats mesurables."
         description="Beaucoup d'agences proposent de l'IA parce que c'est à la mode. On le fait parce qu'on comprend comment les modèles de langage fonctionnent, quelles sont leurs limites et comment les intégrer de façon fiable dans des processus d'affaires réels. On évalue d'abord si l'IA est vraiment la bonne solution pour votre problème. Si ce n'est pas le cas, on vous le dit. Si c'est le cas, on livre quelque chose qui fonctionne encore dans 18 mois."
-        image="/png/service3.png"
+        image="/png/integration-ia.jpg"
         imageAlt="Intégration d'agents IA autonomes dans des processus d'affaires au Québec"
         // image on right (default)
         headingVariant="h2"

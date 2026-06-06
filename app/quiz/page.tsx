@@ -132,10 +132,12 @@ const questions: Question[] = [
   },
 ];
 
-const resultData: Record<Category, { title: string; badge: string; desc: string; details: string[]; href: string }> = {
+const resultData: Record<Category, { title: string; color: string; bg: string; border: string; desc: string; details: string[]; href: string }> = {
   site_web: {
     title: "Site web sur mesure",
-    badge: "bg-emerald-100 text-emerald-800",
+    color: "text-emerald-700",
+    bg: "bg-emerald-50",
+    border: "border-emerald-200",
     desc: "Votre projet est principalement informatif ou vitrine. Un site web sur mesure vous donnera une présence professionnelle, optimisée pour Google et adaptée à votre image.",
     details: [
       "Design unique à votre image de marque",
@@ -147,7 +149,9 @@ const resultData: Record<Category, { title: string; badge: string; desc: string;
   },
   app_web: {
     title: "Application web",
-    badge: "bg-blue-100 text-blue-800",
+    color: "text-blue-700",
+    bg: "bg-blue-50",
+    border: "border-blue-200",
     desc: "Votre projet nécessite que des utilisateurs se connectent et interagissent avec une plateforme. Une application web est la solution idéale.",
     details: [
       "Authentification et gestion de profils",
@@ -159,7 +163,9 @@ const resultData: Record<Category, { title: string; badge: string; desc: string;
   },
   app_mobile: {
     title: "Application mobile",
-    badge: "bg-violet-100 text-violet-800",
+    color: "text-violet-700",
+    bg: "bg-violet-50",
+    border: "border-violet-200",
     desc: "Vos utilisateurs sont principalement sur mobile et utilisent votre solution régulièrement. Une application iOS/Android est ce qu'il vous faut.",
     details: [
       "Disponible sur App Store et Google Play",
@@ -171,7 +177,9 @@ const resultData: Record<Category, { title: string; badge: string; desc: string;
   },
   logiciel: {
     title: "Logiciel sur mesure",
-    badge: "bg-orange-100 text-orange-800",
+    color: "text-orange-700",
+    bg: "bg-orange-50",
+    border: "border-orange-200",
     desc: "Votre besoin est complexe ou interne à votre organisation. Un logiciel sur mesure vous donnera exactement ce qu'il vous faut.",
     details: [
       "Adapté à vos processus d'affaires spécifiques",
@@ -182,13 +190,6 @@ const resultData: Record<Category, { title: string; badge: string; desc: string;
     href: "/services",
   },
 };
-
-const introCards = [
-  { label: "Site web", color: "bg-emerald-50 border-emerald-200 text-emerald-800" },
-  { label: "Application web", color: "bg-blue-50 border-blue-200 text-blue-800" },
-  { label: "Application mobile", color: "bg-violet-50 border-violet-200 text-violet-800" },
-  { label: "Logiciel sur mesure", color: "bg-orange-50 border-orange-200 text-orange-800" },
-];
 
 function computeResult(scores: Partial<Record<Category, number>>): Category {
   const cats: Category[] = ["site_web", "app_web", "app_mobile", "logiciel"];
@@ -249,76 +250,146 @@ export default function QuizPage() {
     <>
       <div className="sticky top-0 z-50"><Navbar /></div>
 
-      <div className="min-h-[calc(100vh-80px)] bg-primary-light flex flex-col">
+      <div className="min-h-[calc(100vh-68px)] bg-primary-light flex flex-col">
 
+        {/* Progress bar */}
         {!isIntro && (
-          <div className="w-full h-1.5 bg-black/8">
-            <div className="h-full bg-primary transition-all duration-500 rounded-full" style={{ width: `${progress}%` }} />
+          <div className="w-full h-1 bg-black/8">
+            <div className="h-full bg-primary transition-all duration-500 ease-out" style={{ width: `${progress}%` }} />
           </div>
         )}
 
-        <div className="flex-1 flex items-center justify-center px-5 py-10">
-          <div className="w-full max-w-xl">
+        <div className="flex-1 flex items-center justify-center px-5 py-12 md:py-16">
+          <div className="w-full max-w-lg">
 
-            {/* Intro */}
+            {/* ── INTRO ── */}
             {isIntro && (
-              <div className="flex flex-col items-center gap-7 text-center">
-                <div className="flex flex-col gap-3">
-                  <p className="text-xs font-semibold uppercase tracking-widest text-primary">Quiz gratuit</p>
-                  <h1 className="font-heading font-normal text-3xl sm:text-4xl text-heading leading-tight">
+              <div className="flex flex-col gap-10">
+                <div className="flex flex-col gap-4">
+                  <span className="text-xs font-semibold uppercase tracking-widest text-primary/70">Quiz gratuit · 2 minutes</span>
+                  <h1 className="font-heading font-normal text-4xl sm:text-5xl text-heading leading-tight">
                     De quoi votre projet<br />a-t-il vraiment besoin ?
                   </h1>
-                  <p className="text-black/50 text-base max-w-xs mx-auto leading-relaxed">
-                    10 questions pour savoir si c'est un site web, une application web, mobile ou un logiciel sur mesure.
+                  <p className="text-black/50 text-base leading-relaxed max-w-sm">
+                    10 questions pour identifier si c'est un site web, une application, ou un logiciel sur mesure.
                   </p>
                 </div>
 
-                <div className="grid grid-cols-2 gap-2.5 w-full max-w-xs">
-                  {introCards.map((card) => (
-                    <div key={card.label} className={`rounded-xl border px-4 py-3 text-center text-sm font-medium ${card.color}`}>
-                      {card.label}
+                <div className="grid grid-cols-2 gap-3">
+                  {[
+                    {
+                      label: "Site web", sub: "Vitrine et présence",
+                      iconBg: "bg-emerald-50", iconColor: "text-emerald-600",
+                      icon: (
+                        <svg viewBox="0 0 20 20" className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+                          <circle cx="10" cy="10" r="8" />
+                          <path d="M2 10h16M10 2c-2.5 3-4 5-4 8s1.5 5 4 8M10 2c2.5 3 4 5 4 8s-1.5 5-4 8" />
+                        </svg>
+                      ),
+                    },
+                    {
+                      label: "Application web", sub: "Plateforme et SaaS",
+                      iconBg: "bg-blue-50", iconColor: "text-blue-600",
+                      icon: (
+                        <svg viewBox="0 0 20 20" className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+                          <rect x="2" y="3" width="16" height="13" rx="2" />
+                          <path d="M6 7h4M6 10h6M6 13h3" />
+                        </svg>
+                      ),
+                    },
+                    {
+                      label: "Application mobile", sub: "iOS et Android",
+                      iconBg: "bg-violet-50", iconColor: "text-violet-600",
+                      icon: (
+                        <svg viewBox="0 0 20 20" className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+                          <rect x="5" y="2" width="10" height="16" rx="2" />
+                          <circle cx="10" cy="15" r="0.8" fill="currentColor" stroke="none" />
+                        </svg>
+                      ),
+                    },
+                    {
+                      label: "Logiciel sur mesure", sub: "Outil interne",
+                      iconBg: "bg-orange-50", iconColor: "text-orange-600",
+                      icon: (
+                        <svg viewBox="0 0 20 20" className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+                          <circle cx="10" cy="10" r="2.5" />
+                          <path d="M10 2v2M10 16v2M2 10h2M16 10h2M4.2 4.2l1.4 1.4M14.4 14.4l1.4 1.4M4.2 15.8l1.4-1.4M14.4 5.6l1.4-1.4" />
+                        </svg>
+                      ),
+                    },
+                  ].map((card) => (
+                    <div key={card.label} className="bg-white rounded-2xl p-4 border border-black/8 flex flex-col gap-3">
+                      <div className={`w-9 h-9 rounded-xl ${card.iconBg} ${card.iconColor} flex items-center justify-center`}>
+                        {card.icon}
+                      </div>
+                      <div>
+                        <span className="text-sm font-semibold text-heading leading-tight block">{card.label}</span>
+                        <span className="text-xs text-black/40">{card.sub}</span>
+                      </div>
                     </div>
                   ))}
                 </div>
 
-                <div className="flex items-center gap-3 text-xs text-black/40 flex-wrap justify-center">
-                  <span>Gratuit</span>
-                  <span className="text-black/20">·</span>
-                  <span>2 minutes</span>
-                  <span className="text-black/20">·</span>
-                  <span>Résultat immédiat</span>
-                  <span className="text-black/20">·</span>
-                  <span>Sans inscription</span>
+                <div className="flex flex-col gap-3">
+                  <button onClick={() => setStep(1)}
+                    className="w-full inline-flex items-center justify-center gap-2 bg-primary text-white font-medium px-8 py-4 rounded-2xl hover:bg-primary/90 transition-colors text-sm">
+                    Commencer le quiz
+                    <svg viewBox="0 0 16 16" className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M3 8h10M9 4l4 4-4 4" />
+                    </svg>
+                  </button>
+                  <p className="text-center text-xs text-black/35">Résultat immédiat · Sans inscription</p>
                 </div>
-
-                <button onClick={() => setStep(1)}
-                  className="w-full max-w-xs inline-flex items-center justify-center gap-2 bg-primary text-white font-medium px-8 py-3.5 rounded-xl hover:bg-primary/90 transition-colors text-sm">
-                  Commencer le quiz →
-                </button>
               </div>
             )}
 
-            {/* Question */}
+            {/* ── QUESTION ── */}
             {!isIntro && !isResult && currentQuestion && (
-              <div className="flex flex-col gap-6">
+              <div className="flex flex-col gap-8">
+
+                {/* Header */}
                 <div className="flex items-center justify-between">
-                  <span className="text-xs font-semibold text-primary">{step} / {questions.length}</span>
-                  <button onClick={reset} className="text-xs text-black/35 hover:text-black/60 transition-colors">Recommencer</button>
+                  <div className="flex items-center gap-3">
+                    <span className="text-xs font-semibold text-primary bg-primary/10 px-3 py-1 rounded-full">
+                      {step} / {questions.length}
+                    </span>
+                  </div>
+                  <button onClick={reset} className="text-xs text-black/35 hover:text-black/60 transition-colors">
+                    Recommencer
+                  </button>
                 </div>
 
-                <div>
-                  <h2 className="font-heading font-normal text-2xl sm:text-3xl text-heading leading-tight">{currentQuestion.question}</h2>
-                  {currentQuestion.sub && <p className="text-sm text-black/45 mt-2">{currentQuestion.sub}</p>}
+                {/* Question */}
+                <div className="flex flex-col gap-2">
+                  <h2 className="font-heading font-normal text-3xl sm:text-4xl text-heading leading-tight">
+                    {currentQuestion.question}
+                  </h2>
+                  {currentQuestion.sub && (
+                    <p className="text-sm text-black/45 leading-relaxed">{currentQuestion.sub}</p>
+                  )}
                 </div>
 
                 {/* MC */}
                 {currentQuestion.format === "mc" && (
-                  <div className="flex flex-col gap-3">
+                  <div className="flex flex-col gap-2.5">
                     {currentQuestion.answers.map((answer, i) => (
                       <button key={i} onClick={() => handleAnswer(answer, i)}
-                        className={`w-full text-left px-5 py-3.5 rounded-xl border-2 transition-all ${selected === i ? "border-primary bg-primary/8" : "border-black/12 bg-white hover:border-primary/40"}`}>
-                        <span className="text-sm font-medium text-heading block">{answer.label}</span>
-                        {answer.desc && <span className="text-xs text-black/40 mt-0.5 block">{answer.desc}</span>}
+                        className={`group w-full text-left px-5 py-4 rounded-2xl border-2 transition-all duration-150 ${
+                          selected === i
+                            ? "border-primary bg-primary/6 shadow-sm"
+                            : "border-black/10 bg-white hover:border-primary/50 hover:shadow-sm"
+                        }`}>
+                        <div className="flex items-center justify-between gap-3">
+                          <div>
+                            <span className="text-sm font-semibold text-heading block">{answer.label}</span>
+                            {answer.desc && <span className="text-xs text-black/40 mt-0.5 block">{answer.desc}</span>}
+                          </div>
+                          <div className={`w-5 h-5 rounded-full border-2 shrink-0 flex items-center justify-center transition-all ${
+                            selected === i ? "border-primary bg-primary text-white" : "border-black/20 group-hover:border-primary/50"
+                          }`}>
+                            {selected === i && <CheckIcon />}
+                          </div>
+                        </div>
                       </button>
                     ))}
                   </div>
@@ -329,9 +400,16 @@ export default function QuizPage() {
                   <div className={`grid gap-3 ${currentQuestion.answers.length === 4 ? "grid-cols-2" : "grid-cols-1 sm:grid-cols-3"}`}>
                     {currentQuestion.answers.map((answer, i) => (
                       <button key={i} onClick={() => handleAnswer(answer, i)}
-                        className={`text-left px-4 py-4 rounded-2xl border-2 transition-all flex flex-col gap-1 ${selected === i ? "border-primary bg-primary/8" : "border-black/12 bg-white hover:border-primary/40"}`}>
-                        <span className="text-sm font-semibold text-heading">{answer.label}</span>
-                        {answer.desc && <span className="text-xs text-black/40 leading-tight">{answer.desc}</span>}
+                        className={`group text-left px-5 py-5 rounded-2xl border-2 transition-all duration-150 flex flex-col gap-2 ${
+                          selected === i
+                            ? "border-primary bg-primary/6 shadow-sm"
+                            : "border-black/10 bg-white hover:border-primary/50 hover:shadow-sm"
+                        }`}>
+                        <div className={`w-2 h-2 rounded-full transition-all ${
+                          selected === i ? "bg-primary" : "bg-black/20 group-hover:bg-primary/50"
+                        }`} />
+                        <span className="text-sm font-semibold text-heading leading-tight">{answer.label}</span>
+                        {answer.desc && <span className="text-xs text-black/40 leading-relaxed">{answer.desc}</span>}
                       </button>
                     ))}
                   </div>
@@ -339,13 +417,22 @@ export default function QuizPage() {
 
                 {/* Binary */}
                 {currentQuestion.format === "binary" && (
-                  <div className="flex flex-col gap-3">
+                  <div className="flex flex-col gap-2.5">
                     {currentQuestion.answers.map((answer, i) => (
                       <button key={i} onClick={() => handleAnswer(answer, i)}
-                        className={`w-full flex items-center px-6 py-4 rounded-2xl border-2 transition-all ${selected === i ? "border-primary bg-primary/8" : "border-black/12 bg-white hover:border-primary/40"}`}>
+                        className={`group w-full flex items-center justify-between px-5 py-4 rounded-2xl border-2 transition-all duration-150 ${
+                          selected === i
+                            ? "border-primary bg-primary/6 shadow-sm"
+                            : "border-black/10 bg-white hover:border-primary/50 hover:shadow-sm"
+                        }`}>
                         <div className="text-left">
                           <span className="text-sm font-semibold text-heading block">{answer.label}</span>
-                          {answer.desc && <span className="text-xs text-black/45 mt-0.5 block">{answer.desc}</span>}
+                          {answer.desc && <span className="text-xs text-black/40 mt-0.5 block">{answer.desc}</span>}
+                        </div>
+                        <div className={`w-5 h-5 rounded-full border-2 shrink-0 flex items-center justify-center transition-all ${
+                          selected === i ? "border-primary bg-primary text-white" : "border-black/20 group-hover:border-primary/50"
+                        }`}>
+                          {selected === i && <CheckIcon />}
                         </div>
                       </button>
                     ))}
@@ -354,44 +441,59 @@ export default function QuizPage() {
               </div>
             )}
 
-            {/* Result */}
+            {/* ── RESULT ── */}
             {isResult && result && (
               <div className="flex flex-col gap-6">
-                <div className="text-center flex flex-col items-center gap-3">
-                  <p className="text-xs font-semibold uppercase tracking-widest text-primary">Votre résultat</p>
-                  <span className={`inline-flex px-4 py-1.5 rounded-full text-sm font-semibold ${result.badge}`}>
+
+                {/* Badge résultat */}
+                <div className="flex flex-col gap-4">
+                  <span className="text-xs font-semibold uppercase tracking-widest text-primary/70">Votre résultat</span>
+                  <div className={`inline-flex self-start items-center gap-2 px-4 py-2 rounded-full border text-sm font-semibold ${result.bg} ${result.border} ${result.color}`}>
+                    <div className={`w-2 h-2 rounded-full ${result.bg.replace("bg-", "bg-").replace("50", "500")}`} />
                     {result.title}
-                  </span>
-                  <h2 className="font-heading font-normal text-3xl sm:text-4xl text-heading leading-tight">{result.title}</h2>
+                  </div>
+                  <h2 className="font-heading font-normal text-3xl sm:text-4xl text-heading leading-tight">
+                    Il vous faut un{" "}
+                    <span className={result.color}>{result.title.toLowerCase()}</span>.
+                  </h2>
                 </div>
 
-                <div className="bg-white rounded-2xl border border-black/10 p-6 flex flex-col gap-5 shadow-sm">
+                {/* Carte principale */}
+                <div className="bg-white rounded-3xl border border-black/8 p-7 flex flex-col gap-6 shadow-sm">
                   <p className="text-[15px] text-black/60 leading-7">{result.desc}</p>
-                  <ul className="flex flex-col gap-2.5">
+                  <ul className="flex flex-col gap-3">
                     {result.details.map((d, i) => (
                       <li key={i} className="flex items-center gap-3 text-sm text-black/70">
-                        <span className="w-5 h-5 rounded-full bg-primary flex items-center justify-center text-white shrink-0"><CheckIcon /></span>
+                        <span className="w-5 h-5 rounded-full bg-primary flex items-center justify-center text-white shrink-0">
+                          <CheckIcon />
+                        </span>
                         {d}
                       </li>
                     ))}
                   </ul>
-                  <div className="flex flex-col sm:flex-row gap-3 pt-1">
-                    <Link href={result.href} className="flex-1 inline-flex items-center justify-center bg-primary text-white font-medium px-6 py-3 rounded-xl hover:bg-primary/90 transition-colors text-sm">
-                      En savoir plus →
+                  <div className="flex flex-col sm:flex-row gap-3 pt-1 border-t border-black/6">
+                    <Link href={result.href}
+                      className="flex-1 inline-flex items-center justify-center gap-2 bg-primary text-white font-medium px-6 py-3 rounded-xl hover:bg-primary/90 transition-colors text-sm">
+                      En savoir plus
+                      <svg viewBox="0 0 16 16" className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M3 8h10M9 4l4 4-4 4" />
+                      </svg>
                     </Link>
-                    <Link href="/contact" className="flex-1 inline-flex items-center justify-center border border-black/15 text-heading font-medium px-6 py-3 rounded-xl hover:border-black/30 transition-colors text-sm">
+                    <Link href="/contact"
+                      className="flex-1 inline-flex items-center justify-center border border-black/12 text-heading font-medium px-6 py-3 rounded-xl hover:border-black/30 transition-colors text-sm bg-white">
                       Parler à l'équipe
                     </Link>
                   </div>
                 </div>
 
-                <div className="bg-white rounded-2xl border border-black/10 p-5 flex flex-col sm:flex-row items-center justify-between gap-4">
+                {/* Partager */}
+                <div className="bg-white rounded-2xl border border-black/8 p-5 flex items-center justify-between gap-4">
                   <div>
                     <p className="text-sm font-semibold text-heading">Partagez ce quiz</p>
-                    <p className="text-xs text-black/45 mt-0.5">Utile pour un collègue ou un associé qui hésite aussi</p>
+                    <p className="text-xs text-black/40 mt-0.5">Utile pour un associé ou un collègue</p>
                   </div>
                   <button onClick={handleShare}
-                    className="shrink-0 inline-flex items-center gap-2 border border-black/15 text-heading font-medium px-5 py-2.5 rounded-xl hover:border-black/30 transition-colors text-sm">
+                    className="shrink-0 inline-flex items-center gap-2 border border-black/12 text-heading font-medium px-4 py-2.5 rounded-xl hover:border-black/30 transition-colors text-sm bg-white">
                     {copied ? "Lien copié" : (
                       <>
                         <svg viewBox="0 0 20 20" className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
@@ -404,7 +506,7 @@ export default function QuizPage() {
                 </div>
 
                 <div className="text-center">
-                  <button onClick={reset} className="text-sm text-black/40 hover:text-black/60 transition-colors underline underline-offset-2">
+                  <button onClick={reset} className="text-sm text-black/35 hover:text-black/55 transition-colors">
                     Recommencer le quiz
                   </button>
                 </div>

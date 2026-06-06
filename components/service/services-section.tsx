@@ -55,7 +55,7 @@ export default function ServicesSection() {
                   className="w-fit text-sm! whitespace-nowrap"
                   icon={<Arrow />}
                 >
-                  Étude de cas
+                  Études de cas
                 </Button>
               </div>
             </div>

@@ -36,7 +36,7 @@ export const testimonials: Testimonial[] = [
 
 export const testimonialsLogo = [
   { src: "/png/balt.png", width: 163 },
-  { src: "/png/AB-new-coul.png", width: 163 },
+  { src: "/png/pascan.png", width: 101 },
   { src: "/png/logo.png", width: 140, className: "grayscale opacity-50 mix-blend-multiply" },
-  { src: "/png/Logo couleur - Vertical.png", width: 163 },
+  { src: "/png/stickers-03.png", width: 56 },
 ];

@@ -47,6 +47,47 @@ const PARTNERS = [
     logo: "/png/logo-abbie-richer.png",
     logoDark: false,
   },
+  {
+    id: 4,
+    name: "LM Agence",
+    role: "Design et création",
+    description:
+      "Agence créative spécialisée en conception graphique, identité visuelle et production de contenu pour entreprises et entrepreneurs québécois.",
+    href: "https://portfoliotemporairelmagence.my.canva.site/portfolio-lm-agence/",
+    logo: undefined,
+    logoDark: false,
+  },
+  {
+    id: 5,
+    name: "SalesPitch",
+    role: "Logiciel SaaS de vente",
+    description:
+      "Logiciel de pitch de vente propulsé par l'IA, conçu pour augmenter le taux de conversion et les commissions des représentants. Un projet interne d'Oriana Solutions.",
+    href: "https://www.usesalespitch.com",
+    logo: "/png/salespitch-icon.png",
+    logoWithName: true,
+    logoDark: false,
+  },
+  {
+    id: 6,
+    name: "Marie-Claire Talbot",
+    role: "Photographie professionnelle",
+    description:
+      "Photographe professionnelle spécialisée en portrait, événementiel et photographie de marque pour entrepreneurs et entreprises.",
+    href: "https://marieclairetalbot.myportfolio.com/work",
+    logo: undefined,
+    logoDark: false,
+  },
+  {
+    id: 7,
+    name: "Asprods",
+    role: "Production audiovisuelle",
+    description:
+      "Studio de production créatif spécialisé en contenu audiovisuel pour marques, entrepreneurs et projets numériques.",
+    href: "",
+    logo: undefined,
+    logoDark: false,
+  },
 ];
 
 export default function CollaborateursPage() {
@@ -75,18 +116,26 @@ export default function CollaborateursPage() {
 
         {/* Partner grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 xl:gap-8">
-          {PARTNERS.map((partner) =>
-            partner.name ? (
-              <Link
-                key={partner.id}
-                href={partner.href!}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group flex flex-col gap-5 rounded-2xl border border-black/8 bg-white p-8 hover:shadow-md transition-shadow"
-              >
+          {PARTNERS.map((partner) => {
+            const cardContent = (
+              <>
                 {/* Logo */}
                 <div className="h-14 flex items-center">
-                  {partner.logo ? (
+                  {partner.logo && partner.logoWithName ? (
+                    <div className="flex items-center gap-2.5">
+                      <Image
+                        src={partner.logo}
+                        alt={partner.name}
+                        width={32}
+                        height={32}
+                        className="w-8 h-8 object-contain"
+                        unoptimized
+                      />
+                      <span className="font-heading font-normal text-2xl text-heading">
+                        {partner.name}
+                      </span>
+                    </div>
+                  ) : partner.logo ? (
                     <div className={`flex items-center ${partner.logoDark ? "rounded-lg overflow-hidden" : ""}`}>
                       <Image
                         src={partner.logo}
@@ -114,25 +163,33 @@ export default function CollaborateursPage() {
                   </p>
                 </div>
 
-                <span className="text-xs text-primary group-hover:underline mt-auto">
-                  Visiter le site →
-                </span>
+                {partner.href && (
+                  <span className="text-xs text-primary group-hover:underline mt-auto">
+                    Visiter le site →
+                  </span>
+                )}
+              </>
+            );
+
+            return partner.href ? (
+              <Link
+                key={partner.id}
+                href={partner.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex flex-col gap-5 rounded-2xl border border-black/8 bg-white p-8 hover:shadow-md transition-shadow"
+              >
+                {cardContent}
               </Link>
             ) : (
               <div
                 key={partner.id}
-                className="flex flex-col items-center justify-center gap-4 rounded-2xl border border-dashed border-black/15 bg-black/2 p-10"
+                className="group flex flex-col gap-5 rounded-2xl border border-black/8 bg-white p-8"
               >
-                <div className="w-16 h-16 rounded-xl bg-black/5 flex items-center justify-center">
-                  <div className="w-8 h-8 rounded-lg bg-black/8" />
-                </div>
-                <div className="flex flex-col items-center gap-2 text-center">
-                  <div className="h-3.5 w-28 rounded-full bg-black/8" />
-                  <div className="h-2.5 w-16 rounded-full bg-black/5" />
-                </div>
+                {cardContent}
               </div>
-            )
-          )}
+            );
+          })}
         </div>
 
         {/* Devenir collaborateur CTA */}

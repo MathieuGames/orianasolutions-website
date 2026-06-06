@@ -185,7 +185,7 @@ export default function LogicielERPPage() {
       <DynamicServiceSection
         title="Un ERP sur mesure qui évolue avec vous, pas contre vous."
         description="Les ERP génériques comme SAP ou Oracle coûtent des centaines de milliers de dollars et demandent des années d'implantation. On développe un système ERP modulaire qui part de vos besoins actuels et grandit avec votre organisation. Vous payez ce dont vous avez besoin, quand vous en avez besoin. Besoin aussi d'un CRM intégré ? On peut le développer en même temps."
-        image="/png/service1-3.png"
+        image="/png/erp-dashboard.jpg"
         imageAlt="Système ERP sur mesure développé pour PME québécoise"
         headingVariant="h2"
         reverse

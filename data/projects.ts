@@ -41,6 +41,24 @@ export const projects: Project[] = [
     image: "/png/PACPLUS.png",
     href: "/developpement-application-mobile/pacplus",
   },
+  {
+    id: 5,
+    title: "SalesPitch",
+    badge: "Application web",
+    category: "Application web",
+    label: "Copilot de vente",
+    image: "/png/Salespitchs.png",
+    href: "/realisations/salespitch",
+  },
+  {
+    id: 4,
+    title: "Michel Morin Consultants",
+    badge: "Site sur mesure",
+    category: "Site web sur mesure",
+    label: "Site web sur mesure",
+    image: "/png/michel-morin.png",
+    href: "/realisations/michel-morin",
+  },
 ];
 
 export const categories: Category[] = [

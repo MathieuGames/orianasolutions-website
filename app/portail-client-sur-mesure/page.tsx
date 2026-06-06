@@ -112,7 +112,9 @@ export default function PortailClientPage() {
         <Navbar />
       </div>
 
-      <Breadcrumb items={[{ label: "Portail client sur mesure" }]} />
+      <div className="bg-primary-light">
+        <Breadcrumb items={[{ label: "Portail client sur mesure" }]} />
+      </div>
 
       {/* Hero */}
       <Container
@@ -210,7 +212,7 @@ export default function PortailClientPage() {
       <DynamicServiceSection
         title="Un portail qui parle à vos clients, pas à vos collègues."
         description="La plupart des professionnels envoient encore des documents par courriel, répondent aux questions via WhatsApp et gardent leurs suivis dans un tableur. Ça fonctionne, jusqu'à ce que ça ne fonctionne plus. Un portail client centralisé vous fait gagner des heures chaque semaine et projette une image de professionnalisme que vos concurrents n'ont pas. On le développe selon vos processus actuels, pas selon un modèle préfabriqué."
-        image="/png/service1.png"
+        image="/png/portail-client.jpg"
         imageAlt="Portail client sur mesure développé pour firmes professionnelles québécoises"
         // image on right (default)
         headingVariant="h2"

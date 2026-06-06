@@ -17,23 +17,23 @@ const pageCountScores: Record<PageCount, number>   = { small: 0, medium: 2, larg
 const integrationDevScores: Partial<Record<Integration, number>> = { auth: 1, paiement: 1, db: 0.5 };
 
 const monthlyRanges: Record<Complexity, { hebergement: [number, number]; support: [number, number] }> = {
-  mvp:        { hebergement: [30, 80],    support: [150, 300] },
-  standard:   { hebergement: [60, 150],   support: [300, 600] },
-  avance:     { hebergement: [100, 250],  support: [500, 1000] },
-  entreprise: { hebergement: [200, 500],  support: [1000, 2500] },
+  mvp:        { hebergement: [20, 50],    support: [100, 200] },
+  standard:   { hebergement: [40, 100],   support: [200, 400] },
+  avance:     { hebergement: [80, 180],   support: [350, 700] },
+  entreprise: { hebergement: [150, 350],  support: [700, 1500] },
 };
 
 
 type Tier = { range: string; label: string };
 
 function getDevTier(score: number): Tier {
-  if (score < 2)  return { range: "2 000 $ à 8 000 $",     label: "Projet simple"        };
-  if (score < 4)  return { range: "8 000 $ à 15 000 $",    label: "Projet standard"      };
-  if (score < 6)  return { range: "15 000 $ à 30 000 $",   label: "Projet intermédiaire" };
-  if (score < 8)  return { range: "30 000 $ à 60 000 $",   label: "Projet avancé"        };
-  if (score < 10) return { range: "60 000 $ à 100 000 $",  label: "Projet complexe"      };
-  if (score < 14) return { range: "100 000 $ à 200 000 $", label: "Projet entreprise"    };
-  return           { range: "200 000 $+",                   label: "Grand projet"         };
+  if (score < 2)  return { range: "1 500 $ à 5 000 $",     label: "Projet simple"        };
+  if (score < 4)  return { range: "5 000 $ à 12 000 $",    label: "Projet standard"      };
+  if (score < 6)  return { range: "12 000 $ à 22 000 $",   label: "Projet intermédiaire" };
+  if (score < 8)  return { range: "22 000 $ à 40 000 $",   label: "Projet avancé"        };
+  if (score < 10) return { range: "40 000 $ à 70 000 $",   label: "Projet complexe"      };
+  if (score < 14) return { range: "70 000 $ à 130 000 $",  label: "Projet entreprise"    };
+  return           { range: "130 000 $+",                   label: "Grand projet"         };
 }
 
 function getMonthlyItems(complexity: Complexity, integrations: Set<Integration>) {

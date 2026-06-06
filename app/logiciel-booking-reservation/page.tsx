@@ -92,7 +92,9 @@ export default function LogicielBookingPage() {
         <Navbar />
       </div>
 
-      <Breadcrumb items={[{ label: "Logiciel de booking et réservation" }]} />
+      <div className="bg-primary-light">
+        <Breadcrumb items={[{ label: "Logiciel de booking et réservation" }]} />
+      </div>
 
       {/* Hero */}
       <Container
@@ -176,7 +178,7 @@ export default function LogicielBookingPage() {
       <DynamicServiceSection
         title="Un système qui réduit vos no-shows et vos appels téléphoniques."
         description="La plupart des petites entreprises perdent entre 15 et 25% de leur revenus à cause de no-shows et d'annulations de dernière minute. Un système de réservation bien conçu, avec des rappels automatiques par SMS et la possibilité de prendre un dépôt en ligne, change la donne du jour au lendemain. Vos clients réservent à 23h depuis leur cellulaire. Vous dormez. Le lendemain matin, votre calendrier est rempli."
-        image="/png/service1-1.png"
+        image="/png/booking-calendar.jpg"
         imageAlt="Système de réservation en ligne sur mesure pour petites entreprises québécoises"
         // image on right (default)
         headingVariant="h2"
@@ -186,7 +188,7 @@ export default function LogicielBookingPage() {
       <DynamicServiceSection
         title="Calendly, SimplyBook... et leurs limitations."
         description="Les outils génériques de réservation fonctionnent bien pour des cas simples. Mais dès que vous avez des ressources spécifiques à gérer, des règles particulières pour certains types de rendez-vous, ou que vous voulez intégrer votre système à votre logiciel de caisse ou à votre CRM, vous vous heurtez aux murs de ces plateformes. Un système sur mesure n'a pas ces limites. Il s'adapte à vous, maintenant et dans 3 ans."
-        image="/png/service2.png"
+        image="/png/booking-schedule.jpg"
         imageAlt="Avantages d'un logiciel de réservation sur mesure versus les outils génériques"
         reverse
         headingVariant="h2"

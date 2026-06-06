@@ -4,7 +4,28 @@ import { useState } from "react";
 import Navbar from "@/components/shared/navbar";
 import Footer from "@/components/shared/footer";
 import Breadcrumb from "@/components/shared/breadcrumb";
+import AboutSectionMobileBlock from "@/components/shared/about-section";
+import Container from "@/components/shared/container";
+import Tag from "@/components/ui/tag";
 import Input from "@/components/ui/input";
+import Button from "@/components/ui/button";
+import AnimatedContent from "@/components/ui/animated-content";
+
+const auditPoints = [
+  { title: "Référencement naturel (SEO)", desc: "Balises title et meta, structure des titres, mots-clés, données structurées, indexation Google." },
+  { title: "Vitesse et performance", desc: "Score PageSpeed et Core Web Vitals — les métriques que Google utilise pour classer les sites." },
+  { title: "Expérience mobile", desc: "Affichage sur téléphone et tablette, taille des éléments, navigation tactile." },
+  { title: "Conversion et clarté", desc: "Votre message est-il clair en 5 secondes ? Vos boutons d'action sont-ils visibles et efficaces ?" },
+  { title: "Sécurité de base", desc: "HTTPS actif, certificat SSL valide, formulaires protégés, redirections correctes." },
+  { title: "Présence locale et technique", desc: "Google Business, sitemap XML, robots.txt, balises Open Graph pour les réseaux sociaux." },
+];
+
+const faqItems = [
+  { q: "Combien de temps ça prend ?", a: "On vous revient dans les 72 heures ouvrables avec un rapport complet et une proposition de créneau pour en discuter." },
+  { q: "C'est vraiment gratuit ?", a: "Oui, sans condition. On ne facture rien et on ne vous vend rien sans votre accord explicite." },
+  { q: "Qu'est-ce que je reçois exactement ?", a: "Un rapport structuré avec vos points forts, vos lacunes prioritaires et des recommandations concrètes. Suivi d'un appel de 30 minutes." },
+  { q: "Mon site doit-il être fait par Oriana Solutions ?", a: "Non. On audite n'importe quel site : WordPress, Wix, sur mesure ou autre." },
+];
 
 const concerns = [
   "Mon site ne génère pas assez de trafic",
@@ -12,34 +33,6 @@ const concerns = [
   "Mon site n'est pas bien affiché sur mobile",
   "Mon site ne convertit pas les visiteurs en clients",
   "Je veux juste savoir où j'en suis",
-];
-
-const auditPoints = [
-  { title: "Référencement naturel (SEO)", desc: "Balises title et meta, structure des titres H1-H6, mots-clés ciblés, données structurées, indexation Google." },
-  { title: "Vitesse et Core Web Vitals", desc: "Score PageSpeed, LCP, CLS, FID : les métriques que Google utilise pour classer les sites." },
-  { title: "Expérience mobile", desc: "Affichage sur téléphone et tablette, taille des éléments, navigation tactile." },
-  { title: "Conversion et clarté", desc: "Est-ce que votre message est clair en 5 secondes ? Les boutons d'action sont-ils visibles et efficaces ?" },
-  { title: "Sécurité de base", desc: "HTTPS actif, certificat SSL valide, formulaires protégés, redirections correctes." },
-  { title: "Présence locale et technique", desc: "Google Business, sitemap XML, robots.txt, balises Open Graph pour les réseaux sociaux." },
-];
-
-const faqItems = [
-  {
-    q: "Combien de temps ça prend ?",
-    a: "On vous revient dans les 72 heures ouvrables suivant votre demande avec un rapport complet et une proposition de créneau pour en discuter.",
-  },
-  {
-    q: "C'est vraiment gratuit ?",
-    a: "Oui, sans condition. On ne facture rien et on ne vous vend rien sans votre accord explicite. L'audit est notre façon de vous montrer ce qu'on peut faire.",
-  },
-  {
-    q: "Qu'est-ce que je reçois exactement ?",
-    a: "Un rapport structuré qui identifie vos points forts, vos lacunes prioritaires et des recommandations concrètes. Le tout suivi d'un appel de 30 minutes pour tout expliquer.",
-  },
-  {
-    q: "Mon site doit-il être fait par Oriana Solutions ?",
-    a: "Non. On audite n'importe quel site, peu importe qui l'a construit : WordPress, Wix, sur mesure ou autre.",
-  },
 ];
 
 export default function AuditGratuitPage() {
@@ -58,7 +51,6 @@ export default function AuditGratuitPage() {
     e.preventDefault();
     const form = e.currentTarget;
     const get = (name: string) => (form.elements.namedItem(name) as HTMLInputElement)?.value.trim() || "";
-
     const data = { name: get("name"), email: get("email"), url: get("url") };
     const newErrors: Record<string, string> = {};
     if (!data.name) newErrors.name = "Requis";
@@ -73,60 +65,42 @@ export default function AuditGratuitPage() {
     <>
       <div className="sticky top-0 z-50"><Navbar /></div>
 
-      <div className="bg-primary-light border-b border-black/6">
+      <div className="bg-primary-light md:bg-transparent">
         <Breadcrumb items={[{ label: "Audit gratuit" }]} />
-        <div className="max-w-5xl mx-auto px-6 md:px-10 pb-12 pt-2">
-          <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-3">Gratuit, sans engagement</p>
-          <h1 className="font-heading font-normal text-3xl sm:text-4xl xl:text-5xl text-heading leading-tight mb-4 max-w-2xl">
-            Audit de site web gratuit à Montréal. On vous dit ce qui cloche.
-          </h1>
-          <p className="text-black/55 text-base leading-relaxed max-w-xl">
-            On regarde votre site de fond en comble : SEO, vitesse, mobile, conversion et sécurité. Vous recevez un rapport clair et un appel de 30 minutes pour en discuter.
-          </p>
-        </div>
+        <AboutSectionMobileBlock
+          tag="Gratuit, sans engagement"
+          title="Audit de site web gratuit"
+          description="On analyse votre site de fond en comble et on vous dit exactement ce qui cloche."
+        />
       </div>
 
-      <div className="bg-[#F8F9FB]">
-        <div className="max-w-5xl mx-auto px-6 md:px-10 py-12 md:py-16 grid grid-cols-1 lg:grid-cols-[1fr_400px] gap-12 items-start">
+      <Container className="w-full pt-6! pb-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start">
 
-          {/* Left */}
-          <div className="flex flex-col gap-10">
+          {/* Gauche — titre + ce qu'on analyse + FAQ */}
+          <AnimatedContent distance={40} duration={0.8} threshold={0.1} className="flex flex-col gap-10">
 
-            {/* What we check */}
-            <div>
-              <h2 className="font-heading font-normal text-2xl text-heading mb-6">Ce qu'on analyse</h2>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {auditPoints.map((p, i) => (
-                  <div key={i} className="bg-white rounded-2xl border border-black/6 p-5">
-                    <div className="flex items-center gap-3 mb-2">
-                      <span className="w-6 h-6 rounded-full bg-primary/10 text-primary text-[10px] font-bold flex items-center justify-center shrink-0">
-                        {String(i + 1).padStart(2, "0")}
-                      </span>
-                      <p className="text-sm font-semibold text-heading">{p.title}</p>
-                    </div>
-                    <p className="text-xs text-black/45 leading-relaxed">{p.desc}</p>
-                  </div>
-                ))}
-              </div>
+            {/* Desktop title */}
+            <div className="hidden md:flex flex-col gap-4 items-start">
+              <Tag>Gratuit, sans engagement</Tag>
+              <h1 className="font-heading font-normal text-3xl sm:text-4xl xl:text-5xl text-heading leading-tight">
+                On analyse votre site.<br />On vous dit ce qui cloche.
+              </h1>
+              <p className="text-base text-black/50 leading-relaxed max-w-sm">
+                SEO, vitesse, mobile, conversion et sécurité. Vous recevez un rapport clair et un appel de 30 minutes pour en discuter.
+              </p>
             </div>
 
-            {/* What you get */}
-            <div className="bg-white rounded-2xl border border-black/6 p-6 flex flex-col gap-4">
-              <h2 className="font-heading font-normal text-xl text-heading">Ce que vous recevez</h2>
-              <div className="flex flex-col gap-3">
-                {[
-                  { label: "Un rapport complet", desc: "Points forts, lacunes et recommandations classées par priorité." },
-                  { label: "Un appel de 30 minutes", desc: "On vous explique les résultats et on répond à vos questions." },
-                  { label: "Dans les 72h ouvrables", desc: "On vous revient rapidement, pas dans trois semaines." },
-                  { label: "Sans frais, sans obligation", desc: "On ne facture rien. Si la suite vous intéresse, on en parle à ce moment-là." },
-                ].map((item, i) => (
-                  <div key={i} className="flex items-start gap-3">
-                    <span className="w-5 h-5 rounded-full bg-primary flex items-center justify-center shrink-0 mt-0.5">
-                      <svg viewBox="0 0 12 12" className="w-2.5 h-2.5" fill="none" stroke="white" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><path d="M2 6.5l3 3L10 3"/></svg>
-                    </span>
-                    <div>
-                      <p className="text-sm font-semibold text-heading">{item.label}</p>
-                      <p className="text-xs text-black/45 mt-0.5">{item.desc}</p>
+            {/* Ce qu'on analyse */}
+            <div className="flex flex-col gap-5">
+              <p className="text-xs font-semibold uppercase tracking-widest text-black/40">Ce qu&apos;on analyse</p>
+              <div className="flex flex-col divide-y divide-black/6">
+                {auditPoints.map((p, i) => (
+                  <div key={i} className="flex gap-5 py-4 first:pt-0 last:pb-0">
+                    <span className="text-xs font-semibold text-primary/50 tracking-widest mt-0.5 shrink-0 w-5">0{i + 1}</span>
+                    <div className="flex flex-col gap-1">
+                      <p className="text-sm font-semibold text-heading">{p.title}</p>
+                      <p className="text-sm text-black/45 leading-relaxed">{p.desc}</p>
                     </div>
                   </div>
                 ))}
@@ -134,37 +108,39 @@ export default function AuditGratuitPage() {
             </div>
 
             {/* FAQ */}
-            <div>
-              <h2 className="font-heading font-normal text-2xl text-heading mb-4">Questions fréquentes</h2>
-              <div className="flex flex-col gap-2">
+            <div className="flex flex-col gap-4">
+              <p className="text-xs font-semibold uppercase tracking-widest text-black/40">Questions fréquentes</p>
+              <div className="flex flex-col divide-y divide-black/6 border-y border-black/6">
                 {faqItems.map((item, i) => (
-                  <div key={i} className="bg-white rounded-2xl border border-black/6 overflow-hidden">
+                  <div key={i}>
                     <button
                       onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                      className="w-full flex items-center justify-between px-5 py-4 text-left"
+                      className="w-full flex items-center justify-between py-4 text-left gap-4"
                     >
-                      <span className="text-sm font-semibold text-heading">{item.q}</span>
-                      <span className={`text-black/30 text-lg transition-transform duration-200 shrink-0 ml-4 ${openFaq === i ? "rotate-45" : ""}`}>+</span>
+                      <span className="text-sm font-medium text-heading">{item.q}</span>
+                      <span className={`text-black/30 text-xl transition-transform duration-200 shrink-0 ${openFaq === i ? "rotate-45" : ""}`}>+</span>
                     </button>
                     {openFaq === i && (
-                      <div className="px-5 pb-4">
-                        <p className="text-sm text-black/55 leading-relaxed">{item.a}</p>
-                      </div>
+                      <p className="text-sm text-black/50 leading-relaxed pb-4">{item.a}</p>
                     )}
                   </div>
                 ))}
               </div>
             </div>
 
-          </div>
+          </AnimatedContent>
 
-          {/* Right — form */}
-          <div className="lg:sticky lg:top-24">
+          {/* Droite — formulaire sticky */}
+          <AnimatedContent distance={40} duration={0.8} delay={0.15} threshold={0.1} className="lg:sticky lg:top-24">
             {submitted ? (
-              <div className="bg-white rounded-3xl border border-black/6 shadow-sm p-8 flex flex-col items-center gap-5 text-center">
-                <span className="text-5xl">🎉</span>
+              <div className="bg-white rounded-3xl border border-black/6 shadow-sm p-10 flex flex-col gap-4 text-center items-center">
+                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                  <svg viewBox="0 0 12 12" className="w-5 h-5 text-primary" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M2 6.5l3 3L10 3"/>
+                  </svg>
+                </div>
                 <div>
-                  <h3 className="font-heading font-normal text-2xl text-heading mb-2">Demande reçue !</h3>
+                  <h3 className="font-heading font-normal text-xl text-heading mb-1">Demande reçue</h3>
                   <p className="text-sm text-black/50 leading-relaxed">On analyse votre site et on vous revient dans les 72 heures avec votre rapport.</p>
                 </div>
               </div>
@@ -194,20 +170,16 @@ export default function AuditGratuitPage() {
                 </div>
 
                 <div>
-                  <Input label="Industrie" placeholder="Ex: immobilier, restauration, services..." name="industry" />
-                </div>
-
-                <div>
-                  <Input label="Depuis combien de temps votre site est en ligne ?" placeholder="Ex: 2 ans, 6 mois..." name="age" />
+                  <Input label="Industrie" placeholder="Ex : immobilier, restauration, services..." name="industry" />
                 </div>
 
                 <div className="flex flex-col gap-2">
-                  <label className="text-sm font-medium text-[#111111]">Votre principale préoccupation</label>
-                  <div className="flex flex-col gap-2">
+                  <label className="text-sm font-medium text-heading">Votre principale préoccupation</label>
+                  <div className="flex flex-wrap gap-2">
                     {concerns.map((c) => (
                       <button key={c} type="button"
                         onClick={() => toggleConcern(c)}
-                        className={`text-left text-xs px-3 py-2.5 rounded-xl border transition-all ${
+                        className={`text-left text-xs px-3 py-2 rounded-xl border transition-all ${
                           selectedConcerns.includes(c)
                             ? "border-primary bg-primary/8 text-primary font-medium"
                             : "border-black/12 text-black/55 hover:border-primary/40"
@@ -223,17 +195,17 @@ export default function AuditGratuitPage() {
                     placeholder="Contexte, objectifs, problèmes spécifiques..." name="message" />
                 </div>
 
-                <button type="submit"
-                  className="w-full inline-flex items-center justify-center bg-primary text-white font-medium px-6 py-3.5 rounded-xl hover:bg-primary/90 transition-colors text-sm">
-                  Recevoir mon audit gratuit →
-                </button>
+                <Button type="submit" variant="primary" className="w-full">
+                  Recevoir mon audit gratuit
+                </Button>
 
                 <p className="text-[11px] text-black/30 text-center">Aucun engagement. On ne vend rien sans votre accord.</p>
               </form>
             )}
-          </div>
+          </AnimatedContent>
+
         </div>
-      </div>
+      </Container>
 
       <div id="contact"><Footer /></div>
     </>

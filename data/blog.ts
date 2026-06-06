@@ -42,6 +42,73 @@ export interface BlogSection {
 
 export const blogPosts: BlogPost[] = [
   {
+    id: 7,
+    slug: "salespitch-saas-vente-ia-oriana-solutions",
+    title: "On a développé notre propre logiciel de vente. Voici ce que ça a donné.",
+    excerpt:
+      "SalesPitch est un copilot de vente IA qu'on a conçu, développé et lancé en interne. Pas pour montrer qu'on en était capables. Parce qu'on avait un vrai problème à régler.",
+    category: "Étude de cas",
+    readTime: "5 min",
+    date: "6 juin 2026",
+    content: [
+      {
+        body: "On accompagne des clients dans leurs projets numériques depuis le premier jour. Applications web, logiciels sur mesure, intégrations IA. On a livré des dizaines de projets pour d'autres.\n\nMais il y a un an, on s'est posé une question honnête : est-ce qu'on est capables de construire notre propre produit, de A à Z, sans client qui nous tient la main et sans délai extensible ?\n\nLa réponse, c'est SalesPitch.",
+      },
+      {
+        heading: "Le problème qu'on voulait régler",
+        body: "Les représentants de vente perdent des deals non pas parce qu'ils manquent de motivation, mais parce qu'ils manquent des bons outils au bon moment. Un bon pitch, c'est structuré. Ça adresse les bonnes objections. Ça s'adapte au profil du client en face.\n\nLa plupart des vendeurs travaillent encore avec des notes dans Google Docs, des scripts Word et des courriels de relance copiés-collés. Aucune structure, aucune cohérence d'une rencontre à l'autre.\n\nOn a bâti SalesPitch pour combler exactement ce vide.",
+      },
+      {
+        heading: "Ce qu'on a livré en 1 mois",
+        body: "On s'était donné une contrainte claire : lancer quelque chose de fonctionnel, utilisé par de vrais vendeurs, en moins de 30 jours. Pas un prototype. Un vrai produit.\n\nVoici ce qu'on a livré :",
+        checklist: {
+          items: [
+            { text: "Bâtisseur de pitch structuré par profil client, avec intro, arguments, objections et close" },
+            { text: "Bibliothèque de templates courriel et texto pour chaque étape du suivi commercial" },
+            { text: "Tableau de bord avec analyse IA pour identifier ce qui fonctionne par vendeur" },
+            { text: "Onglet Entreprise pour centraliser les battlecards concurrentiels et les informations clés" },
+            { text: "Gestion de plusieurs pitchs simultanés pour couvrir différents secteurs ou types de clients" },
+          ],
+          variant: "green",
+        },
+      },
+      {
+        heading: "Les chiffres après les premiers utilisateurs",
+        body: "On ne voulait pas inventer des métriques. On a mesuré ce qu'on pouvait mesurer, et voici ce qu'on a observé chez les équipes qui ont adopté SalesPitch.",
+        comparison: {
+          headers: ["Métrique", "Résultat observé"],
+          rows: [
+            { label: "Taux de conversion moyen", values: ["+27 %"] },
+            { label: "Revenus additionnels par mois", values: ["+1 400 $ par représentant"] },
+            { label: "Temps économisé par semaine", values: ["5 h par vendeur"] },
+          ],
+          note: "Résultats observés chez les premiers utilisateurs des secteurs assurances et immobilier.",
+        },
+      },
+      {
+        heading: "Ce qu'on a appris en le lançant",
+        body: "Bâtir pour soi, c'est différent de bâtir pour un client. Quand le client, c'est toi, il n'y a plus personne pour valider tes décisions. Chaque choix de design, chaque fonctionnalité, chaque arbitrage technique, c'est toi qui l'assumes entièrement.\n\nÇa nous a rendus meilleurs dans notre façon d'accompagner nos propres clients. On comprend maintenant encore mieux ce que c'est de prendre de vraies décisions de produit sous contrainte de temps et de ressources.",
+        callout: {
+          title: "Ce qu'on a réalisé",
+          body: "La plus grande leçon : un bon produit se valide auprès d'utilisateurs réels, pas dans un doc de spécifications. On a itéré plus vite que prévu parce qu'on avait des retours concrets dès la première semaine.",
+          variant: "insight",
+        },
+      },
+      {
+        heading: "La suite pour SalesPitch",
+        body: "SalesPitch est disponible aujourd'hui à [usesalespitch.com](https://www.usesalespitch.com). On continue de le développer activement. De nouvelles fonctionnalités IA arrivent, notamment des suggestions de pitch en temps réel basées sur les données de conversion de l'équipe.\n\nSi vous avez une équipe de vente et que vous reconnaissez le problème qu'on a décrit, allez y jeter un coup d'oeil.",
+      },
+      {
+        cta: {
+          title: "Vous avez un projet SaaS en tête ?",
+          body: "On a prouvé qu'on pouvait lancer un produit fonctionnel en moins d'un mois. Si vous avez une idée, on peut en parler.",
+          label: "Obtenir mon audit gratuit",
+          href: "/audit-gratuit",
+        },
+      },
+    ],
+  },
+  {
     id: 6,
     slug: "refonte-site-web-michel-morin-consultants",
     title: "Nouveau mandat : refonte complète pour Michel Morin, coach professionnel.",

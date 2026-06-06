@@ -185,7 +185,7 @@ export default function LogicielCRMPage() {
       <DynamicServiceSection
         title="Un CRM sur mesure adapté à votre équipe, pas à la théorie."
         description="HubSpot et Salesforce sont des outils puissants, mais conçus pour des équipes de vente de grandes entreprises. On développe un CRM qui correspond exactement à la taille de votre équipe, à votre cycle de vente et à vos habitudes de travail. Adoption rapide, impact immédiat. Les agents immobiliers, comptables et PME qui nous font confiance voient des résultats dès le premier mois."
-        image="/png/service1-1.png"
+        image="/png/crm-pipeline.jpg"
         imageAlt="CRM sur mesure développé pour PME et startups québécoises"
         headingVariant="h2"
         reverse
@@ -195,7 +195,7 @@ export default function LogicielCRMPage() {
       <DynamicServiceSection
         title="Vos données CRM vous appartiennent. Pas à un tiers."
         description="Avec un CRM sur mesure, vous hébergez vos propres données clients, vous contrôlez les accès et vous n'êtes dépendant d'aucun abonnement tiers. Si votre équipe grandit ou si vos besoins changent, on fait évoluer le CRM avec vous. Aucune limite d'utilisateurs, aucune surprise de facturation."
-        image="/png/real2.png"
+        image="/png/crm-contacts.jpg"
         imageAlt="Gestion des données clients dans un CRM hébergé en propre"
         headingVariant="h2"
         parentStyle="bg-primary-light"
